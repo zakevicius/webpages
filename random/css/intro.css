@@ -1,0 +1,190 @@
+@font-face {
+    font-family: MavenPro;
+    src: url(../fonts/MavenPro.ttf);
+}
+
+* {
+    font-family: MavenPro, 'Courier New', serif;
+}
+
+#introContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 20vh;
+    padding: 10px;
+    background-image: linear-gradient(to left, tomato, white 60%);
+}
+
+.introText {
+    flex-basis: 100%;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    font-size: 20pt;
+    font-weight: normal;
+    letter-spacing: 6px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#introContainer .bottomButton {
+    width: 50%;
+    font-weight: bold;
+    font-size: 25pt;
+    background-color: white;
+    color: rgb(255, 30, 30);
+    border-radius: 10px;
+    border: none;
+}
+
+#introContainer .bottomButton:hover {
+    background-color: rgb(255, 30, 30);
+    color: white;
+}
+
+#introContainer .bottomButton:active {
+    background-color: rgb(255, 30, 30);
+    color: white;
+    opacity: 0.8;
+}
+
+.introImages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    flex-basis: 50%;
+    padding: 50px;
+    order: 2;
+}
+
+[class^="introImg "] {
+    display: flex;
+    align-content: center;
+    flex-basis: 100%;
+    height: 80px;
+    margin: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px 20px;
+    opacity: 0;
+}
+
+.warehouse {
+    position: relative;
+    right: 600px;
+    background-image: url("../img/wh1.jpg");
+}
+
+.ship {
+    position: relative;
+    right: 540px;
+    background-image: url("../img/cargoShip.jpg");
+}
+
+.plane {
+    position: relative;
+    right: 480px;
+    background-image: url("../img/cargoPlane.jpg");
+}
+
+.truck {
+    position: relative;
+    right: 420px;
+    background-image: url("../img/cargoTruck.jpg");
+}
+
+.train {
+    position: relative;
+    right: 360px;
+    background-image: url("../img/cargoTrain.jpg");
+}
+
+.team {
+    position: relative;
+    right: 300px;
+    background-image: url("../img/team.jpg");
+}
+
+.enterSite {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.enterSite img {
+    padding: 10px;
+    width: 400px;
+    border-radius: 0px;
+}
+
+.imageIntro {
+    flex-basis: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1350px) {
+    .enterSite img {
+        width: 300px;
+    }
+    
+    [class^="introImg "] {
+        height: 50px;
+    }
+    
+    .introText {
+        font-size: 16pt;
+    }
+}
+    
+@media screen and (min-width: 850px) and (max-width: 999px) {
+    .enterSite img {
+        width: 250px;
+    }
+    
+    [class^="introImg "] {
+        height: 40px;
+    }
+    
+    .introText {
+        font-size: 12pt;
+    }
+}
+    
+@media screen and (max-width: 849px) {
+    .enterSite {
+        margin-top: 140px;
+        order: 2;
+    }
+    
+    .enterSite img {
+        width: 250px;
+    }
+    
+    [class^="introImg "] {
+        height: 40px;
+    }
+    
+    .introText {
+        font-size: 12pt;
+    }
+    
+    #introContainer {
+        flex-wrap: wrap;
+        margin-top: 20px;
+        background-image: linear-gradient(to top, white 60%, tomato);
+    }
+    
+    .introImages {
+        flex-basis: 80%;
+        justify-content: center;
+        padding: 10px;
+        order:1;
+    }
+}

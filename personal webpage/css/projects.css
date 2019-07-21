@@ -1,0 +1,142 @@
+#projects {
+  display: none;
+  top: 0px;
+  left: 0px;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#mainProjects {
+  position: relative;
+  padding-bottom: 2em;
+  display: none;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.project {
+  position: relative;
+  flex-basis: 40%;
+  height: auto;
+  min-width: 300px;
+  min-height: 300px;
+  margin: 2em 1em;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.project a {
+  text-decoration: none;
+}
+
+i.more-info {
+  display: none;
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  height: 30px;
+  width: 30px;
+}
+
+div.project-link {
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 0.5em;
+  height: 300px;
+  min-width: 300px;
+  padding: 1em 0;
+  text-shadow: none;
+  transition: top 1s, right 1s, width 1s 0.5s, height 1s 0.5s;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-origin: content-box;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 5px white;
+}
+
+.project-info {
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-basis: 99%;
+  height: 90%;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1em;
+  font-family: "Wire One", sans-serif;
+  font-size: 18pt;
+  letter-spacing: 3px;
+}
+
+.project-info:hover {
+  opacity: 1;
+}
+
+.project-info .info-skills {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-info .info-skills div:first-of-type {
+  flex-basis: 100%;
+}
+
+.project-info .info-skill-image {
+  width: 2vw;
+  height: 2vw;
+  margin: 0.5em;
+}
+
+/* div.arrow {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  font-size: 30pt;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+div.arrow.left {
+  left: 20%;
+}
+
+div.arrow.right {
+  right: 20%;
+}
+
+div.arrow:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+div.arrow span {
+  font-size: 30pt;
+} */
+
+@media screen and (max-width: 800px) {
+  .project-info .info-skill-image {
+    width: 25px;
+    height: 25px;
+    margin: 0.5em;
+  }
+
+  i.more-info {
+    display: block;
+  }
+}

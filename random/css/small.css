@@ -1,0 +1,78 @@
+@media screen and (min-width: 865px) and (max-width: 1149px) {
+    @font-face {
+        font-family: MavenPro;
+        src: url(../fonts/MavenPro.ttf);
+    }
+    
+    * {
+        font-family: MavenPro, 'Courier New', serif;
+        border-radius: 10px;
+    }
+    
+    .headingContainer {
+        height: 205px;
+    }
+    
+    .logo img {
+        width: 255px;
+    }
+    
+    .asideButton button {
+        display: block;
+    }
+    
+    .asideCont {
+        display: none;
+        position: absolute;
+        width: 250px;
+        min-width: 250px;
+        padding-top: 110px;
+    }
+    
+    .asideSmall {
+        display: none;
+    }
+    
+    .asideLogo img {
+        width: 130px;
+    }
+    
+    .contentsCont {
+        padding: 10px 0px 0px 10px;
+    }
+    
+    .navCont {
+        position: sticky;
+        top: 0px;
+    }
+    
+    .navCont .bigNav {
+        display: none;
+    }
+    
+    .navCont .smallNav {
+        display: flex;
+    }
+    
+    article {
+        font-size: 18pt;
+    }
+    
+    img {
+        width: 200px;
+        border-radius: 40px;
+    }
+    
+    .card {
+        flex-basis: 30%;
+        min-width: 200px;
+        margin: 10px 50px;
+        padding: 20px;
+        font-size: 16pt;
+    }
+    
+    .card img {
+        width: 150px;
+        height: 150px;
+    }
+}

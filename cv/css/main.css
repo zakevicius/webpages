@@ -1,0 +1,202 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: auto;
+  padding: 1%;
+  width: 800px;
+  font-size: 9pt;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(160, 82, 45);
+}
+
+a:hover {
+  color: orange;
+}
+
+h2 {
+  font-size: 14pt;
+}
+
+h3 {
+  font-size: 12pt;
+  padding-bottom: 5px;
+}
+
+b {
+  color: rgb(160, 82, 45);
+}
+
+.mainCont {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headerCont {
+  flex-basis: 100%;
+  margin-left: 10px;
+}
+
+.headerCont header {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.headerImg img {
+  width: 90px;
+  margin-right: 20px;
+  border-radius: 10%;
+}
+
+.headerInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  padding: 5px 20px 5px 0px;
+}
+
+.headerInfo h1 {
+  flex-basis: 100%;
+}
+
+.infoCont {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.profile {
+  flex-basis: 100%;
+  margin: 10px 0px;
+  padding: 5px 20px 5px 0px;
+  text-align: justify;
+}
+
+.profile h2 {
+  border-radius: 2px;
+}
+
+/*Left side content*/
+
+.infoLeftCont {
+  flex-basis: 70%;
+  padding-left: 5px;
+  border-left: 3px solid rgb(160, 82, 45);
+}
+
+.infoLeftCont li:nth-child(even) {
+  color: rgb(160, 82, 45);
+}
+
+.education,
+.employment,
+.courses,
+.info,
+fieldset {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  width: 97%;
+  padding: 10px 0px 3px 3px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 16pt;
+  color: white;
+  background-color: rgb(160, 82, 45);
+}
+
+.companyName {
+  flex-basis: 100%;
+  padding: 5px 10px 0px 132px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom right, rgb(160, 82, 45), white 20%);
+}
+
+.infoLeft {
+  flex-basis: 21%;
+  padding: 5px;
+}
+
+.infoLeft p:nth-child(2) {
+  margin-top: 5px;
+}
+
+.infoRight {
+  flex-basis: 70%;
+  margin-bottom: 0px;
+  padding: 5px;
+}
+
+.infoRight ul {
+  padding: 5px 5px 0px 0px;
+}
+
+/*Right side content*/
+
+.infoRightCont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 26%;
+  padding-left: 10px;
+  border-left: 1px solid rgb(160, 82, 45);
+  line-height: 15px;
+}
+
+.infoRightCont p {
+  margin-top: 0.3em;
+}
+
+.infoRightCont div {
+  flex-basis: 100%;
+}
+
+.infoRightCont img {
+  margin-right: 5px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+.infoRightCont .skill-image {
+  width: 35px;
+  padding: 0.2em;
+}
+
+div[class^="details"] {
+  margin-bottom: 20px;
+}
+
+.infoRightCont ul {
+  list-style-type: none;
+}
+
+.infoRightCont h2 {
+  margin-bottom: 10px;
+}
+
+.progress {
+  padding: 1px;
+  width: 90%;
+  border: 1px solid silver;
+  border-radius: 2px;
+  background-color: white;
+}
+
+.progress div {
+  background-color: rgb(160, 82, 45);
+  height: 10px;
+  border-radius: 2px;
+}

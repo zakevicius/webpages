@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Marius Žakevičius">
+    <meta name="keywords" content="warehouse, transport, logistics, customs, declaration">
+    <meta name="description" content="All logistics solutions">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/intro.css" type="text/css" />
+    <link rel="stylesheet" href="css/medium.css" type="text/css" />
+    <link rel="stylesheet" href="css/small.css" type="text/css" />
+    <link rel="stylesheet" href="css/extraSmall.css" type="text/css" />
+    <link rel="stylesheet" href="css/forma.css" type="text/css" />
+    <title>Random > Your Logistics</title>
+</head>
+
+<body>
+    <div id="introContainer">
+        <div class="introImages">
+            <div class="introImg warehouse">
+                <h1 class="introText">"Sandėlio sprendimai"</h1>
+            </div>
+            <div class="introImg ship">
+                <h1 class="introText">"Kroviniai laivais"</h1>
+            </div>
+            <div class="introImg plane">
+                <h1 class="introText">"Kroviniai lėktuvais"</h1>
+            </div>
+            <div class="introImg truck">
+                <h1 class="introText">"Kroviniai kelių transportu"</h1>
+            </div>
+            <div class="introImg train">
+                <h1 class="introText">"Kroviniai traukiniais"</h1>
+            </div>
+            <div class="introImg team">
+                <h1 class="introText">"Profesionali komanda"</h1>
+            </div>
+        </div>
+        <div class="intro enterSite">
+            <div class="imageIntro">
+                <img src="img/randomLogo.jpg"/>
+            </div>
+            <button class="bottomButton" onclick=enterSite()>>>></button>
+        </div>
+    </div>
+    
+    <div id="mainPage">
+        <div class="logo">
+            <img src="img/randomLogo.png"/>
+        </div>
+        <div class="headingContainer">
+            <div class="cont_logo" id="pageStart">
+            </div>
+        </div>
+        <div id="newOrderWindow"></div>
+        <div id="mainContainer">
+            <div class="asideCont">
+                <aside>
+                    <div class="asideLogo">
+                        <img src="img/randomLogo.jpg">
+                    </div>
+                    <div>Jau dirbame kartu?</div>
+                    <div class="newOrder"><a href="warehouse.php" target="_blank">Į sandėlį>>></a></div>
+                    <div>Turi klausimų ar pasiūlymų?</div>
+                    <form action="php/submit.php" target="_blank" method="post">
+                        <div>Vardas</div>
+                        <input class="formName" type="text" name="name" required/>
+                        <div>El. paštas</div>
+                        <input class="formEmail" type="email" name="email" required/>
+                        <div>Tel. nr.</div>
+                        <input class="formPhone" type="text" name="phone"/>
+                        <div>Komentarai:</div>
+                        <textarea class="formMessage" name="message" required></textarea>
+                        <div><input class="formSubmit" type="submit" value="Siųsti"/></div>
+                    </form>
+                    <div>
+                        Kontaktai:
+                        <address>
+                            <p>Nemuno g. 23A,</p>
+                            <p>Klaipėda, LT-93239</p>
+                            <p><a href="tel: +37060000000">Tel.: +370 600 00000</a></p>
+                        </address>
+                    </div>
+                </aside>
+            </div>
+            <div class="asideCont asideSmall"></div>
+            <div class="contentsCont">
+                <div class="navCont">
+                    <div class="asideButton">
+                        <button class="formExpand">\/</button>
+                    </div>
+                    <nav class="bigNav">
+                        <div class="nav">
+                            Pradžia
+                            <a href="warehouse.php" target="_blank">Sandėlio modulis</a>
+                            <a href="#contacts">Kontaktai</a>
+                        </div>
+                    </nav>
+                    <nav class="smallNav">
+                        <div class="menuSmall">
+                            Pradžia
+                        </div>
+                    </nav>
+                </div>
+                <div class="smallNavLinks">
+                    <a href="warehouse.php" target="_blank">Sandėlio modulis</a>
+                    <a href="#contacts">Kontaktai</a>
+                </div>
+                <div class="contents">
+                    <article id="warehouse">
+                        <div class="image">
+                            <img src="img/warehouse.jpg"/>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>Europos Bendrijos prekių saugojimas</li>
+                                <li>Trečiųjų šalių prekių saugojimas A tipo muitinės sandėlyje</li>
+                                <li>Krovos darbai (mechanizuotu, rankiniu būdu), darbai su kranu</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article id="solutions">
+                        <div class="image">
+                            <img src="img/solutions.jpg"/>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>Sandėliavimo sprendimai</li>
+                                <li>Užsakymų valdymo sprendimai</li>
+                                <li>Atsargų valdymo sprendimai</li>
+                                <li>Transportavimo ir paskirstymo sprendimai</li>
+                                <li>Pridėtinės vertės paslaugos</li>
+                                <li>Paslaugos gabenantiems krovinius iš Europos Sąjungos į trečiasias   šalis</li>
+                                <li>Krovinio pristatymas „nuo durų iki durų“</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article id="customs">
+                        <div class="image">
+                            <img src="img/checklist.png"/>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>Muitinės dokumentų rengimas pagal galiojančius muitinės įstaigų   reikalavimus</li>
+                                <li>Muitinės dokumentų pildymas</li>
+                                <li>„INTRASTAT“ ataskaitų pildymas, jų pateikimas muitinės  įstaigai</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article id="contacts">
+                        <div>Susisiekime!</div>            
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.679454943906!2d21.136351516099705!3d55.69456050394971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e4dc75ba39d119%3A0x3afc284608d1af2e!2sNemuno+g.+23%2C+Klaip%C4%97da+93277%2C+Lithuania!5e0!3m2!1sen!2sus!4v1545846505619" allowfullscreen></iframe>
+                    </article>  
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <footer>
+            </footer>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/aside.js"></script>
+    <script src="js/newOrder.js"></script>
+</body>
+</html>

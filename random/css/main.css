@@ -1,0 +1,374 @@
+@font-face {
+    font-family: MavenPro;
+    src: url(../fonts/MavenPro.ttf);
+}
+
+* {
+    font-family: MavenPro, 'Courier New', serif;
+    border-radius: 10px;
+}
+
+#mainPage {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.headingContainer {
+    height: 310px;
+    flex-basis: 100%;
+    border: 3px solid tomato;
+}
+
+.cont_logo {
+    height: 100%;
+    width: 100%;
+    border-radius: 7px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    z-index: 2;
+}
+
+.logo img {
+    vertical-align: middle;
+    width: 400px;
+    border-radius: 0px;
+}
+
+#mainContainer {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    opacity: 0;
+}
+
+.newOrderWindow {
+    display: none;
+}
+
+.asideCont {
+    display: flex;
+    width: 250px;
+    min-width: 250px;
+    padding-top: 10px;
+    height: 100%;
+}
+
+.asideSmall {
+    display: none;
+}
+
+.asideButton button {
+    display: none;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 50px;
+    width: 90px;
+    height: 90px;
+    color: tomato;
+    font-weight: bold;
+    font-size: 30pt;
+    font-style: normal;
+    border: 4px solid tomato;
+    background-color: white;
+}
+
+.asideLogo img {
+    width: 230px;
+    border-radius: 0px;
+}
+
+aside {
+    flex-basis: 100%;
+    position: relative;
+    top: 5px;
+    border-right: 4px solid tomato;
+    border-top: 4px solid tomato;
+    height: 950px;
+    padding: 10px;
+    line-height: 25px;
+    font-weight: bolder;
+    font-size: 14pt;
+    color: tomato;
+    background-color: white;
+}
+
+aside div {
+    margin: 10px 0px;
+}
+
+.asideCont a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.newOrder {
+    border: 2px solid black;
+    background-color: tomato;
+    color: white;
+    text-decoration: underline;
+    font-size: 11pt;
+    text-align: center;
+}
+
+.newOrder a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.newOrder:hover,
+input[type="submit"]:hover {
+    color: tomato;
+    background-color: white;
+    cursor: pointer;
+}
+
+form {
+    font-size: 12pt;
+}
+
+input,
+textarea {
+    width: 100%;
+    color: tomato;
+    border: 2px solid tomato;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+input[type="submit"] {
+    margin: 10px 0px;
+    border: 2px solid black;
+    background-color: tomato;
+    font-weight: bold;
+    color: white;
+}
+
+.contentsCont {
+    padding: 10px 0px 0px 10px;
+}
+
+.navCont {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+}
+
+.navCont .bigNav,
+.navCont .smallNav {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    padding: 5px;
+    background-color: white;
+    border: 4px solid;
+    border-image: linear-gradient(to right, white 75%, tomato) 1;
+    background-image: linear-gradient(to right, tomato, white 60%);
+}
+
+.navCont .smallNav {
+    display: none;
+    flex-wrap: wrap;
+    text-align: right;
+}
+
+.menuSmall:hover,
+.nav:hover {
+    color: white;
+    background-image: linear-gradient(to right, tomato, white 80%);
+    cursor: pointer;
+}
+
+div.smallNavLinks {
+    display: none;
+    position: fixed;
+    right: 8px;
+    width: 300px;
+    flex-wrap: wrap;
+    text-align: right;
+    font-size: 16pt;
+}
+
+.smallNavLinks a {
+    flex-basis: 100%;
+    margin: 2px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: tomato;
+    border: 4px solid;
+    background-image: linear-gradient(to right, tomato -80%, white 40%);
+    border-image: linear-gradient(to right, white 20%, tomato) 1;
+}
+
+.smallNavLinks a:hover {
+    color: white;
+    background-image: linear-gradient(to left, tomato, white 95%);
+    border-image: linear-gradient(to right, tomato -70%, white) 1;
+    cursor: pointer;
+}
+
+.navCont a {
+    margin-left: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: tomato;
+    background-image: linear-gradient(to right, tomato, white 5%);
+}
+
+.bigNav div,
+.smallNav div {
+    display: flex;
+    flex-basis: 200px;
+    height: 60px;
+    align-items: center;
+    margin: 5px;
+    padding-left: 10px;
+    font-size: 20pt;
+    color: tomato;
+    background-color: white;
+    border: 4px solid;
+    border-image: linear-gradient(to left, white 20%, tomato) 1;
+}
+
+nav a {
+    display: none;
+    margin-left: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: tomato;
+    background-image: linear-gradient(to right, tomato, white 5%);
+}
+
+nav a:hover {
+    color: white;
+    background-image: linear-gradient(to right, tomato, white 150%);
+}
+
+article {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    line-height: 50px;
+    font-size: 24pt;
+    border: 4px solid;
+    border-image: linear-gradient(to right, white 20%, tomato) 1;
+    color: tomato;
+    margin: 20px 0px;
+}
+
+article:nth-child(even) {
+    flex-direction: row-reverse;
+    border-image: linear-gradient(to left, white 20%, tomato) 1;
+}
+
+article.image {
+    margin: 0px 20px;
+}
+
+#warehouse {
+    background-image: url(../img/warehouseWhite.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#solutions {
+    background-image: url(../img/solutions.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#customs {
+    background-image: url(../img/customsDeclaration.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+img {
+    width: 400px;
+    border-radius: 100px;
+}
+
+li:nth-child(even) {
+    color: rgb(100, 100, 100)
+}
+
+#contacts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 20px;
+    color: tomato;
+}
+
+#contacts div:first-child {
+    flex-basis: 100%;
+    font-size: 30pt;
+    margin: 10px
+}
+
+.card {
+    flex-basis: 20%;
+    margin: 10px;
+    padding: 20px;
+    font-size: 20pt;
+    border: solid 4px black;
+    line-height: 50px;
+    background-color: white;
+    background-image: url(../img/arrows.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+}
+
+.card a {
+    color: tomato;
+}
+
+.card a:hover {
+    color: white;
+    background-color: tomato;
+}
+
+iframe {
+    order: 2;
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+#footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5px;
+    background-color: tomato;
+    border-radius: 3px;
+}
+
+footer {
+    margin-right: 20px;
+    color: white;
+}

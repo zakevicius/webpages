@@ -1,0 +1,249 @@
+@font-face {
+    font-family: MavenPro;
+    src: url(../fonts/MavenPro.ttf);
+}
+
+* {
+    font-family: MavenPro, 'Courier New', serif;
+}
+
+#signUpCont {
+    display: none;
+    position: fixed;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: tomato;
+    font-weight: bold;
+    background-color: rgba(255, 240, 240, 0.95);
+    z-index: 10;
+}
+
+.fullOrderCont {
+    display: none;
+    position: fixed;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 240, 240, 0.9);
+    z-index: 10;
+}
+
+.fullOrderWindow {
+    flex-basis: 500px;
+    background-color: white;
+    color: tomato;
+    opacity: 1;
+}
+
+.fullOrderWindow table * {
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid tomato;
+}
+
+.fullOrderWindow td:first-child {
+    width: 150px;
+    font-weight: bold;
+}
+
+.fullOrderCont td:nth-child(2) {
+    text-align: left;
+    color: black;
+}
+
+.contHeader {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: 30pt;
+    padding: 10px;
+    margin: 5px;
+    font-size: 20pt;
+    font-weight: bold;
+    color: tomato;
+    border: 4px solid;
+    border-image: linear-gradient(to left, white 20%, tomato) 1;
+    background-image: linear-gradient(to left, tomato, white 70%);
+}
+
+.contHeader img {
+    height: 200px;
+}
+
+.contHeaderLeft,
+.contHeaderRight {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.contHeaderLeft {
+    flex-basis: 80%;
+}
+
+.contHeaderRight {
+    flex-basis: 15%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 40px;
+    font-size: 12pt;
+    color: black;
+}
+
+.contHeaderRight input,
+.contHeaderRight button {
+    margin: 10px 0px;
+    width: 100%;
+    min-width: 200px;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+.contHeaderRight button {
+  font-size: 14pt;
+  border: 2px solid white;
+}
+
+.contHeaderRight img {
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+}
+
+.navBar {
+    display: flex;
+    position: sticky;
+    top: 0px;
+    width: 100;
+    height: 45px;
+    margin: 5px;
+    font-size: 16pt;
+    border: 4px solid;
+    border-image: linear-gradient(to left, white 20%, tomato) 1;
+    background-image: linear-gradient(to left, tomato, white 70%);
+}
+
+.navBar a {
+    padding: 10px 5px;
+    color: tomato;
+    text-decoration: none;
+}
+
+.navBar a:hover,
+button.generateButton:hover,
+button {
+    color: white;
+    background-color: tomato;
+    cursor: pointer;
+}
+
+.newTableCont {
+    flex-basis: 100%;
+    margin: 6px;
+}
+
+table {
+    width: 100%;
+}
+
+table th {
+    position: sticky;
+    top: 53px;
+}
+
+table,
+th,
+tr,
+td {
+    border: 2px solid tomato;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: tomato;
+    color: white;
+    padding: 5px;
+    border: 2px solid white;
+}
+
+th:nth-child(1) {
+    width: 100px;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+    text-align: center;
+}
+
+th:last-child {
+    width: 100px;
+}
+
+th.narrow {
+    width: 110px;
+    text-align: center;
+}
+
+tr {
+    height: 30px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(255, 240, 240);
+}
+
+td {
+    padding: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 5px;
+    background-color: tomato;
+    color: white;
+    border: none;
+}
+
+button.generateButton {
+    width: 250px;
+    height: 45px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16pt;
+    color: tomato;
+    background-color: white;
+}
+
+#footer {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 100%;
+    padding: 5px;
+    margin: 0px 8px;
+    background-color: tomato;
+    border-radius: 3px;
+}
+
+footer {
+    margin-right: 20px;
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .contHeader img {
+      height: 100px;
+  }
+
+  .contHeaderRight input,
+  .contHeaderRight button {
+      width: 100%;
+      min-width: 200px;
+      min-height: 20px;
+  }
+}
