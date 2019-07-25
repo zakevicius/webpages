@@ -1,55 +1,62 @@
 var main = document.getElementById('mainProjects');
 var projects = [
     {
-        'link': 'https://random.zhako.lt',
+        'link': 'https://damp-hamlet-47083.herokuapp.com/',
         'src': 'img/1.jpg',
         'order': 1,
+        'info': `In progress. Making warehouse management system while learning MERN stack.`,
+        'add_link': 'https://scrape-api.herokuapp.com/',
+        'skills': ['HTML', 'CSS', 'SEMANTIC-UI', 'JS', 'REACT', 'REDUX', 'NODE.JS', 'MONGODB', 'EXPRESS']
+    },
+    {
+        'link': 'https://logway1.lt',
+        'src': 'img/2.jpg',
+        'order': 2,
+        'info': 'First real project for logistic company',
+        'skills': ['HTML', 'CSS', 'JS', 'PHP']
+    },
+    {
+        'link': 'https://github-finder-learning.netlify.com/',
+        'src': 'img/3.jpg',
+        'order': 3,
+        'info': 'App for searching for users on github and displaying their information. Made while was learning about react hooks and context.',
+        'skills': ['HTML', 'CSS', 'JS', 'REACT']
+    },
+    {
+        'link': 'https://random.zhako.lt',
+        'src': 'img/4.jpg',
+        'order': 4,
         'info': 'Project for coding school - website',
         'skills': ['HTML', 'CSS', 'JS', 'JQUERY', 'PHP', 'MYSQL']
     },
     {
         'link': 'https://random.zhako.lt/warehouse.php',
-        'src': 'img/2.jpg',
-        'order': 2,
+        'src': 'img/5.jpg',
+        'order': 5,
         'info': `Project for coding school - system for order management`,
         'skills': ['HTML', 'CSS', 'JS', 'JQUERY', 'PHP', 'MYSQL']
     },
     {
         'link': 'https://mine.zhako.lt',
-        'src': 'img/3.jpg',
-        'order': 3,
+        'src': 'img/6.jpg',
+        'order': 6,
         'info': 'Javascript Minesweeper game clone',
         'skills': ['HTML', 'CSS', 'JS']
     },
     {
         'link': 'https://custbroker.zhako.lt',
-        'src': 'img/4.jpg',
-        'order': 4,
+        'src': 'img/7.jpg',
+        'order': 7,
         'info': 'Website for logistics company',
         'skills': ['HTML', 'CSS', 'JS']
     },
     {
-        'link': 'https://logway1.lt',
-        'src': 'img/5.jpg',
-        'order': 5,
-        'info': 'First real project for logistic company',
-        'skills': ['HTML', 'CSS', 'JS', 'PHP']
-    },
-    {
         'link': 'https://scrape-client.herokuapp.com/',
-        'src': 'img/6.jpg',
-        'order': 6,
+        'src': 'img/8.jpg',
+        'order': 8,
         'info': 'Simple app for scraping information about what local television is showing at the moment and sending data from backend to frontend.',
         'add_link': 'https://scrape-api.herokuapp.com/',
         'skills': ['HTML', 'CSS', 'BOOTSTRAP', 'JS', 'REACT', 'NODE.JS']
-    },
-    {
-        'link': 'https://damp-hamlet-47083.herokuapp.com/',
-        'src': 'img/7.jpg',
-        'order': 7,
-        'info': `In progress. Making warehouse management system while learning MERN stack.`,
-        'add_link': 'https://scrape-api.herokuapp.com/',
-        'skills': ['HTML', 'CSS', 'SEMANTIC-UI', 'JS', 'REACT', 'REDUX', 'NODE.JS', 'MONGODB', 'EXPRESS']
     }
 ];
 
