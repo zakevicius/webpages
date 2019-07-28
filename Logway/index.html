@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="UAB „Logway1“ – Muitinės tarpininkavimas: eksporto, importo, tranzito, laikinojo saugojimo procedūros. Sandėliavimo paslaugos." />
-    <meta name="keywords" content="Logway, logway1, tarpininkai, muitinė, muitinės, sandėlio, deklarantai, sandėlis, sandėliavimas, customs, broker, warehouse, deklaravimas, importas, eksportas, tranzitas, EX, IM, T1, BDK" />
+    <meta name="description"
+        content="UAB „Logway1“ – Muitinės tarpininkavimas: eksporto, importo, tranzito, laikinojo saugojimo procedūros. Sandėliavimo paslaugos." />
+    <meta name="keywords"
+        content="Logway, logway1, tarpininkai, muitinė, muitinės, sandėlio, deklarantai, sandėlis, sandėliavimas, customs, broker, warehouse, deklaravimas, importas, eksportas, tranzitas, EX, IM, T1, BDK" />
     <meta name="author" content="Marius Žakevičius" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel='shortcut icon' type='image/x-icon' href='img/favicon.png' />
@@ -66,17 +68,9 @@
                 <p>Atsakysim, patarsim, padėsim.</p> -->
             </div>
             <form method='POST' action='#form'>
-                <h2>Vardas:</h2>
-                <input type='text' name='name' placeholder='Jūsų vardas' required>
-                <h2>E-mail:</h2>
-                <input type='email' name='email' placeholder='Jūsų e-mail' required>
-                <h2>Žinutė:</h2>
-                <textarea rows=5 name='message'></textarea>
-                <button type='submit'>Siųsti</button>
                 <?php if(isset($_POST['message'])) {
                     include_once 'php/submitForm.php';
-                }
-                ?>
+                } ?>
             </form>
         </div>
         <div id="contacts">
