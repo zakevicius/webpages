@@ -1,18 +1,18 @@
 var languages = [
-    { lang: "English", prog: "55%" },
-    { lang: "Russian", prog: "70%" },
-    { lang: "Lithuanian", prog: "100%" }
+    { lang: "English", level: "Intermediate" },
+    { lang: "Russian", level: "Intermediate" },
+    { lang: "Lithuanian", level: "Mother tongue" }
 ];
 
 var links = {
     projects: [
-        { name: "First online website", link: "https://logway1.lt", text: "logway1.lt" },
-        { name: "Minesweeper with JS", link: "https://mine.zhako.lt", text: "mine.zhako.lt" },
-        { name: "Website for company", link: "https://custbroker.zhako.lt", text: "custbroker.zhako.lt" },
-        { name: "Project:", link: "https://random.zhako.lt", text: "random.zhako.lt" },
-        { name: "Project with PHP and mySQL:", link: "https://random.zhako.lt/warehouse.php", text: "random.zhako.lt/warehouse.php" },
-        { name: "Project made with Wordpress:", link: "https://wp.zhako.lt", text: "wp.zhako.lt" },
-        { name: "My CV online", link: "https://cv.zhako.lt", text: "cv.zhako.lt" }
+        { name: "My portfolio", link: "https://zhako.lt", text: "https://zhako.lt" },
+        // { name: "Minesweeper with JS", link: "https://mine.zhako.lt", text: "mine.zhako.lt" },
+        // { name: "Website for company", link: "https://custbroker.zhako.lt", text: "custbroker.zhako.lt" },
+        // { name: "Project:", link: "https://random.zhako.lt", text: "random.zhako.lt" },
+        // { name: "Project with PHP and mySQL:", link: "https://random.zhako.lt/warehouse.php", text: "random.zhako.lt/warehouse.php" },
+        // { name: "Project made with Wordpress:", link: "https://wp.zhako.lt", text: "wp.zhako.lt" },
+        // { name: "My CV online", link: "https://cv.zhako.lt", text: "cv.zhako.lt" }
     ],
     social: [
         { name: "Github", image: "img/icon_github.png", link: "https://github.com/zakevicius", text: "github.com/zakevicius" },
@@ -68,14 +68,18 @@ var ul = document.createElement("UL");
 div.appendChild(ul);
 for (var i = 0; i < languages.length; i++) {
     var li = document.createElement("LI");
+    li.style.marginBottom = "1em";
     ul.appendChild(li);
     li.textContent = languages[i].lang;
-    var divprog = document.createElement("DIV");
-    ul.appendChild(divprog);
-    divprog.className = "progress";
-    var div = document.createElement("DIV");
-    divprog.appendChild(div);
-    div.setAttribute("style", "width:" + languages[i].prog);
+    // var divprog = document.createElement("DIV");
+    // ul.appendChild(divprog);
+    // divprog.className = "progress";
+    // var div = document.createElement("DIV");
+    // divprog.appendChild(div);
+    // div.setAttribute("style", "width:" + languages[i].prog);
+    var p = document.createElement("P");
+    p.textContent = "Level: " + languages[i].level;
+    li.appendChild(p);
 }
 
 //links

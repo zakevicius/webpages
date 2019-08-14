@@ -8,7 +8,7 @@ body {
   margin: auto;
   padding: 1%;
   width: 800px;
-  font-size: 9pt;
+  font-size: 8pt;
 }
 
 a {
@@ -21,11 +21,11 @@ a:hover {
 }
 
 h2 {
-  font-size: 14pt;
+  font-size: 11pt;
 }
 
 h3 {
-  font-size: 12pt;
+  font-size: 9pt;
   padding-bottom: 5px;
 }
 
@@ -49,7 +49,7 @@ b {
 }
 
 .headerImg img {
-  width: 90px;
+  width: 70px;
   margin-right: 20px;
   border-radius: 10%;
 }
@@ -74,8 +74,8 @@ b {
 
 .profile {
   flex-basis: 100%;
-  margin: 10px 0px;
-  padding: 5px 20px 5px 0px;
+  margin: 5px 0px;
+  padding: 5px 10px 5px 0px;
   text-align: justify;
 }
 
@@ -111,10 +111,10 @@ fieldset {
 
 legend {
   width: 97%;
-  padding: 10px 0px 3px 3px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  font-size: 16pt;
+  padding: 3px 0px 3px 3px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  font-size: 12pt;
   color: white;
   background-color: rgb(160, 82, 45);
 }
@@ -129,6 +129,10 @@ legend {
 .infoLeft {
   flex-basis: 21%;
   padding: 5px;
+}
+
+.infoLeft p:first-of-type {
+  font-weight: bold;
 }
 
 .infoLeft p:nth-child(2) {
