@@ -1,0 +1,132 @@
+$color-primary: #a8d5ff;
+$color-secondary: #d7a3f7;
+$color-success: #c6e5a7;
+$color-warning: #f7eb7e;
+$color-danger: #ff7c7c;
+
+$font-header: "Amatic SC", cursive;
+$font-primary: "";
+
+.flex,
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.all-centered {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.right-X {
+  justify-content: flex-end;
+}
+
+.middle-X {
+  justify-content: center;
+}
+
+.middle-Y {
+  align-items: center;
+}
+
+.container {
+  flex-basis: 90%;
+}
+
+.intro {
+  font-family: $font-header;
+  font-size: 3rem;
+}
+
+// BUTTONS /////////////////////////////////////////////////////////////////////
+%btn-shared {
+  font-family: $font-header;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem;
+  min-width: 7rem;
+  font-size: 2rem;
+}
+
+.btn {
+  @extend %btn-shared;
+}
+
+.btn-primary {
+  @extend %btn-shared;
+  background-color: $color-primary;
+  color: white;
+}
+
+.btn-secondary {
+  @extend %btn-shared;
+  background-color: $color-secondary;
+  color: white;
+}
+
+.btn-warning {
+  @extend %btn-shared;
+  background-color: $color-warning;
+  color: white;
+}
+
+.btn-danger {
+  @extend %btn-shared;
+  background-color: $color-danger;
+  color: white;
+}
+
+.btn-success {
+  @extend %btn-shared;
+  background-color: $color-success;
+  color: white;
+}
+
+// NAVBAR
+.navbar {
+  flex-basis: 100%;
+  background-color: $color-secondary;
+
+  li {
+    font-size: 18pt;
+    display: inline-block;
+    margin: 1rem;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.header {
+  flex-basis: 100%;
+  height: 20rem;
+  background-color: $color-success;
+}
+
+.content {
+  flex: 1 1 100%;
+  background-color: $color-warning;
+}
+
+.main {
+  height: 40rem;
+  flex: 1 1 80%;
+  background-color: $color-primary;
+}
+
+.sidebar {
+  height: 40rem;
+  flex: 1 1 20%;
+  background-color: $color-danger;
+}
+
+.footer {
+  height: 2rem;
+  background-color: $color-success;
+}

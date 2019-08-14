@@ -1,0 +1,113 @@
+.flex,
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.all-centered {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.right-X {
+  justify-content: flex-end;
+}
+
+.middle-X {
+  justify-content: center;
+}
+
+.middle-Y {
+  align-items: center;
+}
+
+.container {
+  flex-basis: 90%;
+}
+
+.intro {
+  font-family: "Amatic SC", cursive;
+  font-size: 3rem;
+}
+
+.btn-success, .btn-danger, .btn-warning, .btn-secondary, .btn-primary, .btn {
+  font-family: "Amatic SC", cursive;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem;
+  min-width: 7rem;
+  font-size: 2rem;
+}
+
+.btn-primary {
+  background-color: #a8d5ff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #d7a3f7;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #f7eb7e;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #ff7c7c;
+  color: white;
+}
+
+.btn-success {
+  background-color: #c6e5a7;
+  color: white;
+}
+
+.navbar {
+  flex-basis: 100%;
+  background-color: #d7a3f7;
+}
+.navbar li {
+  font-size: 18pt;
+  display: inline-block;
+  margin: 1rem;
+  cursor: pointer;
+  color: white;
+}
+
+.header {
+  flex-basis: 100%;
+  height: 20rem;
+  background-color: #c6e5a7;
+}
+
+.content {
+  flex: 1 1 100%;
+  background-color: #f7eb7e;
+}
+
+.main {
+  height: 40rem;
+  flex: 1 1 80%;
+  background-color: #a8d5ff;
+}
+
+.sidebar {
+  height: 40rem;
+  flex: 1 1 20%;
+  background-color: #ff7c7c;
+}
+
+.footer {
+  height: 2rem;
+  background-color: #c6e5a7;
+}
+
+/*# sourceMappingURL=main.css.map */
