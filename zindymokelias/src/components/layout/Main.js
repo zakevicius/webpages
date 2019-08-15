@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Posts from '../posts/Posts';
 
 const Main = () => {
   return (
-    <div className="main flex">
-
+    <div className="main flex wrap">
+      <Posts />
     </div>
   )
-}
+};
 
-export default Main
+export default Main;

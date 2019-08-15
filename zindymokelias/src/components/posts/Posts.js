@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react';
+import PostItem from './PostItem';
 
 const Posts = () => {
   return (
-    <div>
-
-    </div>
+    <Fragment>
+      <PostItem />
+      <PostItem />
+      <PostItem />
+    </Fragment>
   )
-}
+};
 
-export default Posts
+export default Posts;

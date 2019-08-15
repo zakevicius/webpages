@@ -94,9 +94,29 @@
 }
 
 .main {
-  height: 40rem;
   flex: 1 1 80%;
-  background-color: #a8d5ff;
+  background-color: white;
+}
+.main .post {
+  position: relative;
+  flex: 1 1 100%;
+  border: 1px solid #a8d5ff;
+  border-radius: 5px;
+  margin: 5rem 1rem 1rem 5rem;
+  padding: 1rem;
+}
+.main .post .post_image {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 200px;
+  border-radius: 50%;
+  transform: translate(-40%, -40%);
+  border-top: 3px solid #a8d5ff;
+  border-left: 3px solid #a8d5ff;
+}
+.main .post .post_content {
+  flex: 1 1 70%;
 }
 
 .sidebar {
