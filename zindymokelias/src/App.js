@@ -16,12 +16,15 @@ function App() {
     <AlertState>
       <Router>
         <Fragment>
-          <div className="container flex-wrap">
-            <Switch>
-              <Route exact path='/' component={Intro} />
-              <Route exact path='/home' component={Home} />
-              <Route exact path='/about' component={About} />
-            </Switch>
+          <div className="flex wrap">
+            <Navbar />
+            <div className="flex wrap">
+              <Switch>
+                <Route exact path='/' component={Intro} />
+                <Route exact path='/home' component={Home} />
+                <Route exact path='/about' component={About} />
+              </Switch>
+            </div>
           </div>
         </Fragment>
       </Router>

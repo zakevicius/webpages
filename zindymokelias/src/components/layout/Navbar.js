@@ -5,11 +5,17 @@ const Navbar = () => {
   return (
     <div className="navbar flex right-X">
       <ul>
-        <Link to='/home'>
-          <li>Į pradžią</li>
+        <Link to='/'>
+          <li>Link 1</li>
         </Link>
-        <Link to='/about'>
-          <li>Apie mane</li>
+        <Link to='/'>
+          <li>Link 2</li>
+        </Link>
+        <Link to='/posts'>
+          <li>Link 3</li>
+        </Link>
+        <Link to='/posts'>
+          <li>Link 4</li>
         </Link>
       </ul>
     </div>
