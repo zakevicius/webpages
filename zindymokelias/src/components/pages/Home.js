@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
-import Header from '../layout/Header';
-import Alerts from '../layout/Alerts';
-import Content from '../layout/Content';
-import Footer from '../layout/Footer';
+import Header from "../layout/Header";
+import Alerts from "../layout/Alerts";
+import Content from "../layout/Content";
+import Footer from "../layout/Footer";
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
         <Footer />
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
