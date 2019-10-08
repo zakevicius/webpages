@@ -35,7 +35,7 @@ var contentRU = {
         ['Пообщаемся', '#form']
     ],
     customsContent: ['Импортные процедуры', 'Экспортные процедуры', 'Транзитные процедуры', 'Таможенное оформление', 'Таможенные складские процедуры', 'Заполнения ЦМР и книжек МДП'],
-    warehouseContent: ['Складирование', 'Грузовые операции', 'Таможенное складирование', 'Дополнительные складские работы', 'Обработка грузов', 'Работа с крупногабаритными и негабаритными грузами'],
+    warehouseContent: ['Складирование', 'Грузовые операции', 'Таможенное складирование', 'Дополнительные складские работы', 'Обработка грузов', 'Крупногабаритные и негабаритные грузы'],
     formContent: {
         contactTitle: 'Свяжитесь с нами',
         contactText: ['Возникли вопросы? Обращайтесь - ответим, посоветуем, поможем.'],
@@ -78,7 +78,7 @@ var contentEN = {
         }
     },
     workingHours: {
-        title: 'Working ours',
+        title: 'Working hours',
         workDays: ['Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.', 'Sun.']
     },
     address: {
@@ -96,13 +96,17 @@ var contentEN = {
 var hrefArr = window.location.href.split('=');
 var content = contentLT;
 
-if (hrefArr[1] == 'EN') {
+if (!hrefArr[1]) {
+  content = contentLT;
+} else if (hrefArr[1].includes('EN')) {
     content = contentEN;
-} else if (hrefArr[1] == 'RU') {
+} else if (hrefArr[1].includes('RU')) {
     content = contentRU;
 } else {
     content = contentLT;
 }
+
+var whi = 0 // itterator for working Houst display
 
 // FILLING PAGE WITH TEXT BASED ON LANGUAGE SELECTED
 
@@ -111,6 +115,8 @@ var warehouseList = document.querySelector('.warehouse ul');
 var navigation = document.querySelector('#navigation');
 var formDiv = document.querySelector('#form .contactUs');
 var form = document.querySelector('form');
+var address = document.querySelector('.address');
+var schedule = document.querySelector('#workDays');
 var markup = '';
 
 content.headerLinks.forEach(createMarkup.bind(null, 'link'));
@@ -124,16 +130,6 @@ markup = '';
 content.warehouseContent.forEach(createMarkup.bind(null, 'list'));
 warehouseList.insertAdjacentHTML('afterbegin', markup);
 markup = '';
-
-// <h2>Vardas:</h2>
-// <input type='text' name='name' placeholder='Jūsų vardas' required>
-// <h2>E-mail:</h2>
-// <input type='email' name='email' placeholder='Jūsų e-mail' required>
-// <h2>Žinutė:</h2>
-// <textarea rows=5 name='message'></textarea>
-// <button type='submit'>Siųsti</button>
-// 
-// ?></input>
 
 Object.keys(content.formContent).forEach(function (key) {
     if (Array.isArray(content.formContent[key])) {
@@ -155,12 +151,35 @@ Object.keys(content.formContent).forEach(function (key) {
         markup = '';
     }
 });
-
 markup = '';
 
+
+Object.keys(content.address).forEach(function(key) {
+  if (key === 'phone') {
+    createMarkup('addressPhone', content.address[key]);
+  } else if (key === 'email') {
+    createMarkup('addressEmail', content.address[key]);
+  } else {
+    createMarkup('formText', content.address[key]);
+  }
+});
+address.insertAdjacentHTML('afterbegin', markup);
+markup = '';
+
+Object.keys(content.workingHours).forEach(function(key) {
+  if (key === 'title') {
+    createMarkup('workHoursTitle', content.workingHours[key]);
+  } else {
+    content.workingHours[key].forEach(createMarkup.bind(null, 'workHoursInfo'));
+  }
+});
+schedule.insertAdjacentHTML('afterbegin', markup);
+markup = '';
+
+
 // CREATING HTML
+
 function createMarkup(tagName, el) {
-    console.log(el);
     if (tagName === 'list') {
         markup += '<li><h2 class="h2">' + el + '</h2></li>';
     } else if (tagName === 'link') {
@@ -176,6 +195,23 @@ function createMarkup(tagName, el) {
         } else {
             markup += '<textarea rows=5 name="' + el[3] + '"></textarea>';
         }
+    } else if (tagName === 'addressPhone') {
+        markup += '<p><a href="tel:' + el + '">' + el + '</a></p>';
+    } else if (tagName === 'addressEmail') {
+        markup += '<p><a href="mailto:' + el + '">' + el + '</a></p>';
+    } else if (tagName === 'workHoursTitle') {
+      markup += '<caption>' + el + '</caption>';
+    } else if (tagName === 'workHoursInfo') {
+      if (whi === 0) {
+        markup += '<tr><td>' + el + '</td><td rowspan="5">09.00-19.00</td></tr>';
+        whi++;
+      } else if (whi === 5) {
+        markup += '<tr><td>' + el + '</td><td rowspan="2">09.00-15.00</td></tr>';
+        whi++;
+      } else {
+        markup += '<tr><td>' + el + '</td></tr>';
+        whi++;
+      }
     } else if ('button') {
         markup += '<button type="' + el[0] + '">' + el[1] + '</button>';
     }

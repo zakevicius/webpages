@@ -19,6 +19,13 @@ var workers = [
         'email': 'ilona@logway1.lt',
         'photo': 'img/img_red/logo_big_white.jpg',
         'skype': ['ilona-sakbar', 'Ilona']
+    },
+    {
+        'name': 'Maija Kilbovskaja',
+        'phone': '+37063119399',
+        'email': 'maija@logway1.lt',
+        'photo': 'img/img_red/logo_big_white.jpg',
+        'skype': ['Maija-Logway1', 'Maija']
     }
 ]
 
