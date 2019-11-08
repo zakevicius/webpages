@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="main.css" type="text/css" rel="stylesheet" />
+    <title>Horsyn</title>
+  </head>
+  <body>
+    <aside class="MENU">
+      <div class="MENU__icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="MENU__triangle">
+        <svg height="275" width="130">
+          <defs>
+            <filter id="f1" x="0" y="0" width="200%" height="200%">
+              <feOffset result="offOut" in="SourceGraphic" dx="7" dy="3" />
+              <feColorMatrix
+                result="matrixOut"
+                in="offOut"
+                type="matrix"
+                values="0     0     0     0     0
+                        0     0     0     0     0
+                        0     0     0     0     0
+                        0.05  0     0     0     0"
+              />
+              <feGaussianBlur
+                result="blurOut"
+                in="matrixOut"
+                stdDeviation="3"
+              />
+              <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+          </defs>
+          <polygon
+            points="0,269 55,0 115,269"
+            style="fill:#ffffff"
+            filter="url(#f1)"
+          />
+        </svg>
+      </div>
+    </aside>
+    <section class="SECTIONLEFT">
+      <header class="SECTIONLEFT__header">
+        <div class="SECTIONLEFT__header-title">
+          <img src="./Icons/logo.svg" alt="Horsyn logo" />
+        </div>
+        <div class="SECTIONLEFT__header-icons">
+          <img src="./Icons/fb.svg" alt="" />
+          <img src="./Icons/linkedin.svg" alt="" />
+          <img src="./Icons/instagram.svg" alt="" />
+        </div>
+      </header>
+      <div class="SECTIONLEFT__content">
+        <h1>We are equine business and marketing consultants</h1>
+        <p>Let us guide you how to grow your equestrian</p>
+        <div class="SECTIONLEFT__content-button">
+          <p>Get to know us</p>
+          <img src="./Icons/right-arrow.svg" alt="arrow" />
+        </div>
+      </div>
+      <div class="SECTIONLEFT__triangleCenter">
+        <svg height="192" width="340">
+          <defs>
+            <filter id="f2" x="0" y="0" width="200%" height="200%">
+              <feOffset result="offOut" in="SourceGraphic" dx="7" dy="0" />
+              <feColorMatrix
+                result="matrixOut"
+                in="offOut"
+                type="matrix"
+                values="0     0     0     0     0
+                          0     0     0     0     0
+                          0     0     0     0     0
+                          0.05  0     0     0     0"
+              />
+              <feGaussianBlur
+                result="blurOut"
+                in="matrixOut"
+                stdDeviation="3"
+              />
+              <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+          </defs>
+          <polygon
+            points="0,195 166,0 332,195"
+            style="fill:#f8ffff"
+            filter="url(#f2)"
+          />
+        </svg>
+      </div>
+      <div class="SECTIONLEFT__triangleBottom">
+        <svg height="255" width="560">
+          <defs>
+            <filter id="f3" x="0" y="0" width="200%" height="200%">
+              <feOffset result="offOut" in="SourceGraphic" dx="7" dy="0" />
+              <feColorMatrix
+                result="matrixOut"
+                in="offOut"
+                type="matrix"
+                values="0     0     0     0     0
+                          0     0     0     0     0
+                          0     0     0     0     0
+                          0.05  0     0     0     0"
+              />
+              <feGaussianBlur
+                result="blurOut"
+                in="matrixOut"
+                stdDeviation="3"
+              />
+              <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+          </defs>
+          <polygon
+            points="0,255 280,0 550,255"
+            style="fill:white"
+            filter="url(#f3)"
+          />
+        </svg>
+      </div>
+    </section>
+    <section class="SECTIONRIGHT">
+      <div class="SECTIONRIGHT__button">Contact us now</div>
+      <div class="SECTIONRIGHT__background"></div>
+      <div class="SECTIONRIGHT__content">
+        <h2>Branding & Strategy</h2>
+        <a href="#"> <span></span>Learn more </a>
+        <div class="SECTIONRIGHT__content-pages">
+          <img src="./Icons/back.svg" alt="back" />
+          <p>01/04 Services</p>
+          <img src="./Icons/next.svg" alt="back" />
+        </div>
+      </div>
+      <div class="SECTIONRIGHT__icon">
+        <img src="./Icons/fb-messenger.png" alt="fb" />
+      </div>
+    </section>
+  </body>
+</html>
