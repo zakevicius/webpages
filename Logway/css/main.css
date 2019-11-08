@@ -784,7 +784,6 @@ footer {
   div.bottom.right.map {
     flex: 3 10 60%;
     min-width: 20em;
-    height: 100%;
   }
 
   iframe {
@@ -795,6 +794,8 @@ footer {
     filter: grayscale(0.5);
   }
 }
+
+/* SETTING ONLY FOR IE */
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   #mainCont {
