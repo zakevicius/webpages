@@ -137,11 +137,7 @@ var loc = window.location;
 var language = loc.href.slice(loc.href.indexOf("=") + 1);
 var content = contentLT;
 
-console.log(language);
-
-if (language === "") {
-  content = contentLT;
-} else if (language === "EN") {
+if (language === "EN") {
   content = contentEN;
 } else if (language === "RU") {
   content = contentRU;
@@ -149,7 +145,7 @@ if (language === "") {
   content = contentLT;
 }
 
-var whi = 0; // itterator for working Houst display
+var whi = 0; // itterator for working Hours display
 
 // FILLING PAGE WITH TEXT BASED ON LANGUAGE SELECTED
 
