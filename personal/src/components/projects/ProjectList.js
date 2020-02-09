@@ -6,9 +6,9 @@ function ProjectList() {
   return (
     <ProjectListDiv>
       <Project />
+      {/* <Project />
       <Project />
-      <Project />
-      <Project />
+      <Project /> */}
     </ProjectListDiv>
   );
 }

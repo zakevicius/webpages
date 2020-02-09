@@ -13,7 +13,7 @@ function Project() {
     width: "20px",
     height: "20px",
     position: "absolute",
-    zIndex: "2"
+    zIndex: "3"
   };
 
   return (

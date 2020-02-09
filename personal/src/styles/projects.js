@@ -11,23 +11,28 @@ export const ProjectListDiv = styled(StyledDiv)`
 `;
 
 export const ProjectDiv = styled(StyledDiv)`
-  flex-basis: 40%;
+  flex: 1;
+  margin: 10px;
+  min-width: 450px;
   height: 300px;
+  height: 100%;
   border: 1px dashed ${grey};
   background-color: ${grey};
   flex-wrap: nowrap;
   overflow: hidden;
   position: relative;
+  border-radius: 5px;
 `;
 
 export const StyledImageDiv = styled(StyledDiv)`
-  transform: skew(-30deg);
+  transform: skew(-15deg);
   background-color: ${orange};
   flex-basis: 25%;
   position: relative;
-  transition: all 0.5s ease-out;
-  border: 1px solid black;
+  transition: flex-basis 0.6s ease-in, transform 0.5s;
+  border: 1px solid ${dark};
   z-index: 1;
+  border-radius: 5px;
 `;
 
 export const StyledImage = styled(StyledDiv)`

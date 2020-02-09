@@ -40,6 +40,8 @@ export const StyledHeader = styled.header`
   flex-basis: 100%;
   height: 20vh;
   min-height: 10em;
+  border-bottom: 4px solid ${grey};
+  background: linear-gradient(10deg, rgba(35,32,32,1) 16%, rgba(255,115,21,1) 100%);
 `;
 
 export const LeftDivContent = styled(StyledDiv)`
@@ -56,19 +58,15 @@ export const RightDiv = styled(StyledDiv)`
 
 export const RightDivContent = styled(StyledDiv)`
   height: 60vh;
-  border: 1px solid ${orange};
+  border-left: 4px solid ${orange};
+  border-bottom: 4px solid ${orange};
+  border-bottom-left-radius: 8px;
+  color: ${orange}
 `;
 
 export const StyledIconList = styled(StyledDiv)`
   height: 40vh;
   justify-content: space-around;
   align-content: space-around;
-`;
-
-export const StyledIcon = styled.div`
-  margin: 0px 50px;
-  width: 50px;
-  height: 50px;
-  border: 1px solid ${grey};
-  background-color: ${grey};
+  background: ${orange};
 `;
