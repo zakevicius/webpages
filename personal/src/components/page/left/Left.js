@@ -1,14 +1,13 @@
 import React from "react";
-import { LeftDiv } from "../../../styles/main";
 import Header from "./Header";
 import Content from "./Content";
 
 function Left() {
   return (
-    <LeftDiv>
+    <div className="leftDiv">
       <Header />
       <Content />
-    </LeftDiv>
+    </div>
   );
 }
 

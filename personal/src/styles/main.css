@@ -1,0 +1,112 @@
+/* export const color = {
+  main: "#ff7315",
+  secondary: "#3a3535",
+  light: "#f4f4f4",
+  dark: "#232020" */
+
+body {
+  display: flex;
+  background-color: #232020;
+}
+
+div {
+  display: flex;
+  box-sizing: border-box;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+h1 {
+  flex-basis: 100%;
+  font-size: 24px;
+  color: magenta;
+  height: fit-content;
+}
+
+/* LEFT DIV */
+
+.leftDiv {
+  flex-basis: 70%;
+  height: 100vh;
+}
+
+.header {
+  flex-basis: 100%;
+  height: 20vh;
+  min-height: 10em;
+  border-bottom: 4px solid #3a3535;
+  background: linear-gradient(
+    10deg,
+    rgba(35, 32, 32, 1) 16%,
+    rgba(255, 115, 21, 1) 100%
+  );
+}
+
+.leftDivContent {
+  background-color: #232020;
+}
+
+.projectListDiv {
+  height: 80vh;
+  min-height: 40em;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.projectDiv {
+  flex: 480px;
+  margin: 10px;
+  min-width: 480px;
+  height: 360px;
+  border: 1px dashed #3a3535;
+  background-color: #3a3535;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+.projectImageDiv {
+  transform: skew(-15deg);
+  background-color: #ff7315;
+  flex-basis: 25%;
+  position: relative;
+  transition: flex-basis 0.5s ease-in, transform 0.25s, opacity 0.5s;
+  border: 1px solid #232020;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+/* RIGHT DIV */
+
+.rightDiv {
+  position: fixed;
+  right: 0px;
+  width: 30vw;
+  flex-basis: 30%;
+  height: 100vh;
+}
+
+.rightDivContent {
+  padding: 10px;
+  height: 60vh;
+  border-left: 4px solid #ff7315;
+  border-bottom: 4px solid #ff7315;
+  border-bottom-left-radius: 8px;
+  color: #ff7315;
+}
+
+.styledIconList {
+  height: 40vh;
+  justify-content: space-around;
+  align-content: space-around;
+  background: #232020;
+}
+
+.icon {
+  margin: 10px 10px;
+  flex-basis: 50px;
+  height: 50px;
+  background-size: cover;
+  border-radius: 50%;
+}

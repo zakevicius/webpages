@@ -1,14 +1,13 @@
 import React from "react";
-import { RightDiv } from "../../../styles/main";
 import Content from "./Content";
 import IconList from "./IconList";
 
 function Right() {
   return (
-    <RightDiv>
+    <div className="rightDiv">
       <Content />
       <IconList />
-    </RightDiv>
+    </div>
   );
 }
 
