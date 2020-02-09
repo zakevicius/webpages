@@ -1,12 +1,12 @@
 import React from "react";
-import { StyledDiv } from "../../../styles/main";
+import { LeftDivContent } from "../../../styles/main";
 import ProjectList from "../../projects/ProjectList";
 
 function Content() {
   return (
-    <StyledDiv>
+    <LeftDivContent>
       <ProjectList />
-    </StyledDiv>
+    </LeftDivContent>
   );
 }
 
