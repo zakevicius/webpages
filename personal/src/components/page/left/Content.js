@@ -1,10 +1,13 @@
 import React from "react";
 import ProjectList from "../../projects/ProjectList";
 
-function Content() {
+function Content(props) {
   return (
     <div className=".leftDivContent">
-      <ProjectList />
+      <ProjectList
+        onProjectHover={props.onProjectHover}
+        onProjectLeave={props.onProjectLeave}
+      />
     </div>
   );
 }

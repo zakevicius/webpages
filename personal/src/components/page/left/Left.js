@@ -2,11 +2,14 @@ import React from "react";
 import Header from "./Header";
 import Content from "./Content";
 
-function Left() {
+function Left(props) {
   return (
     <div className="leftDiv">
       <Header />
-      <Content />
+      <Content
+        onProjectHover={props.onProjectHover}
+        onProjectLeave={props.onProjectLeave}
+      />
     </div>
   );
 }
