@@ -4,12 +4,13 @@ export default function Icon(props) {
   const { src, name } = props.icon;
   let style = "";
 
-  if (
-    props.toolsToHighlight.length > 0 &&
-    props.toolsToHighlight.indexOf(name) > -1
-  ) {
-    style = "highlighted";
-  } else {
+  if (props.toolsToHighlight.length > 0)
+    if (props.toolsToHighlight.indexOf(name) > -1) {
+      style = "highlighted";
+    } else {
+      style = "shrinked";
+    }
+  else {
     style = "";
   }
 

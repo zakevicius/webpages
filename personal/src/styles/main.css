@@ -112,7 +112,7 @@ h1 {
   border-bottom-left-radius: 8px;
   color: red;
   filter: grayscale(1);
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .styledIconList {
@@ -131,7 +131,7 @@ h1 {
   height: 50px;
   border: 2px solid rgb(122, 122, 122);
   border-radius: 50%;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .icon.highlighted {
@@ -139,6 +139,11 @@ h1 {
   transform: scale(1.1);
   box-shadow: 2px 2px 10px white;
   border-color: white;
+}
+
+.icon.shrinked {
+  transform: scale(0.7);
+  border-color: black;
 }
 
 .icon:hover,
