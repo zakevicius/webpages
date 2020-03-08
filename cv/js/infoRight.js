@@ -1,55 +1,70 @@
 var languages = [
-    { lang: "English", level: "Intermediate" },
-    { lang: "Russian", level: "Intermediate" },
-    { lang: "Lithuanian", level: "Mother tongue" }
+  { lang: "English", level: "Intermediate" },
+  { lang: "Russian", level: "Intermediate" },
+  { lang: "Lithuanian", level: "Mother tongue" }
 ];
 
 var links = {
-    projects: [
-        { name: "My portfolio", link: "https://zhako.lt", text: "https://zhako.lt" },
-        // { name: "Minesweeper with JS", link: "https://mine.zhako.lt", text: "mine.zhako.lt" },
-        // { name: "Website for company", link: "https://custbroker.zhako.lt", text: "custbroker.zhako.lt" },
-        // { name: "Project:", link: "https://random.zhako.lt", text: "random.zhako.lt" },
-        // { name: "Project with PHP and mySQL:", link: "https://random.zhako.lt/warehouse.php", text: "random.zhako.lt/warehouse.php" },
-        // { name: "Project made with Wordpress:", link: "https://wp.zhako.lt", text: "wp.zhako.lt" },
-        // { name: "My CV online", link: "https://cv.zhako.lt", text: "cv.zhako.lt" }
-    ],
-    social: [
-        { name: "Github", image: "img/icon_github.png", link: "https://github.com/zakevicius", text: "github.com/zakevicius" },
-        { name: "LinkedIn", image: "img/icon_linkedin.png", link: "https://www.linkedin.com/in/zakevicius", text: "linkedin.com/in/zakevicius" },
-        { name: "Codewars", image: "img/icon_codewars.png", link: "https://www.codewars.com/users/zakevicius", text: "codewars.com/users/zakevicius" }
-    ]
+  projects: [
+    { name: "My portfolio", link: "https://mzh.lt", text: "https://mzh.lt" }
+    // { name: "Minesweeper with JS", link: "https://mine.zhako.lt", text: "mine.zhako.lt" },
+    // { name: "Website for company", link: "https://custbroker.zhako.lt", text: "custbroker.zhako.lt" },
+    // { name: "Project:", link: "https://random.zhako.lt", text: "random.zhako.lt" },
+    // { name: "Project with PHP and mySQL:", link: "https://random.zhako.lt/warehouse.php", text: "random.zhako.lt/warehouse.php" },
+    // { name: "Project made with Wordpress:", link: "https://wp.zhako.lt", text: "wp.zhako.lt" },
+    // { name: "My CV online", link: "https://cv.zhako.lt", text: "cv.zhako.lt" }
+  ],
+  social: [
+    {
+      name: "Github",
+      image: "img/icon_github.png",
+      link: "https://github.com/zakevicius",
+      text: "github.com/zakevicius"
+    },
+    {
+      name: "LinkedIn",
+      image: "img/icon_linkedin.png",
+      link: "https://www.linkedin.com/in/zakevicius",
+      text: "linkedin.com/in/zakevicius"
+    },
+    {
+      name: "Codewars",
+      image: "img/icon_codewars.png",
+      link: "https://www.codewars.com/users/zakevicius",
+      text: "codewars.com/users/zakevicius"
+    }
+  ]
 };
 
 var skills = [
-    { skill: "HTML", icon: "img/skills/html.png" },
-    { skill: "CSS", icon: "img/skills/css.png" },
-    { skill: "BOOTSTRAP", icon: "img/skills/bootstrap.png" },
-    { skill: "SEMANTICUI", icon: "img/skills/semanticui.png" },
-    { skill: "JS", icon: "img/skills/js.png" },
-    { skill: "JQUERY", icon: "img/skills/jquery.png" },
-    { skill: "PHP", icon: "img/skills/php.png" },
-    { skill: "MYSQL", icon: "img/skills/mysql.png" },
-    { skill: "MONGODB", icon: "img/skills/mongodb.png" },
-    { skill: "EXPRESS", icon: "img/skills/express.png" },
-    { skill: "REACT", icon: "img/skills/react.png" },
-    { skill: "NODE.JS", icon: "img/skills/nodejs.png" },
-    { skill: "AJAX", icon: "img/skills/ajax.png" },
-    { skill: "API", icon: "img/skills/api.png" },
-    { skill: "JSON", icon: "img/skills/json.png" },
-    { skill: "GIT", icon: "img/skills/git.png" },
-    { skill: "HEROKU", icon: "img/skills/heroku.png" },
-    { skill: "DOCKER", icon: "img/skills/docker.png" },
-    { skill: "GOOGLE", icon: "img/skills/google.png" }
+  { skill: "HTML", icon: "img/skills/html.png" },
+  { skill: "CSS", icon: "img/skills/css.png" },
+  { skill: "BOOTSTRAP", icon: "img/skills/bootstrap.png" },
+  { skill: "SEMANTICUI", icon: "img/skills/semanticui.png" },
+  { skill: "JS", icon: "img/skills/js.png" },
+  { skill: "JQUERY", icon: "img/skills/jquery.png" },
+  { skill: "PHP", icon: "img/skills/php.png" },
+  { skill: "MYSQL", icon: "img/skills/mysql.png" },
+  { skill: "MONGODB", icon: "img/skills/mongodb.png" },
+  { skill: "EXPRESS", icon: "img/skills/express.png" },
+  { skill: "REACT", icon: "img/skills/react.png" },
+  { skill: "NODE.JS", icon: "img/skills/nodejs.png" },
+  { skill: "AJAX", icon: "img/skills/ajax.png" },
+  { skill: "API", icon: "img/skills/api.png" },
+  { skill: "JSON", icon: "img/skills/json.png" },
+  { skill: "GIT", icon: "img/skills/git.png" },
+  { skill: "HEROKU", icon: "img/skills/heroku.png" },
+  { skill: "DOCKER", icon: "img/skills/docker.png" },
+  { skill: "GOOGLE", icon: "img/skills/google.png" }
 ];
 
 var hobbies = [
-    { hobby: "Piano", image: "img/icon_piano.png" },
-    { hobby: "Guitar", image: "img/icon_guitar.png" },
-    { hobby: "Board Games", image: "img/icon_boardgames.png" },
-    { hobby: "Computer Games", image: "img/icon_comp_games.png" },
-    { hobby: "Reading", image: "img/icon_book.png" },
-    { hobby: "Sports", image: "img/icon_sports.png" }
+  { hobby: "Piano", image: "img/icon_piano.png" },
+  { hobby: "Guitar", image: "img/icon_guitar.png" },
+  { hobby: "Board Games", image: "img/icon_boardgames.png" },
+  { hobby: "Computer Games", image: "img/icon_comp_games.png" },
+  { hobby: "Reading", image: "img/icon_book.png" },
+  { hobby: "Sports", image: "img/icon_sports.png" }
 ];
 
 var infoRightCont = document.getElementsByClassName("infoRightCont")[0];
@@ -67,19 +82,19 @@ h2.textContent = "Languages:";
 var ul = document.createElement("UL");
 div.appendChild(ul);
 for (var i = 0; i < languages.length; i++) {
-    var li = document.createElement("LI");
-    li.style.marginBottom = "1em";
-    ul.appendChild(li);
-    li.textContent = languages[i].lang;
-    // var divprog = document.createElement("DIV");
-    // ul.appendChild(divprog);
-    // divprog.className = "progress";
-    // var div = document.createElement("DIV");
-    // divprog.appendChild(div);
-    // div.setAttribute("style", "width:" + languages[i].prog);
-    var p = document.createElement("P");
-    p.textContent = "Level: " + languages[i].level;
-    li.appendChild(p);
+  var li = document.createElement("LI");
+  li.style.marginBottom = "1em";
+  ul.appendChild(li);
+  li.textContent = languages[i].lang;
+  // var divprog = document.createElement("DIV");
+  // ul.appendChild(divprog);
+  // divprog.className = "progress";
+  // var div = document.createElement("DIV");
+  // divprog.appendChild(div);
+  // div.setAttribute("style", "width:" + languages[i].prog);
+  var p = document.createElement("P");
+  p.textContent = "Level: " + languages[i].level;
+  li.appendChild(p);
 }
 
 //links
@@ -90,29 +105,29 @@ var h2 = document.createElement("H2");
 div.appendChild(h2);
 h2.textContent = "Links:";
 for (var i = 0; i < links.projects.length; i++) {
-    var text = document.createElement("P");
-    div.appendChild(text);
-    text.textContent = links.projects[i].name;
-    var a = document.createElement("A");
-    a.setAttribute("href", links.projects[i].link);
-    a.setAttribute("target", "_blank");
-    a.textContent = links.projects[i].text;
-    div.appendChild(a);
+  var text = document.createElement("P");
+  div.appendChild(text);
+  text.textContent = links.projects[i].name;
+  var a = document.createElement("A");
+  a.setAttribute("href", links.projects[i].link);
+  a.setAttribute("target", "_blank");
+  a.textContent = links.projects[i].text;
+  div.appendChild(a);
 }
 for (var i = 0; i < links.social.length; i++) {
-    var text = document.createElement("P");
-    text.textContent = links.social[i].name;
-    div.appendChild(text);
-    var imageDiv = document.createElement("DIV");
-    div.appendChild(imageDiv);
-    var img = document.createElement("IMG");
-    imageDiv.appendChild(img);
-    img.setAttribute("src", links.social[i].image);
-    var a = document.createElement("A");
-    a.setAttribute("href", links.social[i].link);
-    a.setAttribute("target", "_blank");
-    a.textContent = links.social[i].text;
-    imageDiv.appendChild(a);
+  var text = document.createElement("P");
+  text.textContent = links.social[i].name;
+  div.appendChild(text);
+  var imageDiv = document.createElement("DIV");
+  div.appendChild(imageDiv);
+  var img = document.createElement("IMG");
+  imageDiv.appendChild(img);
+  img.setAttribute("src", links.social[i].image);
+  var a = document.createElement("A");
+  a.setAttribute("href", links.social[i].link);
+  a.setAttribute("target", "_blank");
+  a.textContent = links.social[i].text;
+  imageDiv.appendChild(a);
 }
 
 //skills
@@ -125,10 +140,10 @@ h2.textContent = "My skills:";
 var divSkills = document.createElement("DIV");
 div.appendChild(divSkills);
 for (var i = 0; i < skills.length; i++) {
-    var img = document.createElement("IMG");
-    img.setAttribute("src", skills[i].icon);
-    img.setAttribute("class", "skill-image");
-    divSkills.appendChild(img);
+  var img = document.createElement("IMG");
+  img.setAttribute("src", skills[i].icon);
+  img.setAttribute("class", "skill-image");
+  divSkills.appendChild(img);
 }
 
 //hobbies
@@ -141,11 +156,11 @@ h2.textContent = "My hobbies:";
 var ul = document.createElement("UL");
 div.appendChild(ul);
 for (var i = 0; i < hobbies.length; i++) {
-    var li = document.createElement("LI");
-    ul.appendChild(li);
-    var img = document.createElement("IMG");
-    li.appendChild(img);
-    img.setAttribute("src", hobbies[i].image);
-    var text = document.createTextNode(hobbies[i].hobby);
-    li.appendChild(text);
+  var li = document.createElement("LI");
+  ul.appendChild(li);
+  var img = document.createElement("IMG");
+  li.appendChild(img);
+  img.setAttribute("src", hobbies[i].image);
+  var text = document.createTextNode(hobbies[i].hobby);
+  li.appendChild(text);
 }

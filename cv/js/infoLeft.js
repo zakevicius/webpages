@@ -2,6 +2,12 @@
 
 var courses = [
   {
+    title: "Various Courses depending on the needs",
+    year: "08.2019 – present",
+    duration: "Unlimited",
+    description: "Every challenge requires addition knowledge"
+  },
+  {
     title: "React Front To Back 2019 at Udemy.com",
     year: "07.2019 – 08.2019",
     duration: "14 hours",
@@ -150,6 +156,24 @@ var employment = [
           "Setup ftp for file uploading and downloading",
           "Implementing various accounts for clients and employees",
           "Constant application updating"
+        ]
+      ]
+    }
+  },
+  {
+    companyName: "JSC Adform Lithuania",
+    workPlace: "Vilnius, Lithuania",
+    position: {
+      expYears: ["10.2019 – 03.2020"],
+      position: ["Creative & Platform Support Specialist"],
+      responsibilities: [
+        [
+          "Suggesting best practices to exploit Adform platform to the fullest potential",
+          "troubleshooting campaign performance, website tracking setup issues, API setup issues.",
+          "Investigating and troubleshooting a code, a setup, a website, a banner, etc.",
+          "Using e-mail to interact with customers",
+          "Educating clients about the possibilities of system",
+          "Coordinating processes and communication between internal parties"
         ]
       ]
     }
