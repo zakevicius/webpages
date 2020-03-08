@@ -288,19 +288,20 @@ li::before {
   .iconName {
     position: absolute;
     color: #f4f4f4;
-    right: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     top: -2em;
     border: 2px solid #711e71;
     border-radius: 5px;
     background: #010818;
-    width: 100px;
+    width: 120px;
     height: 1.5em;
     font-size: 15pt;
     justify-content: center;
     align-content: center;
   }
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) and (min-width: 600px) {
   body {
     padding-bottom: 200px;
   }
@@ -335,10 +336,69 @@ li::before {
   }
 }
 @media only screen and (max-width: 600px) {
-  .projectDiv {
+  body {
+    padding-bottom: 200px;
+  }
+
+  .header {
+    padding: 0px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .header a {
+    width: 150px;
+  }
+  .header a .headerButton {
+    flex-basis: 150px;
+  }
+
+  .leftDiv {
     flex-basis: 100%;
-    max-width: 400px;
-    height: 150px;
+    padding: 0px;
+  }
+  .leftDiv .projectMain {
+    height: auto;
+  }
+  .leftDiv .projectMain .projectDiv {
+    padding: 2em 0;
+    flex-basis: 100%;
+    max-width: 300px;
+    min-width: 300px;
+    height: 200px;
+  }
+  .leftDiv .projectMain .projectInfoDiv {
+    padding: 0;
+    min-width: 300px;
+  }
+  .leftDiv .projectMain .projectInfoDiv h1 {
+    font-size: 1.4em;
+  }
+  .leftDiv .projectMain .projectInfoDiv ul li {
+    font-size: 1em;
+  }
+
+  .rightDiv {
+    bottom: 0px !important;
+    left: 0px;
+    top: initial !important;
+    width: 100%;
+    height: 200px !important;
+    z-index: 5;
+  }
+  .rightDiv .rightDivContent {
+    display: none;
+  }
+  .rightDiv .styledIconList {
+    position: fixed;
+    bottom: 0px;
+    height: 200px;
+    min-height: 200px;
+    width: 100%;
+    background-color: #010818;
+  }
+  .rightDiv .styledIconList .icon {
+    flex-basis: 30px;
+    height: 30px;
   }
 }
 

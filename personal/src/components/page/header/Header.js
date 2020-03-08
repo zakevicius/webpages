@@ -23,7 +23,7 @@ function Header() {
       >
         <div className="headerButton">My Github</div>
       </a>
-      <a href="https://cv.mzh.lt" target="_blank" rel="noopener noreferrer">
+      <a href="http://cv.mzh.lt" target="_blank" rel="noopener noreferrer">
         <div className="headerButton">My CV</div>
       </a>
       {/* <div className="headerButton">Contact me</div> */}
