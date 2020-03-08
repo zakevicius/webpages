@@ -38,8 +38,23 @@ a {
 }
 
 ul {
+  padding: 1em 0;
+  position: relative;
   flex-basis: 100%;
   font-size: 1.2em;
+  list-style-type: none;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: -1em;
+  margin-top: 10px;
+  width: 3px;
+  height: 3px;
+  background-color: #010818;
+  border: 3px solid #711e71;
+  border-radius: 50%;
 }
 
 /* HEADER */
@@ -84,8 +99,7 @@ ul {
 
 /* LEFT DIV */
 .leftDiv {
-  flex-basis: 75%;
-  height: 100vh;
+  flex-basis: 80%;
 }
 
 .leftDivContent {
@@ -144,7 +158,6 @@ ul {
   margin: 10px;
   padding-left: 70px;
   min-width: 480px;
-  height: 100%;
   position: relative;
   transition: flex-basis 0.3s ease-in, transform 0.3s, opacity 0.3s, filter 0.3s;
   z-index: 1;
@@ -158,13 +171,16 @@ ul {
   color: #f4f4f4;
   font-size: 1.2em;
 }
+.projectInfoDiv a {
+  text-decoration: underline;
+}
 
 /* RIGHT DIV */
 .rightDiv {
   position: fixed;
   top: 200px;
   right: 0px;
-  width: 25vw;
+  width: 20vw;
   height: calc(100vh - 200px);
   transition: 0.5s all;
 }
@@ -172,7 +188,8 @@ ul {
 .rightDivContent {
   margin-top: 1em;
   padding: 10px;
-  height: 20%;
+  height: 40%;
+  min-height: 300px;
   color: grey;
   filter: grayscale(1);
   transition: all 0.3s;
@@ -181,7 +198,8 @@ ul {
 .styledIconList {
   position: relative;
   padding: 1em;
-  height: 80%;
+  height: 100%;
+  min-height: 500px;
   align-content: space-around;
   border-top-left-radius: 5px;
   justify-content: center;
@@ -193,8 +211,8 @@ ul {
   right: -100px;
   filter: grayscale(1);
   margin: 10px 10px;
-  flex-basis: 75px;
-  height: 75px;
+  flex-basis: 65px;
+  height: 65px;
   border: 2px solid #711e71;
   border-radius: 50%;
   opacity: 0;
@@ -255,6 +273,73 @@ ul {
   transform: skew(-45deg);
   height: 500px;
   background: linear-gradient(-45deg, #010818 0%, #711e71 100%);
+}
+
+@media only screen and (max-width: 1500px) {
+  .projectMain {
+    flex-wrap: wrap;
+  }
+
+  .icon {
+    flex-basis: 50px;
+    height: 50px;
+  }
+
+  .iconName {
+    position: absolute;
+    color: #f4f4f4;
+    right: 0px;
+    top: -2em;
+    border: 2px solid #711e71;
+    border-radius: 5px;
+    background: #010818;
+    width: 100px;
+    height: 1.5em;
+    font-size: 15pt;
+    justify-content: center;
+    align-content: center;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  body {
+    padding-bottom: 200px;
+  }
+
+  .leftDiv {
+    flex-basis: 100%;
+  }
+  .leftDiv .projectDiv {
+    flex-basis: 100%;
+    max-width: 650px;
+    height: 450px;
+  }
+
+  .rightDiv {
+    bottom: 0px !important;
+    left: 0px;
+    top: initial !important;
+    width: 100%;
+    height: 200px !important;
+    z-index: 5;
+  }
+  .rightDiv .rightDivContent {
+    display: none;
+  }
+  .rightDiv .styledIconList {
+    position: fixed;
+    bottom: 0px;
+    height: 200px;
+    min-height: 200px;
+    width: 100%;
+    background-color: #010818;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .projectDiv {
+    flex-basis: 100%;
+    max-width: 400px;
+    height: 150px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

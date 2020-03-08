@@ -26,7 +26,7 @@ function startingLines() {
   const w = bg.clientWidth;
   const h = bg.clientHeight;
 
-  for (let i = lines.length; i < 50; i++) {
+  for (let i = lines.length; i < 15; i++) {
     let randomX = Math.floor(Math.random() * w);
     let randomY = Math.floor(Math.random() * h);
 
@@ -45,7 +45,7 @@ function newLines() {
   const w = bg.clientWidth;
   const h = bg.clientHeight;
 
-  for (let i = lines.length; i < 60; i++) {
+  for (let i = lines.length; i < 20; i++) {
     let randomX = Math.floor(Math.random() * w - Math.random() * 1000);
     let randomY = h;
 

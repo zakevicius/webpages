@@ -18,7 +18,7 @@ function Right(props) {
 
   return (
     <div className="rightDiv">
-      <Content />
+      {/* <Content /> */}
       <IconList toolsToHighlight={props.toolsToHighlight} />
     </div>
   );

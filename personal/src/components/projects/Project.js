@@ -53,11 +53,16 @@ function Project(props) {
   return (
     <div
       className="projectMain"
+      onTouchStart={() => props.onProjectHover(props.tools)}
       onMouseEnter={() => props.onProjectHover(props.tools)}
       onMouseLeave={props.onProjectLeave}
     >
-      {props.align === "left" ? renderProject() : renderProjectInfo()}
-      {props.align === "left" ? renderProjectInfo() : renderProject()}
+      {props.align === "left" || window.innerWidth < 1500
+        ? renderProject()
+        : renderProjectInfo()}
+      {props.align === "left" || window.innerWidth < 1500
+        ? renderProjectInfo()
+        : renderProject()}
     </div>
   );
 }
