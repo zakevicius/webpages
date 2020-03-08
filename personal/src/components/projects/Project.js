@@ -37,7 +37,13 @@ function Project(props) {
           {props.description.additional ? (
             props.description.additional
           ) : (
-            <a href={props.description.link}>See live</a>
+            <a
+              href={props.description.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See live
+            </a>
           )}
         </p>
       </div>
