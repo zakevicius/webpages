@@ -6,7 +6,7 @@ function Background() {
   useEffect(() => {
     initBackground();
     setBg(1);
-  }, bg);
+  }, [bg]);
 
   return <div id="background"></div>;
 }
