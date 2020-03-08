@@ -20,9 +20,9 @@ function ProjectImage(props) {
       });
       e.target.style.transform = "skew(0deg)";
       e.target.style.flexBasis = "100%";
-      e.target.style.border = "1px solid #232020";
       e.target.style.backgroundSize = "cover";
       e.target.style.filter = "grayscale(0)";
+      e.target.style.boxShadow = `10px 10px 20px -10px #711e71`;
       setLocked(1);
       setExpanded(1);
       setTimeout(() => {
@@ -34,14 +34,13 @@ function ProjectImage(props) {
     if (!locked) {
       e.target.parentNode.childNodes.forEach(node => {
         node.style.flexBasis = "25%";
-        node.style.border = "1px solid black";
         node.style.opacity = "0.8";
       });
       e.target.style.transform = "skew(-15deg)";
       e.target.style.zIndex = "1";
-      e.target.style.boxShadow = "none";
+      e.target.style.boxShadow = `10px 10px 20px 0px #711e71`;
       e.target.style.backgroundSize = "cover";
-      e.target.style.filter = "grayscale(0.8)";
+      e.target.style.filter = "grayscale(1)";
       setLocked(1);
       setTimeout(() => {
         setLocked(0);
@@ -57,8 +56,9 @@ function ProjectImage(props) {
       });
       e.target.style.opacity = "1";
       e.target.style.transform = "skew(-15deg) scale(1.1)";
-      e.target.style.boxShadow = `5px 5px 5px #3a3535, -5px -5px 5px #3a3535`;
+      e.target.style.boxShadow = `0px 0px 20px 0px #711e71`;
       e.target.style.zIndex = "2";
+      e.target.style.filter = "grayscale(0.5)";
     }
   };
 

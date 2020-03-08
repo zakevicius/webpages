@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Icon from "./Icon";
 import ajax from "../../../assets/skills/ajax.png";
 import api from "../../../assets/skills/api.png";
@@ -41,13 +41,28 @@ const icons = [
 ];
 
 function IconList(props) {
+  useEffect(() => {
+    let icons = document.querySelectorAll(".icon");
+    let i = 0;
+    let interval = setInterval(() => {
+      if (i < icons.length) {
+        icons[i].style.position = "relative";
+        icons[i].style.right = "0";
+        icons[i].style.opacity = "1";
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 50);
+  });
+
   const renderIcons = ic => {
     return ic.map((icon, i) => (
       <Icon icon={icon} key={i} toolsToHighlight={props.toolsToHighlight} />
     ));
   };
 
-  return <div className="styledIconList">{renderIcons(icons)};</div>;
+  return <div className="styledIconList">{renderIcons(icons)}</div>;
 }
 
 export default IconList;

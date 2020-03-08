@@ -13,6 +13,10 @@ import mine1 from "../../assets/mine/mine1.jpg";
 import mine2 from "../../assets/mine/mine2.jpg";
 import mine3 from "../../assets/mine/mine3.jpg";
 import mine4 from "../../assets/mine/mine4.jpg";
+import scrape1 from "../../assets/scrape/scrape1.jpg";
+import scrape2 from "../../assets/scrape/scrape2.jpg";
+import scrape3 from "../../assets/scrape/scrape3.jpg";
+import scrape4 from "../../assets/scrape/scrape4.jpg";
 
 function ProjectList(props) {
   const projects = [
@@ -31,15 +35,49 @@ function ProjectList(props) {
         "git",
         "semanticui"
       ],
-      images: [appLogway1, appLogway2, appLogway3, appLogway4]
+      images: [appLogway1, appLogway2, appLogway3, appLogway4],
+      description: {
+        title: "Order management system for warehouse",
+        li: [
+          "Cargo information",
+          "Cargo loading to truck information",
+          "Documents and photos upload",
+          "Information by client",
+          "Authorization with tokens",
+          "Different access levels",
+          "Backend and frontend"
+        ],
+        additional: ["Contact me for a demo access"],
+        link: "https://mzh.lt"
+      }
     },
     {
       tools: ["html", "css", "js", "php", "git"],
-      images: [logway1, logway2, logway3, logway4]
+      images: [logway1, logway2, logway3, logway4],
+      description: {
+        title: "First live webpage",
+        li: [
+          "Webpage for logistics company",
+          "Contact list",
+          "Contact form",
+          "Google maps",
+          "Language selection"
+        ],
+        link: "https://logway1.lt"
+      }
     },
     {
       tools: ["html", "css", "js", "git"],
-      images: [mine1, mine2, mine3, mine4]
+      images: [mine1, mine2, mine3, mine4],
+      description: {
+        title: "First game made while learning Javascript",
+        li: [
+          "Minesweeper clone",
+          "Different difficulty levels",
+          "Time manipulation"
+        ],
+        link: "http://mine.zhako.lt"
+      }
     },
     {
       tools: [
@@ -54,50 +92,35 @@ function ProjectList(props) {
         "heroku",
         "git"
       ],
-      images: [0, 1, 2, 3]
-    },
-    {
-      tools: [
-        "html",
-        "css",
-        "js",
-        "php",
-        "mysql",
-        "jquery",
-        "git",
-        "api",
-        "json",
-        "ajax"
-      ],
-      images: [0, 1, 2, 3]
-    },
-    {
-      tools: [
-        "html",
-        "css",
-        "js",
-        "bootstrap",
-        "nodejs",
-        "react",
-        "api",
-        "json",
-        "heroku",
-        "git"
-      ],
-      images: [0, 1, 2, 3]
+      images: [scrape1, scrape2, scrape3, scrape4],
+      description: {
+        title: "Information scraping from a local television website",
+        li: [
+          "Information about shows playing at the moment",
+          "Detailed information and links for access",
+          "Backend and frontend setup on Heroku"
+        ],
+        link: "https://scrape-client.herokuapp.com/"
+      }
     }
   ];
 
   const renderProjects = () => {
-    return projects.map((project, i) => (
-      <Project
-        src={project.images}
-        tools={project.tools}
-        onProjectHover={props.onProjectHover}
-        onProjectLeave={props.onProjectLeave}
-        key={i}
-      />
-    ));
+    let align;
+    return projects.map((project, i) => {
+      i % 2 ? (align = "right") : (align = "left");
+      return (
+        <Project
+          src={project.images}
+          tools={project.tools}
+          description={project.description}
+          onProjectHover={props.onProjectHover}
+          onProjectLeave={props.onProjectLeave}
+          key={i}
+          align={align}
+        />
+      );
+    });
   };
 
   return <div className="projectListDiv">{renderProjects()}</div>;
