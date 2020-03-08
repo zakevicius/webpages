@@ -17,6 +17,10 @@ import scrape1 from "../../assets/scrape/scrape1.jpg";
 import scrape2 from "../../assets/scrape/scrape2.jpg";
 import scrape3 from "../../assets/scrape/scrape3.jpg";
 import scrape4 from "../../assets/scrape/scrape4.jpg";
+import custbroker1 from "../../assets/custbroker/custbroker1.jpg";
+import custbroker2 from "../../assets/custbroker/custbroker2.jpg";
+import custbroker3 from "../../assets/custbroker/custbroker3.jpg";
+import custbroker4 from "../../assets/custbroker/custbroker4.jpg";
 
 function ProjectList(props) {
   const projects = [
@@ -76,7 +80,21 @@ function ProjectList(props) {
           "Different difficulty levels",
           "Time manipulation"
         ],
-        link: "http://mine.zhako.lt"
+        link: "http://mine.mzh.lt"
+      }
+    },
+    {
+      tools: ["html", "css", "js", "git"],
+      images: [custbroker1, custbroker2, custbroker3, custbroker4],
+      description: {
+        title: "Demo website for another company",
+        li: [
+          "Webpage for logistics company",
+          "Contact list",
+          "Google maps",
+          "Expanding information"
+        ],
+        link: "http://custbroker.mzh.lt/"
       }
     },
     {
