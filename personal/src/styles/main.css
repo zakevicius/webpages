@@ -65,7 +65,7 @@ li::before {
   height: 200px;
   min-height: 200px;
   border-bottom: 4px solid #711e71;
-  background: url("../../src/assets/header.jpg") 0% 20%/cover;
+  background: url("../../src/assets/header.jpg") 0% 100%/cover;
   background-repeat: no-repeat;
   box-shadow: 0px 2px 20px 1px #711e71;
   align-content: center;
@@ -278,6 +278,10 @@ li::before {
 @media only screen and (max-width: 1500px) {
   .projectMain {
     flex-wrap: wrap;
+  }
+
+  .rightDiv {
+    width: 23vw;
   }
 
   .icon {
