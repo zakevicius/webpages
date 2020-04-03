@@ -1,0 +1,127 @@
+{
+	"projects": [
+		{
+			"tools": [
+				"html",
+				"css",
+				"js",
+				"react",
+				"redux",
+				"express",
+				"nodejs",
+				"mongodb",
+				"api",
+				"json",
+				"git",
+				"semanticui"
+			],
+			"images": [0],
+			"description": {
+				"title": "Order management system for warehouse",
+				"li": [
+					"Cargo information",
+					"Cargo loading to truck information",
+					"Documents and photos upload",
+					"Information by client",
+					"Authorization with tokens",
+					"Different access levels",
+					"Backend and frontend"
+				],
+				"additional": ["Contact me for a demo access"],
+				"link": "https://mzh.lt"
+			}
+		},
+		{
+			"tools": ["html", "css", "js", "php", "git"],
+			"images": [1],
+			"description": {
+				"title": "First live webpage",
+				"li": [
+					"Webpage for logistics company",
+					"Contact list",
+					"Contact form",
+					"Google maps",
+					"Language selection"
+				],
+				"link": "https://logway1.lt"
+			}
+		},
+		{
+			"tools": ["html", "css", "js", "git"],
+			"images": [2],
+			"description": {
+				"title": "First game made while learning Javascript",
+				"li": [
+					"Minesweeper clone",
+					"Different difficulty levels",
+					"Time manipulation"
+				],
+				"link": "http://mine.mzh.lt"
+			}
+		},
+		{
+			"tools": ["html", "css", "js", "git"],
+			"images": [3],
+			"description": {
+				"title": "First version of personal website",
+				"li": [
+					"Minesweeper clone",
+					"Different difficulty levels",
+					"Time manipulation"
+				],
+				"link": "http://mine.mzh.lt"
+			}
+		},
+		{
+			"tools": ["html", "css", "js", "react", "api", "json", "git"],
+			"images": [4],
+			"description": {
+				"title": "Second version of personal website",
+				"li": [
+					"Minesweeper clone",
+					"Different difficulty levels",
+					"Time manipulation"
+				],
+				"link": "http://mine.mzh.lt"
+			}
+		},
+		{
+			"tools": ["html", "css", "js", "git"],
+			"images": [5],
+			"description": {
+				"title": "Demo website for another company",
+				"li": [
+					"Webpage for logistics company",
+					"Contact list",
+					"Google maps",
+					"Expanding information"
+				],
+				"link": "http://custbroker.mzh.lt/"
+			}
+		},
+		{
+			"tools": [
+				"html",
+				"css",
+				"js",
+				"bootstrap",
+				"nodejs",
+				"react",
+				"api",
+				"json",
+				"heroku",
+				"git"
+			],
+			"images": [6],
+			"description": {
+				"title": "Information scraping from a local television website",
+				"li": [
+					"Information about shows playing at the moment",
+					"Detailed information and links for access",
+					"Backend and frontend setup on Heroku"
+				],
+				"link": "https://scrape-client.herokuapp.com/"
+			}
+		}
+	]
+}
