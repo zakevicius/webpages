@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Button({ text, additionalClass, type, ...props }) {
+export default function Button({ text, additionalClass, type, id, ...props }) {
 	const onClickHandler = () => {
 		if (props.onClickHandler) {
-			props.onClickHandler(type);
+			props.onClickHandler(id);
 		}
 	};
 

@@ -7,7 +7,8 @@ class RepoItem extends React.Component {
 	}
 
 	state = {
-		languages: {}
+		languages: {},
+		styleSet: false,
 	};
 
 	componentDidMount() {
@@ -23,20 +24,34 @@ class RepoItem extends React.Component {
 				Accept: "application/json",
 				"Content-Type": "application/json",
 				Authorization:
-					"9b0c5a4499841fbb9f67:381da67a31cce792dc84c3bc6768876cc23ebf31"
-			}
+					"9b0c5a4499841fbb9f67:381da67a31cce792dc84c3bc6768876cc23ebf31",
+			},
 		});
 		const languages = await res.json();
 		this.setState({ languages: { ...this.state.languages, ...languages } });
 
-		this.setStyle();
+		window.addEventListener("scroll", this.inView);
 	};
 
-	setStyle() {
+	inView = () => {
+		const elRectTop = document
+			.getElementById("github-repos")
+			.getBoundingClientRect().top;
+		const offset = 200;
+
+		if (elRectTop < window.innerHeight - offset && !this.state.styleSet) {
+			this.setStyle();
+		} else if (this.state.styleSet) {
+			window.removeEventListener("scroll", this.inView);
+		}
+	};
+
+	setStyle = () => {
 		let time = 1 + 0.2 * this.props.index;
 
-		this.repoRef.current.style.transition = `right ${time}s, left ${time}s, opacity ${time +
-			0.5}s`;
+		this.repoRef.current.style.transition = `right ${time}s, left ${time}s, opacity ${
+			time + 0.5
+		}s`;
 
 		if (this.repoRef.current.classList.contains("left")) {
 			this.repoRef.current.style.left = "0px";
@@ -47,7 +62,9 @@ class RepoItem extends React.Component {
 		}
 
 		this.repoRef.current.style.opacity = 1;
-	}
+
+		this.setState({ styleSet: 1 });
+	};
 
 	renderLanguages = () => {
 		const languages = [];
@@ -64,7 +81,7 @@ class RepoItem extends React.Component {
 				</div>
 			);
 		}
-		return languages.map(lang => lang);
+		return languages.map((lang) => lang);
 	};
 
 	render() {

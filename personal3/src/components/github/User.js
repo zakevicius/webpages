@@ -1,19 +1,10 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import Repos from "./Repos";
 import Button from "../elements/Button";
 
 class User extends Component {
 	render() {
-		const {
-			name,
-			avatar_url,
-			location,
-			bio,
-			blog,
-			login,
-			company,
-			html_url
-		} = this.props.user;
+		const { name, avatar_url, location, login, html_url } = this.props.user;
 		const { repos, user, loading } = this.props;
 
 		return (
@@ -25,12 +16,6 @@ class User extends Component {
 						<h3>{login}</h3>
 					</div>
 					<div>
-						{bio && (
-							<Fragment>
-								<h3>Bio</h3>
-								<p>{bio}</p>
-							</Fragment>
-						)}
 						<a
 							href={html_url}
 							className="btn btn-dark my-1"

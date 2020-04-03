@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Project from "./Project";
 import images from "./images";
 
@@ -12,9 +12,9 @@ class ProjectList extends React.Component {
 
 	state = {
 		from: "",
-		activeProject: 0,
+		activeProject: 1,
 		projects: projects.projects,
-		changeDescription: true
+		changeDescription: true,
 	};
 
 	descriptionBlink = () => {
@@ -34,7 +34,7 @@ class ProjectList extends React.Component {
 
 		this.setState({
 			from: "fromRight",
-			activeProject: index
+			activeProject: index,
 		});
 
 		this.descriptionBlink();
@@ -48,12 +48,12 @@ class ProjectList extends React.Component {
 
 		this.setState({
 			from: "fromLeft",
-			activeProject: index
+			activeProject: index,
 		});
 		this.descriptionBlink();
 	};
 
-	setClassName = i => {
+	setClassName = (i) => {
 		let className = "project-container hidden";
 		const activeProject = this.state.activeProject;
 
@@ -100,41 +100,43 @@ class ProjectList extends React.Component {
 
 	render() {
 		return (
-			<div className="projects section">
-				{this.renderDescription()}
-				<div className="projects-line">
-					<div className="arrow left">
-						{this.state.activeProject > 0 ? (
-							<i
-								className="fas fa-arrow-left fa-2x"
-								onClick={this.prevProject}
+			<Fragment>
+				<div className="projects section">
+					<div className="projects-line">
+						<div className="arrow left">
+							{this.state.activeProject > 0 ? (
+								<i
+									className="fas fa-arrow-left fa-2x"
+									onClick={this.prevProject}
+								/>
+							) : (
+								""
+							)}
+						</div>
+						{projects.projects.map((project, i) => (
+							<Project
+								active={this.state.activeProject}
+								index={i}
+								key={i}
+								project={project}
+								className={this.setClassName(i)}
+								image={images[project.images[0]]}
 							/>
-						) : (
-							""
-						)}
+						))}
+						<div className="arrow right">
+							{this.state.activeProject < projects.projects.length - 1 ? (
+								<i
+									className="fas fa-arrow-right fa-2x"
+									onClick={this.nextProject}
+								/>
+							) : (
+								""
+							)}
+						</div>
 					</div>
-					{projects.projects.map((project, i) => (
-						<Project
-							active={this.state.activeProject}
-							index={i}
-							key={i}
-							project={project}
-							className={this.setClassName(i)}
-							image={images[project.images[0]]}
-						/>
-					))}
-					<div className="arrow right">
-						{this.state.activeProject < projects.projects.length - 1 ? (
-							<i
-								className="fas fa-arrow-right fa-2x"
-								onClick={this.nextProject}
-							/>
-						) : (
-							""
-						)}
-					</div>
+					{this.renderDescription()}
 				</div>
-			</div>
+			</Fragment>
 		);
 	}
 }

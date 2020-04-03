@@ -5,7 +5,7 @@ const Repos = ({ repos, user, loading }) => {
 	const { followers, following, public_repos, public_gists, hireable } = user;
 
 	return (
-		<div className="github-repos">
+		<div id="github-repos" className="github-repos">
 			<div className="badges">
 				<div className="badge">
 					Public repositories: <span>{public_repos}</span>

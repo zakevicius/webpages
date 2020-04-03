@@ -7,7 +7,7 @@ class Github extends React.Component {
 		user: "",
 		repos: [],
 		loadingUser: 1,
-		loadingRepos: 1
+		loadingRepos: 1,
 	};
 
 	componentDidMount() {
@@ -22,8 +22,8 @@ class Github extends React.Component {
 				Accept: "application/json",
 				"Content-Type": "application/json",
 				Authorization:
-					"9b0c5a4499841fbb9f67:381da67a31cce792dc84c3bc6768876cc23ebf31"
-			}
+					"9b0c5a4499841fbb9f67:381da67a31cce792dc84c3bc6768876cc23ebf31",
+			},
 		});
 		const user = await res.json();
 		this.setState({ user, loadingUser: 0 });
@@ -36,15 +36,15 @@ class Github extends React.Component {
 				Accept: "application/json",
 				"Content-Type": "application/json",
 				Authorization:
-					"9b0c5a4499841fbb9f67:381da67a31cce792dc84c3bc6768876cc23ebf31"
-			}
+					"9b0c5a4499841fbb9f67:381da67a31cce792dc84c3bc6768876cc23ebf31",
+			},
 		});
 		const repos = await res.json();
 		this.setState({ repos, loadingRepos: 0 });
 	};
 
 	onClickExpand = () => {
-		const github = document.getElementById("github");
+		const github = document.getElementById("github-container");
 		github.classList.toggle("expand");
 		if (this.state.expanded) {
 			this.setState({ expanded: false });
@@ -56,36 +56,38 @@ class Github extends React.Component {
 	render() {
 		const { user, repos, loadingRepos, loadingUser } = this.state;
 		return (
-			<div
-				id="github"
-				className={`github ${
-					loadingUser || loadingRepos ? "loading" : ""
-				} section`}
-			>
-				{loadingUser || loadingRepos ? (
-					<Loader />
-				) : (
-					<Fragment>
-						<User
-							user={user}
-							repos={repos}
-							loading={[loadingRepos, loadingUser]}
-						></User>
-						<div className="github-expand">
-							<div
-								className="github-expand-button"
-								onClick={this.onClickExpand}
-							>
-								<i
-									className={`fas fa-angle-double-${
-										this.state.expanded ? "up" : "down"
-									} fa-2x`}
-								/>
+			<Fragment>
+				<div
+					id="github-container"
+					className={`github ${
+						loadingUser || loadingRepos ? "loading" : ""
+					} section`}
+				>
+					{loadingUser || loadingRepos ? (
+						<Loader />
+					) : (
+						<Fragment>
+							<User
+								user={user}
+								repos={repos}
+								loading={[loadingRepos, loadingUser]}
+							></User>
+							<div className="github-expand">
+								<div
+									className="github-expand-button"
+									onClick={this.onClickExpand}
+								>
+									<i
+										className={`fas fa-angle-double-${
+											this.state.expanded ? "up" : "down"
+										} fa-2x`}
+									/>
+								</div>
 							</div>
-						</div>
-					</Fragment>
-				)}
-			</div>
+						</Fragment>
+					)}
+				</div>
+			</Fragment>
 		);
 	}
 }

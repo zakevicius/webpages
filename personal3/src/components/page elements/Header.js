@@ -10,7 +10,7 @@ class Header extends React.Component {
 	componentDidMount() {
 		window.addEventListener("scroll", () => {
 			const navbar = document.getElementById("navbar");
-			window.pageYOffset > 100
+			window.pageYOffset > 49
 				? navbar.classList.add("fixed")
 				: navbar.classList.remove("fixed");
 		});
