@@ -3,7 +3,8 @@ import React from "react";
 function Divider({ title, id }) {
 	return (
 		<div className="divider" id={id}>
-			<table>
+			<div className="section-title">{title}</div>
+			<table className="divider-dark-table">
 				<thead></thead>
 				<tbody>
 					<tr>
@@ -23,7 +24,28 @@ function Divider({ title, id }) {
 					</tr>
 				</tbody>
 			</table>
-			<div className="section-title">{title}</div>
+			<div className="divider-light">
+				<table className="divider-light-table">
+					<thead></thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }

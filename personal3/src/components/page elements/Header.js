@@ -9,31 +9,18 @@ class Header extends React.Component {
 
 	componentDidMount() {
 		window.addEventListener("scroll", () => {
-			const navbar = document.getElementById("navbar");
+			const navbar = document.getElementById("navbar-primary");
 			window.pageYOffset > 49
 				? navbar.classList.add("fixed")
 				: navbar.classList.remove("fixed");
 		});
 	}
 
-	onClickHandler = type => {
-		console.log(type);
-	};
-
 	render() {
 		return (
 			<Fragment>
-				<Navbar
-					className="navbar"
-					onClickHandler={this.onClickHandler}
-				></Navbar>
-				<header id="header" className="header">
-					<Button
-						additionalClass="btn-aside"
-						type="aside"
-						onClickHandler={this.onClickHandler}
-					/>
-				</header>
+				<Navbar type="primary" className="navbar primary"></Navbar>
+				<header id="header" className="header" />
 			</Fragment>
 		);
 	}

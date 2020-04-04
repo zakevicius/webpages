@@ -8,6 +8,25 @@ class IconList extends React.Component {
 		this.images = images[images.length - 1];
 		this.tools = this.images.map((image) => image.name);
 		this.type = this.props.type;
+		this.iconListRef = React.createRef();
+	}
+
+	componentDidMount() {
+		// if (this.state.tools) {
+		// const leftoverTools = 5;
+		// let numberOfColumns;
+		// let i = 6;
+		// for (i; i > 1; i--) {
+		// 	if (leftoverTools % i > 4 || leftoverTools % i === 0) {
+		// 		numberOfColumns = i;
+		// 		break;
+		// 	} else {
+		// 		numberOfColumns = Math.floor(leftoverTools / i);
+		// 	}
+		// }
+		// console.log(i, numberOfColumns);
+		// this.iconListRef.current.style.gridTemplateColumns = `repeat(${numberOfColumns}, 1fr)`;
+		// }
 	}
 
 	getIcon = (tool) => {
@@ -32,9 +51,13 @@ class IconList extends React.Component {
 	renderContent = () => {
 		const tools = this.props.tools || this.tools;
 		return (
-			<div className={this.getClassName()}>
+			<div
+				id={`${this.props.type === "section" ? "icon-list" : ""}`}
+				className={this.getClassName()}
+				ref={this.iconListRef}
+			>
 				{tools.map((tool, i) => (
-					<Icon key={i} icon={this.getIcon(tool)} type="project" />
+					<Icon key={i} index={i} icon={this.getIcon(tool)} type={this.type} />
 				))}
 			</div>
 		);
