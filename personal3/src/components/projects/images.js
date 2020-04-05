@@ -43,9 +43,9 @@ const icons = [
 	{ name: "php", src: php },
 	{ name: "react", src: react },
 	{ name: "redux", src: redux },
-	{ name: "semanticui", src: semanticui }
+	{ name: "semanticui", src: semanticui },
 ];
 
-const images = [appLogway, logway, mine, v1, v2, custbroker, scrape, icons];
+const images = [logway, appLogway, mine, v1, v2, custbroker, scrape, icons];
 
 export default images;
