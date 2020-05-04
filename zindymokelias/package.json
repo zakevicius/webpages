@@ -1,33 +1,37 @@
 {
-  "name": "zindymokelias",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1",
-    "uuid": "^3.3.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "zindymokelias",
+	"version": "1.0.0",
+	"description": "",
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
+		]
+	},
+	"main": "index.jsx",
+	"scripts": {
+		"start": "webpack-dev-server --config webpack.common.js --mode development --open --hot",
+		"build": "webpack --mode production"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.9.6",
+		"@babel/preset-env": "^7.9.6",
+		"@babel/preset-react": "^7.9.4",
+		"babel-loader": "^8.1.0",
+		"css-loader": "^3.5.3",
+		"html-webpack-plugin": "^4.3.0",
+		"mini-css-extract-plugin": "^0.9.0",
+		"style-loader": "^1.2.1",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11",
+		"webpack-dev-server": "^3.10.3",
+		"webpack-merge": "^4.2.2"
+	}
 }
