@@ -1,0 +1,17 @@
+.tab-div {
+	margin-top: 5em;
+	background-color: var(--blue);
+	width: inherit;
+	height: 100px;
+}
+
+.tab-list {
+	width: 100%;
+	height: 50px;
+}
+
+.tab-list.primary {
+}
+
+.tab-list.secondary {
+}

@@ -1,0 +1,9 @@
+.tab {
+	cursor: pointer;
+	background: var(--green);
+	width: 25%;
+	height: 100%;
+	margin: 0 0.5em;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}

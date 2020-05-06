@@ -1,0 +1,48 @@
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-secondary,
+.btn-primary,
+.btn {
+	border: none;
+	border-radius: 5px;
+	padding: 0.5rem 1.5rem;
+	margin: 0.5rem;
+	min-width: 7rem;
+	font-size: 2rem;
+	outline: none;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn:active {
+	opacity: 0.8;
+	transform: scale(0.97);
+}
+
+.btn-primary {
+	background-color: var(--blue);
+	color: white;
+}
+
+.btn-secondary {
+	background-color: var(--light);
+	color: white;
+}
+
+.btn-warning {
+	background-color: var(--orange);
+	color: white;
+}
+
+.btn-danger {
+	background-color: var(--red);
+	color: white;
+}
+
+.btn-success {
+	background-color: var(--green);
+	color: white;
+}

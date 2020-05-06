@@ -1,0 +1,65 @@
+:root {
+	--blue: #a8e6cf;
+	--green: #dcedc1;
+	--orange: #ffd3b6;
+	--red: #ffaaa5;
+	--light: #eee;
+	--dark: #555;
+	--page-width: 1300px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#root {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.flex,
+#root {
+	display: flex;
+	font-family: "Livvic", sans-serif;
+	letter-spacing: 1px;
+	line-height: 1.5rem;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-position: center;
+	background-repeat: repeat;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.all-centered {
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.right-X {
+	justify-content: flex-end;
+}
+
+.middle-X {
+	justify-content: center;
+}
+
+.middle-Y {
+	align-items: center;
+}
+
+.container {
+	flex-basis: 90%;
+	padding: 2em;
+}
+
+.width {
+	width: var(--page-width);
+	max-width: var(--page-width);
+}
