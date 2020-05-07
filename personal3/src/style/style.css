@@ -248,9 +248,9 @@ header {
 	display: -webkit-box;
 	display: flex;
 	-webkit-box-pack: center;
-	        justify-content: center;
+	justify-content: center;
 	-webkit-box-align: center;
-	        align-items: center;
+	align-items: center;
 	-webkit-transition: height 1s, -webkit-transform 0.3s;
 	transition: height 1s, -webkit-transform 0.3s;
 	transition: transform 0.3s, height 1s;
@@ -261,9 +261,9 @@ header {
 	display: -webkit-box;
 	display: flex;
 	-webkit-box-align: center;
-	        align-items: center;
+	align-items: center;
 	-webkit-box-pack: center;
-	        justify-content: center;
+	justify-content: center;
 	height: 300px;
 	width: 600px;
 	min-height: 150px;
@@ -323,13 +323,14 @@ button:focus {
 }
 
 .btn-navbar.primary {
-	border: 0;
+	border: none;
 	height: 100%;
 	width: 200px;
 	padding: 10px 20px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
-	background-color: var(--light-color);
+	color: var(--light-color);
+	background-color: var(--primary-color);
 }
 
 .btn-navbar.primary:first-of-type:not(.link) {
@@ -338,6 +339,7 @@ button:focus {
 
 .btn-navbar.primary:hover {
 	background-color: var(--grey-color);
+	color: var(--primary-color);
 	font-size: 102%;
 }
 
@@ -527,7 +529,8 @@ aside.hidden {
 	padding-left: 20px;
 	background: -webkit-gradient(
 		linear,
-		left top, right top,
+		left top,
+		right top,
 		color-stop(40%, rgba(248, 248, 248, 1)),
 		to(rgba(248, 248, 248, 0))
 	);
@@ -545,7 +548,8 @@ aside.hidden {
 	padding-right: 20px;
 	background: -webkit-gradient(
 		linear,
-		right top, left top,
+		right top,
+		left top,
 		color-stop(40%, rgba(248, 248, 248, 1)),
 		to(rgba(248, 248, 248, 0))
 	);
@@ -672,6 +676,7 @@ aside.hidden {
 }
 
 .project {
+	cursor: pointer;
 	position: relative;
 	width: 500px;
 	min-width: 500px;
@@ -802,7 +807,8 @@ aside.hidden {
 	color: var(--dark-color);
 	background: -webkit-gradient(
 		linear,
-		left top, left bottom,
+		left top,
+		left bottom,
 		from(rgba(248, 248, 248, 0.5)),
 		color-stop(50%, rgba(248, 248, 248))
 	);
@@ -1136,9 +1142,9 @@ aside.hidden {
 	display: -webkit-box;
 	display: flex;
 	-webkit-box-align: center;
-	        align-items: center;
+	align-items: center;
 	-webkit-box-pack: end;
-	        justify-content: flex-end;
+	justify-content: flex-end;
 	width: 100%;
 	height: 50px;
 	padding: 20px;

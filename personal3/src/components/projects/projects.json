@@ -40,10 +40,11 @@
 					"Information by client",
 					"Authorization with tokens",
 					"Different access levels",
-					"Backend and frontend"
+					"Backend and frontend",
+					"Demo access: demo@demo.lt 12345678"
 				],
 				"additional": ["Contact me for a demo access"],
-				"link": "https://mzh.lt"
+				"link": "http://app.logway1.lt"
 			}
 		},
 		{

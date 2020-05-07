@@ -1,6 +1,8 @@
 #builded app
 build/
 
+zindymokelias/back/config/default.json
+
 # Logs
 logs
 *.log

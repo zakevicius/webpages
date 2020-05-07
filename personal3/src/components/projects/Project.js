@@ -14,7 +14,11 @@ class Project extends React.Component {
 	render() {
 		return (
 			<div className={this.props.className}>
-				<div className="project" ref={this.projectRef}>
+				<div
+					className="project"
+					ref={this.projectRef}
+					onClick={() => window.open(this.props.project.description.link)}
+				>
 					<IconList tools={this.props.project.tools} />
 				</div>
 			</div>
