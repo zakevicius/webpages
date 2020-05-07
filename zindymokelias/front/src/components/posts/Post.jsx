@@ -1,14 +1,12 @@
 import React from "react";
 import Button from "../elements/Button.jsx";
 
-const Post = () => {
+const Post = ({ post }) => {
 	return (
 		<div>
-			<h2>Post</h2>
-			<Button text="Apie mane" />
-			<Button text="Informacija apie zindyma su temom" type="danger" />
-			<Button text="video" type="warning" />
-			<Button text="Klausimai ir atsakymai" type="success" />
+			<h2>{post.title}</h2>
+			<h3>{post.intro}</h3>
+			<p>{post.content}</p>
 		</div>
 	);
 };

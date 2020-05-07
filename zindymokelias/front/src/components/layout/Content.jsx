@@ -8,31 +8,45 @@ const primaryTabs = tabs.primary;
 const secondaryTabs = tabs.secondary;
 const [FEEDING, VIDEOS, QUESTIONS, ABOUT] = primaryTabs;
 const [SEC1, SEC2, SEC3, SEC4] = secondaryTabs[0];
+const [SEC5, SEC6, SEC7, SEC8] = secondaryTabs[2];
 
-const Content = ({ page, subPage }) => {
+const subTabs = [];
+
+secondaryTabs.forEach((group) => {
+	group.forEach((el) => subTabs.push(el));
+});
+
+console.log(subTabs);
+
+const Content = ({ page, subPage, cat, subCat }) => {
 	const renderContent = () => {
-		console.log(page);
-		switch (page) {
-			case VIDEOS.text:
-				return <PostList cat={VIDEOS.cat} />;
-			case QUESTIONS.text:
-				return <PostList cat={QUESTIONS.cat} />;
-			case ABOUT.text:
-				return <About />;
-			default:
-				switch (subPage) {
-					case SEC1.text:
-						return <PostList cat={SEC1.cat} />;
-					case SEC2.text:
-						return <PostList cat={SEC2.cat} />;
-					case SEC3.text:
-						return <PostList cat={SEC3.cat} />;
-					case SEC4.text:
-						return <PostList cat={SEC4.cat} />;
-					default:
-						return <PostList cat="all" />;
+		if (subPage) {
+			for (let tab of subTabs) {
+				if (tab.subCat === subCat && tab.cat === cat) {
+					return <PostList subCat={tab.subCat} />;
 				}
+			}
+		} else if (page) {
+			for (let tab of primaryTabs) {
+				if (tab.cat === cat) {
+					return <PostList cat={tab.cat} />;
+				}
+			}
+		} else {
+			return <PostList cat="all" />;
 		}
+		// switch (subPage) {
+		// 	case SEC1.text:
+		// 		return <PostList subCat={SEC1.subCat} />;
+		// 	case SEC2.text:
+		// 		return <PostList subCat={SEC2.subCat} />;
+		// 	case SEC3.text:
+		// 		return <PostList subCat={SEC3.subCat} />;
+		// 	case SEC4.text:
+		// 		return <PostList subCat={SEC4.subCat} />;
+		// 	default:
+		// 		return <PostList cat="all" />;
+		// }
 	};
 
 	return (

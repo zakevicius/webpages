@@ -5,7 +5,7 @@ const Tab = ({ type, data, handleTabClick }) => {
 	const tabRef = useRef();
 
 	const handleOnClick = () => {
-		handleTabClick(tabRef.current.innerText, type);
+		handleTabClick(tabRef.current.innerText, type, data);
 	};
 
 	return (

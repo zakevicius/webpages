@@ -11,7 +11,7 @@ const TabList = (props) => {
 	const [tabIndex, setTabIndex] = useState(-1);
 	const [activeTab, setActiveTab] = useState(0);
 
-	const handleTabClick = (tabText, type) => {
+	const handleTabClick = (tabText, type, tabData) => {
 		if (type === "primary") {
 			const index = primaryTabs.findIndex((tab) => tab.text === tabText);
 
@@ -30,7 +30,7 @@ const TabList = (props) => {
 		} else {
 			shrink();
 		}
-		props.handleOnClick(tabText, type);
+		props.handleOnClick(tabText, type, tabData);
 	};
 
 	const shrink = () => {

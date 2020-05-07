@@ -1,18 +1,23 @@
 {
 	"primary": [
-		{ "id": 1, "text": "Žindymas", "cat": "feeding" },
+		{ "id": 1, "text": "Žindymas", "cat": "all" },
 		{ "id": 2, "text": "Video", "cat": "videos" },
 		{ "id": 3, "text": "Klausimai", "cat": "questions" },
 		{ "id": 4, "text": "Apie mane", "cat": "about" }
 	],
 	"secondary": [
 		[
-			{ "id": 5, "text": "Subtab1", "cat": "subcat1" },
-			{ "id": 6, "text": "Subtab2", "cat": "subcat2" },
-			{ "id": 7, "text": "Subtab3", "cat": "subcat3" },
-			{ "id": 8, "text": "Subtab4", "cat": "subcat4" }
+			{ "id": 5, "text": "Žindymas1", "cat": "all", "subCat": "subcat1" },
+			{ "id": 6, "text": "Žindymas2", "cat": "all", "subCat": "subcat2" },
+			{ "id": 7, "text": "Žindymas3", "cat": "all", "subCat": "subcat3" },
+			{ "id": 8, "text": "Žindymas4", "cat": "all", "subCat": "subcat4" }
 		],
-		[],
+		[
+			{ "id": 9, "text": "Video5", "cat": "videos", "subCat": "subcat1" },
+			{ "id": 10, "text": "Video6", "cat": "videos", "subCat": "subcat2" },
+			{ "id": 11, "text": "Video7", "cat": "videos", "subCat": "subcat3" },
+			{ "id": 12, "text": "Video8", "cat": "videos", "subCat": "subcat4" }
+		],
 		[],
 		[]
 	]
