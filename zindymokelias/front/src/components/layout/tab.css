@@ -1,7 +1,9 @@
 .tab {
+  position: relative;
   cursor: pointer;
   background: var(--green);
-  width: 25%;
+  width: 284px;
+  min-width: 284px;
   height: 100%;
   margin: 0 0.5em;
   border-top-left-radius: 20px;
@@ -9,7 +11,17 @@
 }
 
 .tab.secondary {
-  position: relative;
-  top: 50px;
+  top: 0px;
   transition: all 0.5s;
+}
+
+.tab.show-icon::after {
+  content: "^";
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--red);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-100%, -25%);
 }

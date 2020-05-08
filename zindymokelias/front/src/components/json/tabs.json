@@ -1,22 +1,87 @@
 {
   "primary": [
-    { "id": 1, "text": "Žindymas", "cat": "all", "subcat": true },
-    { "id": 2, "text": "Video", "cat": "videos", "subcat": true },
-    { "id": 3, "text": "Klausimai", "cat": "questions", "subcat": false },
-    { "id": 4, "text": "Apie mane", "cat": "about", "subcat": false }
+    {
+      "id": 1,
+      "type": "primary",
+      "text": "Žindymas",
+      "cat": "articles",
+      "subCat": true
+    },
+    {
+      "id": 2,
+      "type": "primary",
+      "text": "Video",
+      "cat": "videos",
+      "subCat": true
+    },
+    {
+      "id": 3,
+      "type": "primary",
+      "text": "Klausimai",
+      "cat": "questions",
+      "subCat": false
+    },
+    {
+      "id": 4,
+      "type": "primary",
+      "text": "Apie mane",
+      "cat": "about",
+      "subCat": false
+    }
   ],
   "secondary": [
     [
-      { "id": 5, "text": "Žindymas1", "cat": "all", "subCat": "subcat1" },
-      { "id": 6, "text": "Žindymas2", "cat": "all", "subCat": "subcat2" },
-      { "id": 7, "text": "Žindymas3", "cat": "all", "subCat": "subcat3" },
-      { "id": 8, "text": "Žindymas4", "cat": "all", "subCat": "subcat4" }
+      {
+        "id": 5,
+        "type": "secondary",
+        "text": "Žindymas1",
+        "cat": "articles",
+        "subCat": "articles1"
+      },
+      {
+        "id": 6,
+        "type": "secondary",
+        "text": "Žindymas2",
+        "cat": "articles",
+        "subCat": "articles2"
+      },
+      {
+        "id": 7,
+        "type": "secondary",
+        "text": "Žindymas3",
+        "cat": "articles",
+        "subCat": "articles3"
+      }
     ],
     [
-      { "id": 9, "text": "Video5", "cat": "videos", "subCat": "subcat1" },
-      { "id": 10, "text": "Video6", "cat": "videos", "subCat": "subcat2" },
-      { "id": 11, "text": "Video7", "cat": "videos", "subCat": "subcat3" },
-      { "id": 12, "text": "Video8", "cat": "videos", "subCat": "subcat4" }
+      {
+        "id": 9,
+        "type": "secondary",
+        "text": "Video5",
+        "cat": "videos",
+        "subCat": "videos1"
+      },
+      {
+        "id": 10,
+        "type": "secondary",
+        "text": "Video6",
+        "cat": "videos",
+        "subCat": "videos2"
+      },
+      {
+        "id": 11,
+        "type": "secondary",
+        "text": "Video7",
+        "cat": "videos",
+        "subCat": "videos3"
+      },
+      {
+        "id": 12,
+        "type": "secondary",
+        "text": "Video8",
+        "cat": "videos",
+        "subCat": "videos4"
+      }
     ],
     [],
     []

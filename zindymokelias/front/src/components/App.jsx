@@ -3,35 +3,28 @@ import Header from "./layout/Header.jsx";
 import Footer from "./layout/Footer.jsx";
 import Content from "./layout/Content.jsx";
 import TabList from "./layout/TabList.jsx";
+import HomeLink from "./elements/HomeLink.jsx";
 import "./app.css";
 
 const App = () => {
-  const [page, setPage] = useState();
-  const [subPage, setSubPage] = useState();
-  const [cat, setCat] = useState();
-  const [subCat, setSubCat] = useState();
+  const [page, setPage] = useState({ cat: "all" });
 
-  useEffect(() => {
-    console.log(page, subPage, cat, subCat);
-  }, [page]);
+  useEffect(() => {}, [page]);
 
-  const handleOnClick = (page, type, data) => {
-    setCat(data.cat);
-    setSubCat(data.subCat);
+  const handleOnTabClick = (tab) => {
+    setPage({ ...page, ...tab });
+  };
 
-    if (type === "primary" && page !== "Žindymas") {
-      setPage(page);
-      setSubPage(null);
-    } else if (type === "secondary") {
-      setSubPage(page);
-    }
+  const handleOnHomeClick = () => {
+    setPage({ cat: "all" });
   };
 
   return (
     <Fragment>
       <Header />
-      <TabList handleOnClick={handleOnClick} />
-      <Content cat={cat} subCat={subCat} page={page} subPage={subPage} />
+      <HomeLink handleOnClick={handleOnHomeClick} />
+      <TabList handleOnClick={handleOnTabClick} page={page} />
+      <Content page={page} />
       <Footer />
     </Fragment>
   );

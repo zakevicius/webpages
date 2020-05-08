@@ -13,22 +13,17 @@ secondaryTabs.forEach((group) => {
   group.forEach((el) => subTabs.push(el));
 });
 
-const Content = ({ page, subPage, cat, subCat }) => {
+const Content = ({ page }) => {
   const renderContent = () => {
-    if (subPage) {
-      for (let tab of subTabs) {
-        if (tab.subCat === subCat && tab.cat === cat) {
-          return <PostList tab={tab} />;
-        }
-      }
-    } else if (page) {
+    if (page.cat === "all") return <PostList />;
+    if (page.type !== "primary") {
       for (let tab of primaryTabs) {
-        if (tab.cat === cat) {
-          return <PostList tab={tab} />;
+        if (tab.cat === page.cat) {
+          return <PostList cat={page.cat} subCat={page.subCat} />;
         }
       }
     } else {
-      return <PostList cat='all' />;
+      return <PostList cat={page.cat} />;
     }
   };
 
