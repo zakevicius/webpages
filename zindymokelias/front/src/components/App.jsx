@@ -23,7 +23,7 @@ const App = () => {
 	const handleOnHomeClick = () => {
 		setPage({ cat: "all" });
 		window.scrollTo(0, 0);
-		if (page === "admin") history.push("/");
+		history.push("/");
 	};
 
 	return (

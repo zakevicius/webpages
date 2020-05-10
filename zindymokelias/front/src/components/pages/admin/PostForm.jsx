@@ -18,7 +18,6 @@ const PostForm = () => {
 	});
 
 	const onFormSubmit = async (e) => {
-		console.log(formData);
 		e.preventDefault();
 		const res = await api.post("/posts/new", formData);
 		if (!res.data.errors) {
@@ -67,18 +66,22 @@ const PostForm = () => {
 				{renderErrors("content")}
 				<select value={cat} name="cat" onChange={onInputChange}>
 					<option value="">Select category...</option>
-					<option value="Cat1">Cat 1</option>
-					<option value="Cat2">Cat 2</option>
-					<option value="Cat3">Cat 3</option>
+					<option value="articles">Articles</option>
+					<option value="videos">Videos</option>
+					<option value="questions">Questions</option>
 				</select>
 				{renderErrors("cat")}
 				<select value={subCat} name="subCat" onChange={onInputChange}>
 					<option value="">Select subcategory...</option>
-					<option value="subCat1">subCat 1</option>
-					<option value="subCat1">subCat 2</option>
-					<option value="subCat1">subCat 3</option>
+					<option value="articles1">articles 1</option>
+					<option value="articles2">articles 2</option>
+					<option value="articles3">articles 3</option>
+					<option value="videos1">videos1</option>
+					<option value="videos2">videos2</option>
+					<option value="videos3">videos3</option>
+					<option value="videos4">videos4</option>
 				</select>
-				{renderErrors("cat")}
+				{renderErrors("subCat")}
 				<Button type="success" text="Submit" />
 			</form>
 		</div>

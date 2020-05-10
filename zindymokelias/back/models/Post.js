@@ -10,6 +10,12 @@ const PostSchema = mongoose.Schema({
 	content: {
 		type: String,
 	},
+	cat: {
+		type: String,
+	},
+	subCat: {
+		type: String,
+	},
 	// user: {
 	// 	type: mongoose.Schema.Types.ObjectId,
 	// 	ref: "users",
