@@ -14,24 +14,24 @@ router.get("/", async (req, res) => {
 	}
 });
 
-router.post("/create", [
-	requireTitle,
-	requireIntro,
-	requireContent
-], handleErrors(), async (req, res) => {
+router.post(
+	"/new",
+	[requireTitle, requireIntro, requireContent],
+	handleErrors(),
+	async (req, res) => {
+		const { title, intro, content } = req.body;
 
-	const { title, intro, content } = req.body;
+		const post = new Post({
+			title,
+			intro,
+			content,
+			user: "test",
+		});
 
-	const post = new Post({
-		title,
-		intro,
-		content,
-		user: "test"
-	})
+		await post.save();
 
-	await post.save();
-
-	res.send({ post })
-})
+		res.send({ post });
+	}
+);
 
 module.exports = router;

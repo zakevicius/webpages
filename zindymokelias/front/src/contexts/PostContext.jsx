@@ -4,20 +4,13 @@ import { postReducer } from "../reducers/postReducer";
 export const PostContext = createContext();
 
 const PostContextProvider = (props) => {
-  const [posts, dispatch] = useReducer(postReducer, [], () => {
-    fetch("http://localhost:8080/posts").then((res) => console.log(res.body));
-    return [];
-  });
+	const [posts, dispatch] = useReducer(postReducer, []);
 
-  useEffect(() => {
-    console.log(posts);
-  });
-
-  return (
-    <PostContext.Provider value={{ posts, dispatch }}>
-      {props.children}
-    </PostContext.Provider>
-  );
+	return (
+		<PostContext.Provider value={{ posts, dispatch }}>
+			{props.children}
+		</PostContext.Provider>
+	);
 };
 
 export default PostContextProvider;
