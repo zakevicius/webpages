@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "../elements/Button.jsx";
+import images from "../json/images.json";
+import "./post.css";
 
 const Post = ({ post }) => {
-	return (
-		<div>
-			<h2>{post.title}</h2>
-			<h3>{post.intro}</h3>
-			<p>{post.content}</p>
-		</div>
-	);
+  const imageRef = useRef();
+
+  useEffect(() => {}, [post.id]);
+
+  const getImage = () => {
+    return images.filter((img) => img.id === "1")[0].image;
+  };
+
+  return (
+    <div className='post flex wrap'>
+      <div className='post-header'>
+        <img
+          ref={imageRef}
+          className='post-image'
+          alt={post.title}
+          src={getImage()}
+        />
+        <h2>{post.title}</h2>
+        <div className='post-intro'>{post.intro}</div>
+        <Button text='Daugiau...' />
+      </div>
+      <div className='post-content'>{post.content}</div>
+    </div>
+  );
 };
 
 export default Post;

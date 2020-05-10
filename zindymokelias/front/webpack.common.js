@@ -2,6 +2,9 @@ module.exports = {
 	entry: {
 		main: "./src/index.jsx",
 	},
+	devServer: {
+		historyApiFallback: true,
+	},
 	module: {
 		rules: [
 			{
