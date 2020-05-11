@@ -15,24 +15,40 @@ const PostForm = () => {
 		content: "",
 		cat: "",
 		subCat: "",
+		image: "",
 	});
+
+	const onInputChange = (e) => {
+		let value = "";
+
+		if (e.target.name === "image") {
+			value = e.target.files[0];
+		} else {
+			value = e.target.value;
+		}
+		setFormData({
+			...formData,
+			[e.target.name]: value,
+		});
+	};
 
 	const onFormSubmit = async (e) => {
 		e.preventDefault();
-		const res = await api.post("/posts/new", formData);
+
+		const data = new FormData();
+
+		for (let key in formData) {
+			data.append(key, formData[key]);
+		}
+
+		const res = await api.post("/posts/new", data);
+
 		if (!res.data.errors) {
 			dispatch({ type: "ADD_POST", payload: res.data.post });
 			history.push("/");
 		} else {
-			setErrors(res.data.errors);
+			setErrors(resData.data.errors);
 		}
-	};
-
-	const onInputChange = (e) => {
-		setFormData({
-			...formData,
-			[e.target.name]: e.target.value,
-		});
 	};
 
 	const renderErrors = (field) => {
@@ -49,20 +65,31 @@ const PostForm = () => {
 
 	return (
 		<div className="post-form">
-			<form onSubmit={onFormSubmit}>
-				<label htmlFor="title">Title</label>
+			<form onSubmit={onFormSubmit} encType="multipart/form-data">
+				<label htmlFor="input-title">Title</label>
 				<input
+					id="input-title"
 					type="text"
 					name="title"
 					value={title}
 					onChange={onInputChange}
 				/>
 				{renderErrors("title")}
-				<label htmlFor="title">Intro</label>
-				<textarea name="intro" value={intro} onChange={onInputChange} />
+				<label htmlFor="input-intro">Intro</label>
+				<textarea
+					id="input-intro"
+					name="intro"
+					value={intro}
+					onChange={onInputChange}
+				/>
 				{renderErrors("intro")}
-				<label htmlFor="title">Content</label>
-				<textarea name="content" value={content} onChange={onInputChange} />
+				<label htmlFor="input-content">Content</label>
+				<textarea
+					id="input-content"
+					name="content"
+					value={content}
+					onChange={onInputChange}
+				/>
 				{renderErrors("content")}
 				<select value={cat} name="cat" onChange={onInputChange}>
 					<option value="">Select category...</option>
@@ -82,6 +109,13 @@ const PostForm = () => {
 					<option value="videos4">videos4</option>
 				</select>
 				{renderErrors("subCat")}
+				<label htmlFor="input-image">Image</label>
+				<input
+					id="input-image"
+					type="file"
+					name="image"
+					onChange={onInputChange}
+				/>
 				<Button type="success" text="Submit" />
 			</form>
 		</div>

@@ -7,7 +7,7 @@ const FileSchema = mongoose.Schema({
 	name: {
 		type: String,
 	},
-	post: {
+	postID: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "post",
 	},

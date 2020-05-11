@@ -23,10 +23,9 @@ const PostSchema = mongoose.Schema({
 	user: {
 		type: String,
 	},
-	// files: {
-	// 	type: mongoose.Schema.Types.ObjectId,
-	// 	ref: "files",
-	// },
+	image: {
+		type: String,
+	},
 	date: {
 		type: Date,
 		default: Date.now,
