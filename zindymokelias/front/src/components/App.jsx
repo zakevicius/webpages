@@ -3,6 +3,8 @@ import { Router } from "react-router-dom";
 import { history } from "./history";
 
 import PostContextProvider from "../contexts/PostContext.jsx";
+import QuestionContextProvider from "../contexts/QuestionContext.jsx";
+import EventContextProvider from "../contexts/EventContext.jsx";
 
 import Header from "./layout/Header.jsx";
 import Footer from "./layout/Footer.jsx";
@@ -16,7 +18,11 @@ const App = () => {
 			<Router history={history}>
 				<Header />
 				<PostContextProvider>
-					<Main />
+					<QuestionContextProvider>
+						<EventContextProvider>
+							<Main />
+						</EventContextProvider>
+					</QuestionContextProvider>
 				</PostContextProvider>
 				<Footer />
 			</Router>

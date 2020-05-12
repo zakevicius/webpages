@@ -3,15 +3,18 @@ const { check } = require("express-validator");
 module.exports = {
 	requireTitle: check("title")
 		.trim()
-		.isLength({ min: 5 })
+		.not()
+		.isEmpty()
 		.withMessage("Title is required"),
 	requireIntro: check("intro")
 		.trim()
-		.isLength({ min: 5 })
+		.not()
+		.isEmpty()
 		.withMessage("Intro is required"),
 	requireContent: check("content")
 		.trim()
-		.isLength({ min: 5 })
+		.not()
+		.isEmpty()
 		.withMessage("Content is required"),
 	requireCat: check("cat")
 		.trim()
@@ -23,4 +26,14 @@ module.exports = {
 		.not()
 		.isEmpty()
 		.withMessage("Subcategory is required"),
+	requireQuestion: check("question")
+		.trim()
+		.not()
+		.isEmpty()
+		.withMessage("Question is required"),
+	requireAnswer: check("answer")
+		.trim()
+		.not()
+		.isEmpty()
+		.withMessage("Answer is required"),
 };

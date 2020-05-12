@@ -32,7 +32,7 @@ router.post(
 		const { title, intro, content, cat, subCat } = req.body;
 		const image = req.files.image[0].buffer.toString("base64");
 
-		const post = new Post({
+		const newPost = new Post({
 			title,
 			intro,
 			content,
@@ -42,9 +42,9 @@ router.post(
 			user: "test",
 		});
 
-		await post.save();
+		await newPost.save();
 
-		res.send({ post });
+		res.send({ newPost });
 	}
 );
 

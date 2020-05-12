@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import { PostContext } from "../../contexts/PostContext.jsx";
+import { QuestionContext } from "../../contexts/QuestionContext.jsx";
+import { EventContext } from "../../contexts/EventContext.jsx";
 import { history } from "../history";
 import api from "../api/api.js";
 import PrivateRoute from "../../PrivateRoute.jsx";
 import {
 	FETCH_POSTS,
 	SET_LOADING,
-	UNSET_LOADING,
 	REFRESH_PAGE,
+	FETCH_QUESTIONS,
 } from "../../reducers/types.js";
 
 import Content from "./Content.jsx";
@@ -19,23 +21,33 @@ import HomeLink from "../elements/HomeLink.jsx";
 const Main = () => {
 	const [page, setPage] = useState({ cat: "all" });
 
-	const { state, dispatch } = useContext(PostContext);
+	const { state: postState, dispatch: postDispatch } = useContext(PostContext);
+	const { state: questionState, dispatch: questionDispatch } = useContext(
+		QuestionContext
+	);
+	const { state: eventState, dispatch: eventDispatch } = useContext(
+		EventContext
+	);
 
 	useEffect(() => {
-		dispatch({ type: REFRESH_PAGE, payload: false });
+		eventDispatch({ type: REFRESH_PAGE, payload: false });
 
 		try {
-			dispatch({ type: SET_LOADING });
-			api
-				.get("http://localhost:8080/posts")
-				.then((res) => {
-					dispatch({ type: FETCH_POSTS, payload: res.data });
+			eventDispatch({ type: SET_LOADING, payload: true });
+
+			const postsPromise = api.get("http://localhost:8080/posts");
+			const questionsPromise = api.get("http://localhost:8080/questions");
+
+			Promise.all([postsPromise, questionsPromise])
+				.then(([posts, questions]) => {
+					postDispatch({ type: FETCH_POSTS, payload: posts.data });
+					questionDispatch({ type: FETCH_QUESTIONS, payload: questions.data });
 				})
-				.finally(() => dispatch({ type: UNSET_LOADING }));
+				.finally(() => eventDispatch({ type: SET_LOADING, payload: false }));
 		} catch (err) {
 			console.log(err);
 		}
-	}, [state.refreshPage]);
+	}, [eventState.refreshPage]);
 
 	const handleOnTabClick = (tab) => {
 		setPage({ ...page, ...tab });
@@ -44,7 +56,7 @@ const Main = () => {
 	const handleOnHomeClick = () => {
 		setPage({ cat: "all" });
 		window.scrollTo(0, 0);
-		dispatch({ type: REFRESH_PAGE, payload: true });
+		eventDispatch({ type: REFRESH_PAGE, payload: true });
 		history.push("/");
 	};
 
