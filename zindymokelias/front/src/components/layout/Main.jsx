@@ -12,6 +12,7 @@ import {
 } from "../../reducers/types.js";
 
 import Content from "./Content.jsx";
+import Aside from "./Aside.jsx";
 import TabList from "./TabList.jsx";
 import HomeLink from "../elements/HomeLink.jsx";
 
@@ -51,6 +52,7 @@ const Main = () => {
 		<>
 			<HomeLink handleOnClick={handleOnHomeClick} />
 			<TabList handleOnClick={handleOnTabClick} page={page} />
+			<Aside side="left" />
 			<Switch>
 				<Route
 					path="/"
@@ -63,6 +65,7 @@ const Main = () => {
 					component={(props) => <Content page="admin" {...props} />}
 				/>
 			</Switch>
+			<Aside side="right" />
 		</>
 	);
 };

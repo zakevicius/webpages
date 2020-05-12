@@ -38,28 +38,28 @@ const PostForm = () => {
 	const onFormSubmit = async (e) => {
 		e.preventDefault();
 
-		const post = {
-			title: faker.lorem.sentence(4),
-			intro: faker.lorem.sentences(4),
-			content: faker.lorem.paragraphs(3, "---------"),
-			cat: "videos",
-			subCat: `videos${Math.ceil(Math.random() * 4)}`,
-			image: "",
-		};
+		// const post = {
+		// 	title: faker.lorem.sentence(4),
+		// 	intro: faker.lorem.sentences(4),
+		// 	content: faker.lorem.paragraphs(3, "---------"),
+		// 	cat: "videos",
+		// 	subCat: `videos${Math.ceil(Math.random() * 4)}`,
+		// 	image: "",
+		// };
 
 		const config = {
 			file: formData.image,
-			maxSize: 500,
+			maxSize: 1000,
 		};
 		const resizedImage = await resizeImage(config);
 
 		const data = new FormData();
 
-		for (let key in post) {
+		for (let key in formData) {
 			if (key === "image") {
 				data.append("image", resizedImage);
 			} else {
-				data.append(key, post[key]);
+				data.append(key, formData[key]);
 			}
 		}
 

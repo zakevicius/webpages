@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext } from "react";
 import PostList from "../posts/PostList.jsx";
 import About from "../about/About.jsx";
 import PostForm from "../pages/admin/PostForm.jsx";
@@ -16,7 +16,7 @@ secondaryTabs.forEach((group) => {
 	group.forEach((el) => subTabs.push(el));
 });
 
-const Content = ({ page, ...props }) => {
+const Content = ({ page }) => {
 	const { state, dispatch } = useContext(PostContext);
 	const { posts, loading } = state;
 
@@ -43,7 +43,7 @@ const Content = ({ page, ...props }) => {
 	};
 
 	return (
-		<div className="container flex width middle-X content wrap">
+		<div className="container flex width middle-X content">
 			{renderContent()}
 		</div>
 	);

@@ -1,27 +1,27 @@
 .tab-div {
-  position: relative;
-  margin-top: 350px;
-  width: inherit;
-  height: 50px;
+	position: relative;
+	flex-basis: 100%;
+	margin-top: 350px;
+	height: 50px;
 }
 
 .tab-list {
-  width: 100%;
-  height: 50px;
-  position: absolute;
-  transition: all 0.5s;
-  box-sizing: border-box;
+	justify-content: center;
+	height: 50px;
+	position: absolute;
+	transition: all 0.5s;
+	box-sizing: border-box;
 }
 
 .tab-list * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .tab-list.primary {
-  z-index: 3;
+	z-index: 3;
 }
 
 .tab-list.secondary {
-  z-index: 2;
-  top: 0;
+	z-index: 2;
+	top: 0;
 }

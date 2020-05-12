@@ -13,7 +13,7 @@ const PostContextProvider = (props) => {
 	const [state, dispatch] = useReducer(postReducer, initialState);
 
 	return (
-		<PostContext.Provider value={{ state: { ...state }, dispatch }}>
+		<PostContext.Provider value={{ state, dispatch }}>
 			{props.children}
 		</PostContext.Provider>
 	);

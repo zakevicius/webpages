@@ -16,7 +16,7 @@ const Post = require("../models/Post");
 
 router.get("/", async (req, res) => {
 	try {
-		const posts = await Post.find();
+		const posts = await Post.find().sort({ date: -1 });
 		res.send({ posts });
 	} catch (err) {
 		res.send(err);

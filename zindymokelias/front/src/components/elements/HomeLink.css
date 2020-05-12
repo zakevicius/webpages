@@ -1,9 +1,10 @@
 .home-link {
-  cursor: pointer;
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  height: 50px;
-  width: 50px;
-  background: var(--orange);
+	cursor: pointer;
+	position: fixed;
+	top: 50px;
+	left: 50px;
+	height: 50px;
+	width: 50px;
+	background: var(--orange);
+	z-index: 100;
 }

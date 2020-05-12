@@ -2,27 +2,29 @@ import React, { useEffect, useRef } from "react";
 import Button from "../elements/Button.jsx";
 import "./post.css";
 
-const Post = ({ post }) => {
-	const imageRef = useRef();
-
+const Post = ({ post, index, full }) => {
 	useEffect(() => {}, [post._id]);
 
 	return (
 		<div className="post flex wrap">
-			<div className="post-header">
+			<div
+				className="post-top flex"
+				style={{ flexDirection: `${index % 2 ? "row-reverse" : "row"}` }}
+			>
 				<img
-					ref={imageRef}
 					className="post-image"
 					alt={post.title}
 					src={`data:image/jpeg;base64,${post.image}`}
 				/>
-				<h2>{post.title}</h2>
-				{post.cat && post.cat}
-				{post.subCat && post.subCat}
-				<div className="post-intro">{post.intro}</div>
-				<Button text="Daugiau..." />
+				<div className="post-header flex wrap">
+					<h2>{post.title}</h2>
+					{post.cat && post.cat}
+					{post.subCat && post.subCat}
+					<div className="post-intro">{post.intro}</div>
+					<Button text="Daugiau..." />
+				</div>
 			</div>
-			<div className="post-content">{post.content}</div>
+			{full ? <div className="post-bottom">{post.content}</div> : null}
 		</div>
 	);
 };
