@@ -13,7 +13,6 @@ const {
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 const Post = require("../models/Post");
-const File = require("../models/File");
 
 router.get("/", async (req, res) => {
 	try {
@@ -30,7 +29,6 @@ router.post(
 	[requireTitle, requireIntro, requireContent, requireCat, requireSubCat],
 	handleErrors(),
 	async (req, res) => {
-		console.log(req.files);
 		const { title, intro, content, cat, subCat } = req.body;
 		const image = req.files.image[0].buffer.toString("base64");
 
@@ -40,7 +38,7 @@ router.post(
 			content,
 			cat,
 			subCat,
-			image,
+			image: image,
 			user: "test",
 		});
 

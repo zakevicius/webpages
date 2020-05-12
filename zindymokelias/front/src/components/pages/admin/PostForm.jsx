@@ -2,9 +2,12 @@ import React, { useState, useContext } from "react";
 import { PostContext } from "../../../contexts/PostContext.jsx";
 import api from "../../api/api";
 import { history } from "../../history.js";
+import resizeImage from "./resizeImage";
 
 import Button from "../../elements/Button.jsx";
 import Error from "../../elements/Error.jsx";
+
+import faker from "faker";
 
 const PostForm = () => {
 	const { dispatch } = useContext(PostContext);
@@ -35,10 +38,29 @@ const PostForm = () => {
 	const onFormSubmit = async (e) => {
 		e.preventDefault();
 
+		const post = {
+			title: faker.lorem.sentence(4),
+			intro: faker.lorem.sentences(4),
+			content: faker.lorem.paragraphs(3, "---------"),
+			cat: "videos",
+			subCat: `videos${Math.ceil(Math.random() * 4)}`,
+			image: "",
+		};
+
+		const config = {
+			file: formData.image,
+			maxSize: 500,
+		};
+		const resizedImage = await resizeImage(config);
+
 		const data = new FormData();
 
-		for (let key in formData) {
-			data.append(key, formData[key]);
+		for (let key in post) {
+			if (key === "image") {
+				data.append("image", resizedImage);
+			} else {
+				data.append(key, post[key]);
+			}
 		}
 
 		const res = await api.post("/posts/new", data);
@@ -47,7 +69,7 @@ const PostForm = () => {
 			dispatch({ type: "ADD_POST", payload: res.data.post });
 			history.push("/");
 		} else {
-			setErrors(resData.data.errors);
+			setErrors(res.data.errors);
 		}
 	};
 

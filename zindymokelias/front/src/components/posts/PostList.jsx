@@ -1,23 +1,15 @@
-import React, { useEffect, useContext, useReducer } from "react";
-import Post from "./Post.jsx";
+import React, { useEffect, useContext, useState } from "react";
 import { PostContext } from "../../contexts/PostContext.jsx";
-import { FETCH_POSTS } from "../../reducers/types.js";
-import api from "../api/api.js";
 
-const PostList = ({ cat, subCat }) => {
-	const { posts, dispatch } = useContext(PostContext);
+import Post from "./Post.jsx";
 
-	useEffect(() => {
-		try {
-			api.get("http://localhost:8080/posts", { cat, subCat }).then((res) => {
-				dispatch({ type: FETCH_POSTS, payload: res.data });
-			});
-		} catch (err) {
-			console.log(err);
-		}
-	}, [posts.length]);
+const PostList = ({ cat, subCat, posts, loading }) => {
+	useEffect(() => {}, [posts.length]);
+
+	const { state, dispatch } = useContext(PostContext);
 
 	const renderPosts = () => {
+		if (loading) return "Loading";
 		const postsToRender = posts.filter((post) => {
 			if (!cat && !subCat) return post;
 			if (subCat) {

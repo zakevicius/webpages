@@ -1,7 +1,8 @@
 header {
-  position: fixed;
-  top: 0;
-  height: 500px;
-  width: 100%;
-  background-color: var(--blue);
+	position: fixed;
+	top: 0;
+	height: 500px;
+	width: 100%;
+	background-color: var(--blue);
+	background-image: url("../../assets/img/family.jpg");
 }

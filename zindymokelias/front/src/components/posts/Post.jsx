@@ -5,7 +5,7 @@ import "./post.css";
 const Post = ({ post }) => {
 	const imageRef = useRef();
 
-	useEffect(() => {}, [post.id]);
+	useEffect(() => {}, [post._id]);
 
 	return (
 		<div className="post flex wrap">
