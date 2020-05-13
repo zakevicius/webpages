@@ -1,3 +1,5 @@
+/* If changes are made to :root, values should be update in /json/cssVars.json  */
+
 :root {
 	--blue: #a8e6cf;
 	--green: #dcedc1;
@@ -6,6 +8,7 @@
 	--light: #eee;
 	--dark: #555;
 	--page-width: 1200px;
+	--from-top: 350px;
 }
 
 * {
@@ -67,4 +70,18 @@ body {
 .width {
 	width: var(--page-width);
 	max-width: var(--page-width);
+}
+
+.section {
+	padding: 1em;
+	background: #fff;
+	border: 1px solid var(--light);
+	box-shadow: 0px 5px 5px 2px var(--light);
+	border-radius: 5px;
+}
+
+ul,
+li {
+	padding: 0;
+	margin: 0.5em;
 }

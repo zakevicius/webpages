@@ -35,15 +35,3 @@ const MainContextProvider = (props) => {
 };
 
 export default MainContextProvider;
-
-const newStateValues = (state, values) => {
-	let newState = { ...state };
-
-	for (let key in state) {
-		console.log(typeof newState[key]);
-		newState[key] = { ...state[key] };
-	}
-
-	console.log(newState);
-	return values;
-};

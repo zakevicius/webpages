@@ -1,7 +1,7 @@
 .tab-div {
 	position: relative;
 	flex-basis: 100%;
-	margin-top: 350px;
+	margin-top: var(--from-top);
 	height: 50px;
 }
 
@@ -23,5 +23,5 @@
 
 .tab-list.secondary {
 	z-index: 2;
-	top: 0;
+	top: 50px;
 }

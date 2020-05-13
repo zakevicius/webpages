@@ -19,14 +19,19 @@ const QuestionList = ({ questions, loading }) => {
 
 		if (questionsToRender.length > 0) {
 			return questionsToRender.map((question, i) => (
-				<Question index={i} key={question._id} question={question} />
+				<>
+					<Question index={i} key={question._id} question={question} />
+					{i !== questionsToRender.length - 1 ? (
+						<Divider key={question._id} />
+					) : null}
+				</>
 			));
 		} else {
 			return "No questions";
 		}
 	};
 
-	return <div className="question-list width">{renderQuestions()}</div>;
+	return <div className="question-list section width">{renderQuestions()}</div>;
 };
 
 export default QuestionList;

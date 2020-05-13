@@ -1,0 +1,11 @@
+{
+	"blue": "#a8e6cf",
+	"green": "#dcedc1",
+	"orange": "#ffd3b6",
+	"red": "#ffaaa5",
+	"light": "#eee",
+	"dark": "#555",
+	"page-width": "1200px",
+	"from-top": "350px",
+	"__IMPORTANT__": "any changes made should be applied to app.css"
+}

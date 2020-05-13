@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import "./postList.css";
 
 import Post from "./Post.jsx";
+import Divider from "../elements/Divider.jsx";
 
 const PostList = ({ cat, subCat, posts, loading }) => {
 	useEffect(() => {}, [posts.length]);
@@ -18,15 +19,21 @@ const PostList = ({ cat, subCat, posts, loading }) => {
 		});
 
 		if (postsToRender.length > 0) {
-			return postsToRender.map((post, i) => (
-				<Post index={i} key={post._id} post={post} />
-			));
+			const data = [];
+
+			postsToRender.forEach((post, i) => {
+				data.push(<Post index={i} key={post._id} post={post} />);
+				if (i !== postsToRender.length - 1)
+					data.push(<Divider key={post._id + "d"} />);
+			});
+
+			return data.map((el) => el);
 		} else {
 			return "No posts";
 		}
 	};
 
-	return <div className="post-list width">{renderPosts()}</div>;
+	return <div className="post-list section width">{renderPosts()}</div>;
 };
 
 export default PostList;
