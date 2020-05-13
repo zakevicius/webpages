@@ -4,5 +4,5 @@ header {
 	height: 500px;
 	width: 100%;
 	background-color: var(--blue);
-	background: 50% 0% / contain no-repeat url("../../assets/img/family.jpg");
+	background: 0% 50% / cover no-repeat url("../../assets/img/family.jpg");
 }

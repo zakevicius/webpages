@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { PostContext } from "../../../contexts/PostContext.jsx";
+import { MainContext } from "../../../contexts/MainContext.jsx";
 import api from "../../api/api";
 import { history } from "../../history.js";
 import resizeImage from "./resizeImage";
@@ -10,7 +10,7 @@ import Error from "../../elements/Error.jsx";
 import faker from "faker";
 
 const PostForm = () => {
-	const { dispatch } = useContext(PostContext);
+	const { dispatch } = useContext(MainContext);
 	const [errors, setErrors] = useState([]);
 	const [postData, setPostData] = useState({
 		title: "",

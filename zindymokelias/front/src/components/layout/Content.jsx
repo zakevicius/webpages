@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import PostList from "../posts/PostList.jsx";
-import About from "../about/About.jsx";
+import About from "../pages/about/About.jsx";
 import PostForm from "../pages/admin/Form.jsx";
-import { PostContext } from "../../contexts/PostContext.jsx";
-import { QuestionContext } from "../../contexts/QuestionContext.jsx";
+import { MainContext } from "../../contexts/MainContext.jsx";
 
 import "./content.css";
 import tabs from "../json/tabs.json";
@@ -19,12 +18,8 @@ secondaryTabs.forEach((group) => {
 });
 
 const Content = ({ page }) => {
-	const { state: postState, dispatch: postDispatch } = useContext(PostContext);
-	const { posts, loading } = postState;
-	const { state: questionState, dispatch: questionDispatch } = useContext(
-		QuestionContext
-	);
-	const { questions } = questionState;
+	const { state, dispatch } = useContext(MainContext);
+	const { posts, questions, loading } = state;
 
 	const renderContent = () => {
 		if (page === "admin") return <PostForm />;

@@ -2,9 +2,7 @@ import React, { Fragment } from "react";
 import { Router } from "react-router-dom";
 import { history } from "./history";
 
-import PostContextProvider from "../contexts/PostContext.jsx";
-import QuestionContextProvider from "../contexts/QuestionContext.jsx";
-import EventContextProvider from "../contexts/EventContext.jsx";
+import MainContextProvider from "../contexts/MainContext.jsx";
 
 import Header from "./layout/Header.jsx";
 import Footer from "./layout/Footer.jsx";
@@ -17,13 +15,9 @@ const App = () => {
 		<Fragment>
 			<Router history={history}>
 				<Header />
-				<PostContextProvider>
-					<QuestionContextProvider>
-						<EventContextProvider>
-							<Main />
-						</EventContextProvider>
-					</QuestionContextProvider>
-				</PostContextProvider>
+				<MainContextProvider>
+					<Main />
+				</MainContextProvider>
 				<Footer />
 			</Router>
 		</Fragment>

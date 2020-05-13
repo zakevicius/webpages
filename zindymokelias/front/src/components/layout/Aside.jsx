@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from "react";
-import { PostContext } from "../../contexts/PostContext.jsx";
+import { MainContext } from "../../contexts/MainContext.jsx";
 import "./aside.css";
 
 const Aside = ({ side }) => {
-	const { state, dispatch } = useContext(PostContext);
+	const { state, dispatch } = useContext(MainContext);
 
 	const renderLeftContent = () => {
 		return "LEFT";
