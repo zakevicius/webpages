@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useRef } from "react";
 import { MainContext } from "../../contexts/MainContext.jsx";
 import "./aside.css";
+import { Link } from "react-router-dom";
 
 const Aside = ({ side }) => {
 	const { state, dispatch } = useContext(MainContext);
@@ -28,12 +29,24 @@ const Aside = ({ side }) => {
 	};
 
 	const renderRightContent = () => {
+		let newPosts = [];
+
+		if (state.posts.length > 5) {
+			for (let i = 0; i < 5; i++) {
+				newPosts[i] = state.posts[i];
+			}
+		} else {
+			newPosts = [...state.posts];
+		}
+
 		return (
 			<div>
 				New posts:
 				<ul>
-					{state.posts.map((post) => (
-						<li key={post._id}>{post.title}</li>
+					{newPosts.map((post) => (
+						<Link key={post._id} to={`/${post._id}`}>
+							<li>{post.title}</li>
+						</Link>
 					))}
 				</ul>
 			</div>

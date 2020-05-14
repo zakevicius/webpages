@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Router } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import { history } from "./history";
 
 import MainContextProvider from "../contexts/MainContext.jsx";

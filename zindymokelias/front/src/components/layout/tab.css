@@ -1,22 +1,30 @@
 .tab {
 	position: relative;
 	cursor: pointer;
-	background: var(--green);
-	flex: 1;
-	min-width: 284px;
+	background: #fff;
+	flex-basis: 25%;
 	height: 100%;
-	margin: 0 0.5em;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
+	transition: all 0.5s;
+}
+
+.tab.primary:not(:first-of-type),
+.tab.secondary:not(:first-of-type) {
+	border-left: 1px solid var(--orange);
+}
+
+.tab:first-of-type {
+	border-top-left-radius: inherit;
+}
+
+.tab:last-of-type {
+	border-top-right-radius: inherit;
 }
 
 .tab.secondary {
 	top: 0px;
-	transition: all 0.5s;
 }
 
 .tab.show-icon::after {
-	content: "^";
 	font-size: 2em;
 	font-weight: bold;
 	color: var(--red);
@@ -24,4 +32,12 @@
 	right: 0;
 	top: 50%;
 	transform: translate(-100%, -25%);
+}
+
+.tab.show-icon.up::after {
+	content: "^";
+}
+
+.tab.show-icon.down::after {
+	content: "v";
 }

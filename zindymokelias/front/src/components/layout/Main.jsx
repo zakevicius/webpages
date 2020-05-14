@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import { history } from "../history";
 import api from "../api/api.js";
@@ -16,7 +16,6 @@ import {
 import Content from "./Content.jsx";
 import Aside from "./Aside.jsx";
 import TabList from "./TabList.jsx";
-import HomeLink from "../elements/HomeLink.jsx";
 
 const Main = () => {
 	const [page, setPage] = useState({ cat: "all" });
@@ -56,8 +55,11 @@ const Main = () => {
 
 	return (
 		<>
-			<HomeLink handleOnClick={handleOnHomeClick} />
-			<TabList handleOnClick={handleOnTabClick} page={page} />
+			<TabList
+				handleOnClick={handleOnTabClick}
+				handleOnHomeClick={handleOnHomeClick}
+				page={page}
+			/>
 			<Aside side="left" />
 			<Switch>
 				<Route
@@ -65,10 +67,28 @@ const Main = () => {
 					exact
 					component={(props) => <Content page={page} {...props} />}
 				/>
+				<Route
+					path="/:id"
+					exact
+					component={(props) => {
+						return (
+							// <Redirect
+							// 	to={{
+							// 		pathname: "/",
+							// 		redirectURL: props.location.pathname,
+							// 	}}
+							// />
+							<Content page="post" post={props.match.params.id} {...props} />
+						);
+					}}
+				/>
 				<PrivateRoute
 					path="/admin"
 					exact
 					component={(props) => <Content page="admin" {...props} />}
+				/>
+				<Route
+					component={(props) => <div className="content container">404</div>}
 				/>
 			</Switch>
 			<Aside side="right" />

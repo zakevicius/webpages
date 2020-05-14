@@ -11,6 +11,8 @@
 	position: absolute;
 	transition: all 0.5s;
 	box-sizing: border-box;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .tab-list * {
@@ -18,10 +20,12 @@
 }
 
 .tab-list.primary {
+	background: #fff;
 	z-index: 3;
 }
 
 .tab-list.secondary {
+	padding-left: 50px;
 	z-index: 2;
 	top: 50px;
 }

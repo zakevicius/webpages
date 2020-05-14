@@ -4,13 +4,20 @@ module.exports = {
 	},
 	devServer: {
 		historyApiFallback: true,
+		contentBase: "./",
+		hot: true,
 	},
 	module: {
 		rules: [
 			{
 				test: /\.jsx$/,
 				exclude: /node_modules/,
-				use: "babel-loader",
+				loader: "babel-loader",
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: "babel-loader",
 			},
 			{
 				test: /\.(svg|png|jpeg|jpg|gif)$/,
@@ -20,6 +27,14 @@ module.exports = {
 						name: "[name].[hash].[ext]",
 						outputPath: "assets/img",
 					},
+				},
+			},
+			{
+				test: /\.(eot|ttf|woff|woff2)$/,
+				loader: "file-loader",
+				options: {
+					name: "[name].[ext]",
+					outputPath: "assets/fonts",
 				},
 			},
 		],

@@ -1,5 +1,15 @@
 /* If changes are made to :root, values should be update in /json/cssVars.json  */
 
+@font-face {
+	font-family: Josefin;
+	src: url("../assets/fonts/JosefinSans.ttf");
+}
+
+@font-face {
+	font-family: Italianno;
+	src: url("../assets/fonts/Italianno.ttf");
+}
+
 :root {
 	--blue: #a8e6cf;
 	--green: #dcedc1;
@@ -7,12 +17,13 @@
 	--red: #ffaaa5;
 	--light: #eee;
 	--dark: #555;
-	--page-width: 1200px;
+	--page-width: calc(100vw - 700px);
 	--from-top: 350px;
 }
 
 * {
 	box-sizing: border-box;
+	font-family: Josefin, "sans";
 }
 
 #root {
@@ -27,7 +38,6 @@
 .flex,
 #root {
 	display: flex;
-	font-family: "Livvic", sans-serif;
 	letter-spacing: 1px;
 	line-height: 1.5rem;
 }
@@ -37,6 +47,20 @@ body {
 	padding: 0px;
 	background-position: center;
 	background-repeat: repeat;
+	color: var(--dark);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: Italianno;
+	margin: 0;
+}
+
+h2 {
+	font-size: 30pt;
+	font-weight: 100;
 }
 
 .wrap {
@@ -85,3 +109,9 @@ li {
 	padding: 0;
 	margin: 0.5em;
 }
+
+/* @media only screen and (max-width: 1500px) {
+	:root {
+		--page-width: 100%;
+	}
+} */

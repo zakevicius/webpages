@@ -3,11 +3,13 @@ import "./tabList.css";
 import Tab from "./Tab.jsx";
 import tabs from "../json/tabs.json";
 
+import HomeLink from "../elements/HomeLink.jsx";
+
 const primaryTabs = tabs.primary;
 const secondaryTabs = tabs.secondary;
-const TAB_TIMEOUT = 100;
+const TAB_TIMEOUT = 50;
 
-const TabList = ({ handleOnClick, page }) => {
+const TabList = ({ handleOnClick, handleOnHomeClick, page }) => {
 	const [tabStatus, setTabStatus] = useState("shrinked");
 	const [activeTab, setActiveTab] = useState(0);
 	const subRef = useRef();
@@ -17,6 +19,8 @@ const TabList = ({ handleOnClick, page }) => {
 	}, [page.cat]);
 
 	const handleTabClick = (tabData) => {
+		if (tabStatus === "expanding" || tabStatus === "shrinking")
+			console.log(tabStatus);
 		handleOnClick(tabData);
 
 		if (tabData.type === "primary") {
@@ -31,7 +35,7 @@ const TabList = ({ handleOnClick, page }) => {
 				setTimeout(() => {
 					setActiveTab(newTab);
 					expand();
-				}, 700);
+				}, 500);
 				return;
 			}
 
@@ -41,7 +45,7 @@ const TabList = ({ handleOnClick, page }) => {
 					() => setActiveTab(newTab),
 					Math.max(
 						secondaryTabs[newTab].length * TAB_TIMEOUT + TAB_TIMEOUT,
-						700
+						500
 					)
 				);
 				return;
@@ -101,17 +105,19 @@ const TabList = ({ handleOnClick, page }) => {
 	return (
 		<div className={`tab-div flex all-centered wrap `}>
 			<div className={`tab-list flex width primary`}>
+				<HomeLink handleOnClick={handleOnHomeClick} />
 				{primaryTabs.map((tab) => (
 					<Tab
 						key={tab.id}
 						data={tab}
-						icon={tab.subcat ? "show-icon" : ""}
+						icon={tab.subCat ? "show-icon" : ""}
 						type="primary"
 						handleTabClick={handleTabClick}
+						tabStatus={tabStatus}
 					/>
 				))}
 			</div>
-			<div ref={subRef} className={`tab-list flex secondary`}>
+			<div ref={subRef} className={`tab-list width flex secondary`}>
 				{secondaryTabs[activeTab].map((tab, i) => (
 					<Tab
 						key={tab.id ? tab.id : i}

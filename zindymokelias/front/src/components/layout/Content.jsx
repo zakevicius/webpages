@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PostList from "../posts/PostList.jsx";
 import About from "../pages/about/About.jsx";
 import PostForm from "../pages/admin/Form.jsx";
@@ -7,6 +7,8 @@ import { MainContext } from "../../contexts/MainContext.jsx";
 import "./content.css";
 import tabs from "../json/tabs.json";
 import QuestionList from "../questions/QuestionList.jsx";
+import PostPage from "../posts/PostPage.jsx";
+import { history } from "../history.js";
 
 const primaryTabs = tabs.primary;
 const secondaryTabs = tabs.secondary;
@@ -17,12 +19,16 @@ secondaryTabs.forEach((group) => {
 	group.forEach((el) => subTabs.push(el));
 });
 
-const Content = ({ page }) => {
+const Content = ({ page, post, ...props }) => {
 	const { state, dispatch } = useContext(MainContext);
 	const { posts, questions, loading } = state;
 
+	console.log(page);
+
 	const renderContent = () => {
+		if (page === "post") return <PostPage id={post} />;
 		if (page === "admin") return <PostForm />;
+
 		if (page.cat === "all") return <PostList posts={posts} loading={loading} />;
 		if (page.cat === "questions")
 			return <QuestionList questions={questions} loading={loading} />;
