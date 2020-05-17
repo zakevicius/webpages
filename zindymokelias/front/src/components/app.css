@@ -19,11 +19,13 @@
 	--dark: #555;
 	--page-width: calc(100vw - 700px);
 	--from-top: 350px;
+	--font-h: Italianno;
+	--font-m: Josefin;
 }
 
 * {
 	box-sizing: border-box;
-	font-family: Josefin, "sans";
+	font-family: var(--font-m), "sans";
 }
 
 #root {
@@ -54,13 +56,38 @@ h1,
 h2,
 h3,
 h4 {
-	font-family: Italianno;
+	font-family: var(--font-h);
 	margin: 0;
+	font-weight: 100;
+}
+
+h1 {
+	font-size: 34pt;
 }
 
 h2 {
 	font-size: 30pt;
-	font-weight: 100;
+}
+
+h3 {
+	font-size: 24pt;
+}
+
+h4 {
+	font-size: 20pt;
+}
+
+a {
+	text-decoration: none;
+	color: var(--orange);
+}
+
+a:visited {
+	color: var(--orange);
+}
+
+a:hover {
+	color: var(--red);
 }
 
 .wrap {
@@ -107,7 +134,7 @@ h2 {
 ul,
 li {
 	padding: 0;
-	margin: 0.5em;
+	margin: 0;
 }
 
 /* @media only screen and (max-width: 1500px) {

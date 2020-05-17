@@ -6,6 +6,8 @@ const Tab = ({ data, handleTabClick, icon, tabStatus }) => {
 	const tabRef = useRef();
 	const colors = [cssVars.blue, cssVars.green, cssVars.orange];
 
+	useEffect(() => {}, [data.text]);
+
 	const handleOnClick = () => {
 		handleTabClick(data);
 	};

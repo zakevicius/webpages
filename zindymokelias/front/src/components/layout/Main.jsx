@@ -67,6 +67,11 @@ const Main = () => {
 					exact
 					component={(props) => <Content page={page} {...props} />}
 				/>
+				<PrivateRoute
+					path="/admin"
+					exact
+					component={(props) => <Content page="admin" {...props} />}
+				/>
 				<Route
 					path="/:id"
 					exact
@@ -81,11 +86,6 @@ const Main = () => {
 							<Content page="post" post={props.match.params.id} {...props} />
 						);
 					}}
-				/>
-				<PrivateRoute
-					path="/admin"
-					exact
-					component={(props) => <Content page="admin" {...props} />}
 				/>
 				<Route
 					component={(props) => <div className="content container">404</div>}

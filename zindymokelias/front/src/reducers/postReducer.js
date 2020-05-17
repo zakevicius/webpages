@@ -1,7 +1,7 @@
 import { FETCH_POSTS, ADD_POST } from "./types";
 
 export const postReducer = (state, action) => {
-	console.log(action);
+	// console.log(action);
 	switch (action.type) {
 		case FETCH_POSTS:
 			return { ...state, posts: [...action.payload.posts] };

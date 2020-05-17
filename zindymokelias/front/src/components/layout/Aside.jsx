@@ -41,11 +41,14 @@ const Aside = ({ side }) => {
 
 		return (
 			<div>
-				New posts:
+				<h2>Naujausi įrašai</h2>
 				<ul>
 					{newPosts.map((post) => (
 						<Link key={post._id} to={`/${post._id}`}>
-							<li>{post.title}</li>
+							<li>
+								<h4>{post.title}</h4>
+								<div>{post.date.split("T")[0]}</div>
+							</li>
 						</Link>
 					))}
 				</ul>

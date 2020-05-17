@@ -23,8 +23,6 @@ const Content = ({ page, post, ...props }) => {
 	const { state, dispatch } = useContext(MainContext);
 	const { posts, questions, loading } = state;
 
-	console.log(page);
-
 	const renderContent = () => {
 		if (page === "post") return <PostPage id={post} />;
 		if (page === "admin") return <PostForm />;

@@ -25,7 +25,7 @@ const Post = ({ post, index = 0, full }) => {
 					src={`data:image/jpeg;base64,${post.image}`}
 				/>
 				<div className="post-header flex wrap">
-					<h2>{post.title}</h2>
+					<h1>{post.title}</h1>
 					{post.date.split("T")[0]}
 					{post.cat && post.cat}
 					{post.subCat && post.subCat}

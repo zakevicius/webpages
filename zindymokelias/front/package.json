@@ -2,6 +2,7 @@
 	"name": "zindymokelias",
 	"version": "1.0.0",
 	"description": "",
+	"homepage": "./",
 	"babel": {
 		"presets": [
 			"@babel/preset-env",
