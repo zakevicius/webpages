@@ -9,6 +9,8 @@ import FormAside from "./FormAside.jsx";
 const Aside = ({ side }) => {
 	const { state, dispatch } = useContext(MainContext);
 	const asideRef = useRef();
+	let lastScrollPos = 0;
+	let scrollDir = "";
 
 	const valueForRender = state.posts[0] ? state.posts[0].id : "";
 
@@ -20,24 +22,93 @@ const Aside = ({ side }) => {
 	}, [valueForRender]);
 
 	const repositionAside = () => {
-		console.log(
-			window.pageYOffset + window.innerHeight - 75,
-			document.querySelector("footer").offsetTop
-		);
-		if (window.pageYOffset >= 450) {
-			asideRef.current.style.top = -500 + "px";
+		// Getting scroll direction
+		let newScrollPos = window.pageYOffset;
+
+		if (lastScrollPos > newScrollPos) {
+			scrollDir = "up";
 		} else {
-			asideRef.current.style.top = -window.pageYOffset + "px";
+			scrollDir = "down";
 		}
 
+		// let asideTop = asideRef.current.style.top;
+		let asideOff = asideRef.current.offsetHeight;
+		let windowH = window.innerHeight;
+		let windowOff = window.pageYOffset;
+
+		// Setting aside fixed to page top or bottom
+		if (windowOff <= 450 + asideOff - windowH) {
+			asideRef.current.style.top = -windowOff + 500 + "px";
+		} else {
+			if (scrollDir === "down") {
+				if (asideRef.current.style.top.split("px")[0] > asideOff - windowH) {
+					asideRef.current.style.top =
+						+asideRef.current.style.top.split("px")[0] -
+						lastScrollPos -
+						newScrollPos +
+						"px";
+				} else {
+					asideRef.current.style.top = -asideOff + windowH + "px";
+				}
+			} else {
+				if (
+					scrollDir === "up" &&
+					+asideRef.current.style.top.split("px")[0] < 0
+				) {
+					console.log(
+						asideRef.current.style.top.split("px")[0],
+						lastScrollPos - newScrollPos
+					);
+
+					asideRef.current.style.top =
+						+asideRef.current.style.top.split("px")[0] +
+						lastScrollPos -
+						newScrollPos +
+						"px";
+				} else {
+					asideRef.current.style.top = 0 + "px";
+				}
+			}
+		}
+		// }
+		// else if (
+		// 	window.pageYOffset >= 450 + window.innerHeight &&
+		// 	scrollDir === "up"
+		// ) {
+		// 	asideRef.current.style.top = 0 + "px";
+		// } else {
+		// 	asideRef.current.style.top = -window.pageYOffset + 500 + "px";
+		// }
+
+		// scrolling aside elements if there is content overflow
+		// if (
+		// 	asideRef.current.offsetHeight > window.innerHeight &&
+		// 	window.pageYOffset >= 450
+		// ) {
+		// 	asideRef.current.style.top = -window.pageYOffset + "px";
+		// 	console.log(asideRef.current.offsetHeight - window.innerHeight);
+		// 	console.log(
+		// 		window.innerHeight + window.pageYOffset >
+		// 			asideRef.current.offsetHeight -
+		// 				asideRef.current.offsetHeight -
+		// 				window.innerHeight
+		// 	);
+		// 	// asideRef.current.style.top = -window.pageYOffset + "px";
+		// }
+
+		// giving footer some space by shrinking aside component
 		if (
 			window.pageYOffset + window.innerHeight >
 			document.querySelector("footer").offsetTop
 		) {
-			asideRef.current.style.bottom = "5em";
+			asideRef.current.style.top =
+				asideRef.current.style.top.split("px")[0] - 75 + "px";
+			// asideRef.current.style.bottom = "50px";
 		} else {
-			asideRef.current.style.bottom = "0em";
+			asideRef.current.style.bottom = "unset";
 		}
+
+		lastScrollPos = newScrollPos;
 	};
 
 	const renderLeftContent = () => {
@@ -89,6 +160,7 @@ const Aside = ({ side }) => {
 
 	return (
 		<aside ref={asideRef} className={`${side} middle-X flex wrap`}>
+			{renderContent()}
 			{renderContent()}
 		</aside>
 	);

@@ -23,6 +23,16 @@ const Content = ({ page, post, ...props }) => {
 	const { state, dispatch } = useContext(MainContext);
 	const { posts, questions, loading } = state;
 
+	const setHeight = () => {
+		const content = document.querySelector(".content");
+
+		if (content) {
+			// console.log(content.style.minHeight);
+			// content.style.minHeight =
+			// 	document.querySelector("aside").style.height + "px";
+		}
+	};
+
 	const renderContent = () => {
 		if (page === "post") return <PostPage id={post} />;
 		if (page === "admin") return <PostForm />;

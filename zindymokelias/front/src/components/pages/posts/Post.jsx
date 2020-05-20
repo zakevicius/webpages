@@ -33,7 +33,7 @@ const Post = ({ post, index = 0, full }) => {
 					{post.date.split("T")[0]}
 					{post.cat && post.cat}
 					{post.subCat && post.subCat}
-					<div className="post-intro">{post.intro}</div>
+					<h4 className="post-intro">{post.intro}</h4>
 					{full ? null : (
 						<Link to={`/posts/${post._id}`}>
 							<Button text="Daugiau..." type="warning" />

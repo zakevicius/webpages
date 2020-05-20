@@ -4,10 +4,9 @@
 	top: 0px;
 	height: 50px;
 	z-index: 3;
-	border-bottom: 1px solid var(--light);
+	/* border-bottom: 1px solid var(--light); */
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	box-shadow: 0px 0px 2px 0px var(--light);
 }
 
 .tab-list {
@@ -24,12 +23,20 @@
 .tab-list.primary {
 	background: #fff;
 	z-index: 3;
+	box-shadow: 0px 0px 2px 0px var(--light);
 }
 
 .tab-list.secondary {
 	position: relative;
+	left: 50px;
 	z-index: 2;
 	border: none;
 	box-shadow: none;
 	transition: 0.2s;
+}
+
+@media only screen and (max-width: 1500px) {
+	.tab-div {
+		width: 100%;
+	}
 }

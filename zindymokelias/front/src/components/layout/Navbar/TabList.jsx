@@ -95,7 +95,6 @@ const TabList = ({ handleOnClick, handleOnHomeClick, page }) => {
 	const expand = () => {
 		setTabStatus("changing");
 		subRef.current.style.top = "50px";
-		subRef.current.style.left = "50px";
 		setTimeout(() => {
 			setTabStatus("expanded");
 		}, TAB_TIMEOUT);

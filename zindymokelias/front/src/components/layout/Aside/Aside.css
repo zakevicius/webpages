@@ -1,8 +1,7 @@
 aside {
 	position: fixed;
-	top: 0;
-	bottom: 0em;
-	margin-top: var(--from-top);
+	top: var(--from-top);
+	/* bottom: 0em; */
 	padding: 2em 1em;
 	width: 300px;
 	border: 1px solid var(--light);
@@ -40,4 +39,16 @@ aside.right li {
 
 aside.right .form-aside-cont {
 	margin-top: 1em;
+}
+
+@media only screen and (max-width: 1500px) {
+	aside.left {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	aside.right {
+		display: none;
+	}
 }
