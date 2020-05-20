@@ -1,0 +1,17 @@
+aside.right form {
+	width: 100%;
+}
+
+aside.right form > *:not(button) {
+	width: 100%;
+	padding: 0.5em;
+	margin: 0.5em auto;
+	/* border-radius: 3px; */
+	border: none;
+	border-bottom: 1px solid var(--orange);
+	outline: none;
+}
+
+aside.right form textarea {
+	resize: none;
+}

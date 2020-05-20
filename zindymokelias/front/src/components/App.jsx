@@ -4,9 +4,9 @@ import { history } from "./history";
 
 import MainContextProvider from "../contexts/MainContext.jsx";
 
-import Header from "./layout/Header.jsx";
-import Footer from "./layout/Footer.jsx";
-import Main from "./layout/Main.jsx";
+import Header from "./layout/Header/Header.jsx";
+import Footer from "./layout/Footer/Footer.jsx";
+import Main from "./layout/Main/Main.jsx";
 
 import "./app.css";
 
@@ -16,7 +16,17 @@ const App = () => {
 			<Router history={history}>
 				<Header />
 				<MainContextProvider>
-					<Main />
+					<Switch>
+						<Route path="/" exact component={(props) => <Main />} />
+						<Route path="/admin" exact component={(props) => <Main />} />
+						<Route path="/posts" component={(props) => <Main />} />
+						<Route
+							component={(props) => (
+								<div className="content all-cesssssntered container">404</div>
+							)}
+						/>
+					</Switch>
+					{/* <Main /> */}
 				</MainContextProvider>
 				<Footer />
 			</Router>

@@ -1,0 +1,13 @@
+.admin-form {
+	width: 100%;
+	padding: 2em;
+}
+
+.admin-form form {
+	width: 100%;
+}
+
+.admin-form form > *:not(select) {
+	display: block;
+	width: 100%;
+}

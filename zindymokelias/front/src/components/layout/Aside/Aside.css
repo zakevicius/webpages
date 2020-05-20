@@ -1,0 +1,43 @@
+aside {
+	position: fixed;
+	top: 0;
+	bottom: 0em;
+	margin-top: var(--from-top);
+	padding: 2em 1em;
+	width: 300px;
+	border: 1px solid var(--light);
+	box-shadow: 0px 5px 5px 2px var(--light);
+	z-index: 1;
+	border-radius: 5px;
+	background: #fff;
+}
+
+aside.left {
+	left: 0.5em;
+	margin-right: 0.5em;
+}
+
+aside.right {
+	right: 0.5em;
+	overflow: hidden;
+}
+
+aside.right h2 {
+	text-align: center;
+}
+
+aside.right a:first-of-type li {
+	border-top: 1px solid var(--orange);
+}
+
+aside.right li {
+	list-style-type: none;
+	margin: 1em 0;
+	padding: 0.5em;
+	border-bottom: 1px solid var(--orange);
+	font-size: 10pt;
+}
+
+aside.right .form-aside-cont {
+	margin-top: 1em;
+}

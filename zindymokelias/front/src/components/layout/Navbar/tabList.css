@@ -1,0 +1,35 @@
+.tab-div {
+	position: fixed;
+	flex-basis: 100%;
+	top: 0px;
+	height: 50px;
+	z-index: 3;
+	border-bottom: 1px solid var(--light);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: 0px 0px 2px 0px var(--light);
+}
+
+.tab-list {
+	justify-content: flex-start;
+	height: 50px;
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.tab-list * {
+	box-sizing: border-box;
+}
+
+.tab-list.primary {
+	background: #fff;
+	z-index: 3;
+}
+
+.tab-list.secondary {
+	position: relative;
+	z-index: 2;
+	border: none;
+	box-shadow: none;
+	transition: 0.2s;
+}

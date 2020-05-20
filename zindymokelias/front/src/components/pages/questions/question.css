@@ -1,0 +1,10 @@
+.question-cont {
+	position: relative;
+	justify-content: space-around;
+	margin: 0 0 3em;
+}
+
+.answer::before {
+	content: "-";
+	margin-right: 1em;
+}

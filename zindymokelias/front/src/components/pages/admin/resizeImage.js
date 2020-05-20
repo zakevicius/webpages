@@ -1,4 +1,4 @@
-module.exports = (settings) => {
+export default (settings) => {
 	const file = settings.file;
 	const maxSize = settings.maxSize;
 	const reader = new FileReader();

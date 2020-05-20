@@ -16,9 +16,9 @@
 	--orange: #ffd3b6;
 	--red: #ffaaa5;
 	--light: #eee;
-	--dark: #555;
+	--dark: #666;
 	--page-width: calc(100vw - 700px);
-	--from-top: 350px;
+	--from-top: 500px;
 	--font-h: Italianno;
 	--font-m: Josefin;
 }
@@ -33,7 +33,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: flex-start;
-	background-color: #f8f8f6;
+	background-color: #f5f5f5;
 	min-height: 100vh;
 }
 
@@ -59,6 +59,7 @@ h4 {
 	font-family: var(--font-h);
 	margin: 0;
 	font-weight: 100;
+	margin-bottom: 0.5em;
 }
 
 h1 {
@@ -79,15 +80,19 @@ h4 {
 
 a {
 	text-decoration: none;
-	color: var(--orange);
+	color: var(--dark);
 }
 
 a:visited {
-	color: var(--orange);
+	color: var(--dark);
 }
 
 a:hover {
 	color: var(--red);
+}
+
+p {
+	margin: 0;
 }
 
 .wrap {
@@ -121,6 +126,10 @@ a:hover {
 .width {
 	width: var(--page-width);
 	max-width: var(--page-width);
+}
+
+.width-100 {
+	width: 100%;
 }
 
 .section {
