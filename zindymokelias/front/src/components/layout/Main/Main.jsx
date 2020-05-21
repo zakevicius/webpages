@@ -17,8 +17,10 @@ import Content from "../Content/Content.jsx";
 import Aside from "../Aside/Aside.jsx";
 import TabList from "../Navbar/TabList.jsx";
 
-const Main = () => {
-	const [page, setPage] = useState({ cat: "all" });
+const Main = (props) => {
+	const [page, setPage] = props.location.data
+		? useState({ cat: props.location.data.cat })
+		: useState({ cat: "all" });
 
 	const { state, dispatch } = useContext(MainContext);
 

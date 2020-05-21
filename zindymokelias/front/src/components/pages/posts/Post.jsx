@@ -4,11 +4,13 @@ import "./post.css";
 import { Link } from "react-router-dom";
 import Divider from "../../elements/Divider.jsx";
 
-const Post = ({ post, index = 0, full }) => {
+const Post = ({ post, index = 0, full, ...props }) => {
 	if (!post) return "No post found";
 
 	useEffect(() => {
-		if (full) window.scrollTo(0, 450);
+		if (full) {
+			window.scrollTo(0, 450);
+		}
 	}, [post._id]);
 
 	const renderContent = () => {

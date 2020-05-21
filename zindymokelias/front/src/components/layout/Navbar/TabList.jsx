@@ -9,16 +9,20 @@ const primaryTabs = tabs.primary;
 const secondaryTabs = tabs.secondary;
 const TAB_TIMEOUT = 200;
 
-const TabList = ({ handleOnClick, handleOnHomeClick, page }) => {
+const TabList = ({ handleOnClick, handleOnHomeClick, page, ...props }) => {
 	const [tabStatus, setTabStatus] = useState("shrinked");
 	const [activeTab, setActiveTab] = useState(0);
 	const subRef = useRef();
 
 	useEffect(() => {
 		if (page.cat === "all" || tabStatus === "expanded") {
-			console.log(tabStatus);
 			handleTabExpand("shrink");
 		}
+		document.addEventListener("scroll", function () {
+			if (subRef.current && tabStatus !== "shrinked") {
+				handleTabExpand("shrink");
+			}
+		});
 	}, [page.cat]);
 
 	const handleTabClick = (tabData) => {
@@ -58,7 +62,6 @@ const TabList = ({ handleOnClick, handleOnHomeClick, page }) => {
 	};
 
 	const handleTabExpand = (action, newTab) => {
-		console.log(action);
 		switch (action) {
 			case "switch":
 				if (tabStatus === "expanded") {
@@ -130,101 +133,3 @@ const TabList = ({ handleOnClick, handleOnHomeClick, page }) => {
 };
 
 export default TabList;
-
-// const handleTabClick = (tabData) => {
-// 	if (tabData.type === "primary") {
-// 		let newTab = activeTab;
-// 		newTab = primaryTabs.findIndex((tab) => tab.text === tabData.text);
-
-// 		if (tabStatus === "expanded" || tabStatus === "shrinked") {
-// 			console.log(tabStatus);
-// 			if (
-// 				primaryTabs[activeTab] !== primaryTabs[newTab] &&
-// 				primaryTabs[newTab].subCat &&
-// 				(tabStatus === "expanded" || tabStatus === "expanding")
-// 			) {
-// 				shrink();
-// 				setTimeout(() => {
-// 					setActiveTab(newTab);
-// 					expand();
-// 				}, 500);
-// 			} else if (tabStatus === "expanded" || tabStatus === "expanding") {
-// 				shrink();
-// 				setTimeout(() => {
-// 					setActiveTab(newTab);
-// 				}, Math.max(secondaryTabs[newTab].length * TAB_TIMEOUT + TAB_TIMEOUT, 500));
-// 			} else if (
-// 				secondaryTabs[newTab].length > 0 &&
-// 				tabStatus === "shrinked"
-// 			) {
-// 				expand();
-// 				setActiveTab(newTab);
-// 			}
-// 			handleOnClick(tabData);
-// 		} else if (!primaryTabs[newTab].subCat) {
-// 			shrink();
-// 		}
-// 	} else {
-// 		handleOnClick(tabData);
-// 	}
-// 	// if (tabData.subCat === false && tabStatus !== "shrinked") {
-// 	//   shrink();
-// 	//   return;
-// 	// }
-// };
-
-// const shrink = () => {
-// 	document.querySelector(".tab-list.secondary").style.top = "0px";
-// 	const tabs = document.querySelectorAll(".tab.secondary");
-// 	setTabStatus("shrinking");
-
-// 	if (!tabs.length) {
-// 		if (tabStatus === "shrinking") {
-// 			setTabStatus("shrinked");
-// 		} else {
-// 			setTabStatus("expanded");
-// 		}
-// 	}
-
-// 	for (let i = tabs.length - 1; i >= 0; i--) {
-// 		tabs[i].style.top = "-50px";
-// 		setTimeout(() => {
-// 			tabs[i].style.top = "0px";
-// 			tabs[i].style.opacity = 0;
-// 			if (i === 0) {
-// 				setTimeout(() => {
-// 					setTabStatus("shrinked");
-// 				}, TAB_TIMEOUT * tabs.length);
-// 			}
-// 		}, TAB_TIMEOUT * (tabs.length - i));
-// 	}
-// };
-
-// const expand = () => {
-// 	document.querySelector(".tab-list.secondary").style.top = "-50px";
-// 	const tabs = document.querySelectorAll(".tab.secondary");
-// 	setTabStatus("expanding");
-
-// 	if (!tabs.length) {
-// 		if (tabStatus === "expanding") {
-// 			setTabStatus("expanded");
-// 		} else {
-// 			setTabStatus("shrinked");
-// 		}
-// 		return;
-// 	}
-
-// 	for (let i = 0; i < tabs.length; i++) {
-// 		tabs[i].style.top = "50px";
-// 		setTimeout(() => {
-// 			tabs[i].style.top = "0px";
-// 			tabs[i].style.opacity = 1;
-// 			if (i === tabs.length - 1) {
-// 				setTimeout(() => {
-// 					console.log("expanded status");
-// 					setTabStatus("expanded");
-// 				}, TAB_TIMEOUT * tabs.length);
-// 			}
-// 		}, TAB_TIMEOUT * i);
-// 	}
-// };

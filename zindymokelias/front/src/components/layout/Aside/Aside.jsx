@@ -161,7 +161,6 @@ const Aside = ({ side }) => {
 	return (
 		<aside ref={asideRef} className={`${side} middle-X flex wrap`}>
 			{renderContent()}
-			{renderContent()}
 		</aside>
 	);
 };

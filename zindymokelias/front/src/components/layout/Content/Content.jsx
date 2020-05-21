@@ -34,12 +34,15 @@ const Content = ({ page, post, ...props }) => {
 	};
 
 	const renderContent = () => {
-		if (page === "post") return <PostPage id={post} />;
+		if (page === "post") return <PostPage id={post} {...props} />;
 		if (page === "admin") return <PostForm />;
 
-		if (page.cat === "all") return <PostList posts={posts} loading={loading} />;
+		if (page.cat === "all")
+			return <PostList posts={posts} loading={loading} {...props} />;
 		if (page.cat === "questions")
-			return <QuestionList questions={questions} loading={loading} />;
+			return (
+				<QuestionList questions={questions} loading={loading} {...props} />
+			);
 		if (page.cat === "about") return <About />;
 		if (page.type !== "primary") {
 			for (let tab of primaryTabs) {
@@ -55,7 +58,9 @@ const Content = ({ page, post, ...props }) => {
 				}
 			}
 		} else {
-			return <PostList posts={posts} cat={page.cat} loading={loading} />;
+			return (
+				<PostList posts={posts} cat={page.cat} loading={loading} {...props} />
+			);
 		}
 	};
 

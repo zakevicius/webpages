@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import cssVars from "../../json/cssVars.json";
 import "./tab.css";
+import { Link } from "react-router-dom";
 
 const Tab = ({ data, handleTabClick, icon, tabStatus }) => {
 	const tabRef = useRef();
 	const colors = [cssVars.blue, cssVars.green, cssVars.orange];
+	const homePage = window.location.pathname === "/";
 
 	useEffect(() => {}, [data.text]);
 
@@ -27,9 +29,13 @@ const Tab = ({ data, handleTabClick, icon, tabStatus }) => {
 			className={`tab flex all-centered ${data.type} ${icon ? icon : ""}`}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			onClick={handleOnClick}
+			onClick={homePage ? handleOnClick : console.log()}
 		>
-			{data.text}
+			{homePage ? (
+				data.text
+			) : (
+				<Link to={{ pathname: "/", data: { ...data } }}>{data.text}</Link>
+			)}
 		</div>
 	);
 };

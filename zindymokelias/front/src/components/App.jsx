@@ -17,9 +17,13 @@ const App = () => {
 				<Header />
 				<MainContextProvider>
 					<Switch>
-						<Route path="/" exact component={(props) => <Main />} />
-						<Route path="/admin" exact component={(props) => <Main />} />
-						<Route path="/posts" component={(props) => <Main />} />
+						<Route path="/" exact component={(props) => <Main {...props} />} />
+						<Route
+							path="/admin"
+							exact
+							component={(props) => <Main {...props} />}
+						/>
+						<Route path="/posts" component={(props) => <Main {...props} />} />
 						<Route
 							component={(props) => (
 								<div className="content all-cesssssntered container">404</div>

@@ -4,7 +4,7 @@ import "./postList.css";
 import Post from "./Post.jsx";
 import Divider from "../../elements/Divider.jsx";
 
-const PostList = ({ cat, subCat, posts, loading }) => {
+const PostList = ({ cat, subCat, posts, loading, ...props }) => {
 	useEffect(() => {}, [posts.length]);
 
 	const renderPosts = () => {
@@ -22,7 +22,7 @@ const PostList = ({ cat, subCat, posts, loading }) => {
 			const data = [];
 
 			postsToRender.forEach((post, i) => {
-				data.push(<Post index={i} key={post._id} post={post} />);
+				data.push(<Post index={i} key={post._id} post={post} {...props} />);
 				if (i !== postsToRender.length - 1)
 					data.push(<Divider key={post._id + "d"} />);
 			});
