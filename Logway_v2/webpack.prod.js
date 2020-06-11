@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = require('./webpack.config');
 
-module.exports = mwerge(config, {
+module.exports = merge(config, {
   mode: 'production',
   output: {
     filename: '[name].[contentHash].bundle.js',
@@ -36,8 +36,8 @@ module.exports = mwerge(config, {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        test: /\.s[ac]ss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
     ]
   }
