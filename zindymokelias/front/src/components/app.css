@@ -2,12 +2,12 @@
 
 @font-face {
 	font-family: Josefin;
-	src: url("../assets/fonts/JosefinSans.ttf");
+	src: url('../assets/fonts/JosefinSans.ttf');
 }
 
 @font-face {
 	font-family: Italianno;
-	src: url("../assets/fonts/Italianno.ttf");
+	src: url('../assets/fonts/Italianno.ttf');
 }
 
 :root {
@@ -25,7 +25,7 @@
 
 * {
 	box-sizing: border-box;
-	font-family: var(--font-m), "sans";
+	font-family: var(--font-m), 'sans';
 }
 
 #root {
@@ -33,7 +33,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: flex-start;
-	background-color: #f5f5f5;
+	background-color: #fff;
 	min-height: 100vh;
 	width: 100%;
 	font-size: 14pt;

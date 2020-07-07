@@ -3,7 +3,7 @@
 	min-height: 50px;
 	min-width: 50px;
 	z-index: 100;
-	background: 50% / 50% no-repeat url("../../assets/img/home.svg");
+	background: 50% / 50% no-repeat url('../../assets/img/home.svg');
 	/* background-color: var(--blue); */
 	opacity: 0.7;
 }
