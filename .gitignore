@@ -1,5 +1,6 @@
 #builded app
 build/
+dist/
 
 zindymokelias/back/config/default.json
 

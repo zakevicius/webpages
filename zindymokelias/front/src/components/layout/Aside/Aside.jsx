@@ -36,71 +36,31 @@ const Aside = ({ side }) => {
 		let windowH = window.innerHeight;
 		let windowOff = window.pageYOffset;
 
+		let hidden = 0;
+
+		if (asideOff > windowH) hidden = asideOff - windowH;
+
 		// Setting aside fixed to page top or bottom
-		if (windowOff <= 450 + asideOff - windowH) {
-			asideRef.current.style.top = -windowOff + 500 + "px";
-		} else {
-			if (scrollDir === "down") {
-				if (asideRef.current.style.top.split("px")[0] > asideOff - windowH) {
-					asideRef.current.style.top =
-						+asideRef.current.style.top.split("px")[0] -
-						lastScrollPos -
-						newScrollPos +
-						"px";
-				} else {
-					asideRef.current.style.top = -asideOff + windowH + "px";
-				}
-			} else {
-				if (
-					scrollDir === "up" &&
-					+asideRef.current.style.top.split("px")[0] < 0
-				) {
-					console.log(
-						asideRef.current.style.top.split("px")[0],
-						lastScrollPos - newScrollPos
-					);
 
-					asideRef.current.style.top =
-						+asideRef.current.style.top.split("px")[0] +
-						lastScrollPos -
-						newScrollPos +
-						"px";
-				} else {
-					asideRef.current.style.top = 0 + "px";
-				}
-			}
+		if (asideRef.current.style.clientHeight < windowH) return;
+
+		switch (scrollDir) {
+			case "down":
+				console.log("down");
+				break;
+			case "up":
+				console.log("up");
+				break;
 		}
-		// }
-		// else if (
-		// 	window.pageYOffset >= 450 + window.innerHeight &&
-		// 	scrollDir === "up"
-		// ) {
-		// 	asideRef.current.style.top = 0 + "px";
-		// } else {
-		// 	asideRef.current.style.top = -window.pageYOffset + 500 + "px";
-		// }
 
-		// scrolling aside elements if there is content overflow
-		// if (
-		// 	asideRef.current.offsetHeight > window.innerHeight &&
-		// 	window.pageYOffset >= 450
-		// ) {
-		// 	asideRef.current.style.top = -window.pageYOffset + "px";
-		// 	console.log(asideRef.current.offsetHeight - window.innerHeight);
-		// 	console.log(
-		// 		window.innerHeight + window.pageYOffset >
-		// 			asideRef.current.offsetHeight -
-		// 				asideRef.current.offsetHeight -
-		// 				window.innerHeight
-		// 	);
-		// 	// asideRef.current.style.top = -window.pageYOffset + "px";
-		// }
+		if (windowOff > 450 + hidden) {
+			asideRef.current.style.top = -hidden + "px";
+		} else {
+			asideRef.current.style.top = -newScrollPos + 500 + "px";
+		}
 
 		// giving footer some space by shrinking aside component
-		if (
-			window.pageYOffset + window.innerHeight >
-			document.querySelector("footer").offsetTop
-		) {
+		if (windowOff + windowH > document.querySelector("footer").offsetTop) {
 			asideRef.current.style.top =
 				asideRef.current.style.top.split("px")[0] - 75 + "px";
 			// asideRef.current.style.bottom = "50px";
