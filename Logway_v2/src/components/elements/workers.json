@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Tadas Lekerauskas",
+    "phone": "+37062176494",
+    "email": "tadas@logway1.lt",
+    "skype": ["leikeris", "Tadas"],
+    "gender": "male"
+  },
+  {
+    "name": "Ilona Zapolskaja",
+    "phone": "+37060541314",
+    "email": "ilona@logway1.lt",
+    "skype": ["ilona-sakbar", "Ilona"],
+    "gender": "female"
+  },
+  {
+    "name": "Paulius Gučius",
+    "phone": "+37065552644",
+    "email": "paulius@logway1.lt",
+    "skype": ["live:6ca4de6d0b8be973", "Paulius"],
+    "gender": "male"
+  },
+  {
+    "name": "Maija Kilbovskaja",
+    "phone": "+37063119399",
+    "email": "maija@logway1.lt",
+    "skype": ["Maija-Logway1", "Maija"],
+    "gender": "female"
+  }
+]

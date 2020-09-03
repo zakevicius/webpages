@@ -1,12 +1,12 @@
 import React from "react";
-import Card from "./Card.jsx";
+import Sections from "./elements/Sections.jsx";
+import Contacts from "./elements/Contacts.jsx";
 
 const Main = () => {
   return (
     <main>
-      <Card />
-      <Card />
-      <Card />
+      <Sections />
+      <Contacts />
     </main>
   );
 };

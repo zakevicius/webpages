@@ -1,7 +1,400 @@
-#root {
-  background-color: #555;
+$red: rgb(183, 13, 13);
+$black: rgb(0, 0, 0);
+$sectionTitleHeight: 170px;
 
-  h2 {
-    font-size: 12px;
+@font-face {
+  font-family: RedHat;
+  src: url(../assets/fonts/RedHat.ttf);
+}
+
+@font-face {
+  font-family: Muli;
+  src: url(../assets/fonts/Muli.ttf);
+}
+
+body {
+  max-width: 1920px;
+  margin: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #444;
+  font-family: RedHat, sans-serif;
+}
+
+.red {
+  color: $red;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+      
+h2 {
+  font-size: 30pt;
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 30pt;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.backLogo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 100% 50% / contain no-repeat url('../assets/images/logo/logo_big_white.jpg');
+  opacity: 0.1;
+}
+
+header {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+  .headerLogo, .headerInfo {
+    width: 50%;
+    height: 100%;
+  }
+
+  .headerLogo {
+    background: 0% 50% / contain no-repeat url('../assets/images/logo/logo_big_text.png');
+  }
+
+  .headerInfo {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+
+    .header-item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+
+      .background {
+        position: absolute;
+        opacity: 0.2;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: opacity 0.5s;
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -ms-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+      }
+
+      h2 {
+        width: 100%;
+        padding: 1em;
+        text-align: center;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+}
+
+      h2.active {
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .header-item:hover {
+      .background {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  
+  h3 {
+    position: relative
+  }
+
+  h3::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #fff 10%, #555, $red, #555, #fff 90%)
+  }
+
+  .workers {
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+
+
+    .worker {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      height: 250px;
+      width: 600px;
+      min-width: 600px;
+      padding: 2em;
+      margin: 1em;
+      // border: 1px solid #eee;
+      border-radius: 50px;
+      box-shadow: 0px 0px 3px #ddd;
+
+      img, p>i {
+        margin: 0 1rem;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        width: 250px;
+        font-size: 14pt;
+      }
+
+      a>i {
+        margin: 0 10px;
+        float: right;
+      }
+    }
+
+  }
+
+  h1 {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    width: 1000px;
+    font-size: 50px;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 100px;
+    opacity: 0;   
+  }
+
+  .background {
+    width: 700px;
+    opacity: 1;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .sectionContent {
+    display: flex;
+    margin-top: 270px;
+    padding-left: 100px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        position: relative;
+        left: 200px;
+        list-style-type: none;
+        margin: 0.3em 0;
+        font-size: 30px;
+        opacity: 0;
+        padding: 0.3em 1em;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 100px 0 0 100px;
+      }
+    }
+  }
+}
+
+// section::after {
+//     content: '';
+//     box-sizing: border-box;
+//     position: inherit;
+//     left: -1000px;
+//     top: 10%;
+//     width: 1000px;
+//     height: $sectionTitleHeight;
+//     border-right: 1px solid #ddd;
+//     border-radius: 100px;
+// }
+
+.warehouse .background {
+  background: center / cover no-repeat url(../assets/images/warehouse_p.jpg);
+}
+
+.logistics .background {
+  background: center / cover no-repeat url(../assets//images/logistics_p.jpg);
+}
+
+.customs .background {
+  background: center / cover no-repeat url(../assets//images/documents_p.jpg);
+}
+
+.contacts .background {
+  background: center / cover no-repeat url(../assets//images/contacts.jpg);
+}
+
+img.icon {
+  position: relative;
+  width: 2em;
+  height: 2em;
+}
+
+section.contacts {
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  display: flex;
+
+  .companyInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: $black;
+    overflow: hidden;
+
+    .companyInfo-actualInfo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      width: 100%;
+      font-size: 1.2rem;
+
+      p {
+        color: #fff;
+        margin: 1em;
+      }
+    }
+     
+  }
+
+  .map {
+    width: 100%;
+    height: 400px;
+    background: $black;
+    
+    iframe {
+      width: 100%;
+      height: inherit;
+      border: none;
+      opacity: 0.9;
+      filter: grayscale(80%);
+    }
+  }
+
+  .wHours {
+    color: #fff;
+    padding: 2em;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  height: 35px;
+  background: black;
+  padding: 0 1em;
+}
+
+.slidingLeft {
+  animation: slideLeft 1s;
+  animation-fill-mode: forwards;
+}
+
+.slidingBottom {
+  animation: slideBottom 1s;
+  animation-fill-mode: forwards;
+}
+
+.opacityUp {
+  animation: opacityUp 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideLeft {
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  to {
+    top: 10%;
+    opacity: 1;
+  }
+}
+
+@keyframes opacityUp {
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+
+    .headerInfo, .headerLogo {
+      flex-basis: 100%;
+      height: 50vh;
+    }
+  }
+
+  section {  
+    .background {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .sectionContent {
+      display: flex;
+      margin-top: 270px;
+      padding-left: 100px;
+
+      li {
+        display: flex;
+        align-items: center;
+        right: 0px;
+        font-size: 16px;
+        min-height: 75px;
+      }
+    }
   }
 }
