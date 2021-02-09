@@ -4,5 +4,5 @@ const local = 'http://localhost:8080';
 const heroku = 'https://zindymo.herokuapp.com/';
 
 export default axios.create({
-	baseURL: heroku
+	baseURL: local
 });
