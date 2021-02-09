@@ -1,0 +1,39 @@
+[
+  {
+    "section": "customs",
+    "title": "Muitinės paslaugos",
+    "list": [
+      "Importo procedūros",
+      "Eksporto procedūros",
+      "Tranzito procedūros",
+      "Tarpininkavimas muitinėje",
+      "Muitinės sandėliavimo procedūros",
+      "Važtaraščių ir TIR knygelių pildymas",
+      "Fitosanitarinių sertifikatų užsakymas"
+    ]
+  },
+  {
+    "section": "warehouse",
+    "title": "Sandėlio paslaugos",
+    "list": [
+      "Sandėliavimas",
+      "Krovos darbai",
+      "Muitinės sandėliavimas",
+      "Papildomi sandėlio darbai",
+      "Krovinio apdirbimo darbai",
+      "Nestandartinių krovinių krovimas"
+    ]
+  },
+  {
+    "section": "logistics",
+    "title": "Logistikos paslaugos",
+    "list": [
+      "Standartinių krovinių pervežimas",
+      "Negabaritinių krovinių, didelio tūrio krovinių pervežimas",
+      "Pavojingų krovinių gabenimas ( ADR )",
+      "Krovinių pervežimas, kuriems būtinas temperatūros režimas",
+      "Krovinių pervežimas Europoje ir NVS šalyse",
+      "Muitinės paslaugos"
+    ]
+  }  
+]         
