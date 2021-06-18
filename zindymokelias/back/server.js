@@ -1,31 +1,32 @@
-const express = require("express");
-const connectDB = require("./config/db");
-const cors = require("cors");
+require('dotenv').config();
+const express = require('express');
+const connectDB = require('./config/db');
+const cors = require('cors');
 
 const app = express();
 app.use(
-	(req, res, next) => {
-		res.header("Access-Control-Allow-Headers", "Content-Type");
-		res.header("Access-Control-Allow-Origin", "*");
-		next();
-	},
-	[cors()]
+  (req, res, next) => {
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  },
+  [cors()]
 );
 
-app.options("*", cors());
+app.options('*', cors());
 
 connectDB();
 
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => {
-	console.log("api");
-	res.send("api");
+app.get('/', (req, res) => {
+  console.log('api');
+  res.send('api');
 });
 
-app.use("/auth", require("./routes/auth"));
-app.use("/posts", require("./routes/posts"));
-app.use("/questions", require("./routes/questions"));
+app.use('/auth', require('./routes/auth'));
+app.use('/posts', require('./routes/posts'));
+app.use('/questions', require('./routes/questions'));
 
 const PORT = process.env.PORT || 8080;
 
