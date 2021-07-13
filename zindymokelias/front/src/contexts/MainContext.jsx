@@ -4,7 +4,7 @@ import { questionReducer } from "../reducers/questionReducer";
 import { eventReducer } from "../reducers/eventReducer";
 import { postState, questionState, eventState } from "./initialState";
 
-export const MainContext = createContext();
+export const MainContext = createContext({});
 
 const MainContextProvider = (props) => {
 	const reducers = [

@@ -23,6 +23,8 @@ const Content = ({ page, post, ...props }) => {
 	const { state, dispatch } = useContext(MainContext);
 	const { posts, questions, loading } = state;
 
+	console.log(page)
+
 	const setHeight = () => {
 		const content = document.querySelector(".content");
 
@@ -41,7 +43,7 @@ const Content = ({ page, post, ...props }) => {
 			return <PostList posts={posts} loading={loading} {...props} />;
 		if (page.cat === "questions")
 			return (
-				<QuestionList questions={questions} loading={loading} {...props} />
+				<QuestionList cat={page.cat} subCat={page.subCat} questions={questions} loading={loading} {...props} />
 			);
 		if (page.cat === "about") return <About />;
 		if (page.type !== "primary") {
